@@ -144,6 +144,7 @@ const ShowProject: FC = () => {
         await axios.get("/api/getAllAmount").then(res => res.data).then(data => setShowAmount(data[ 'data' ]))
     }
 
+
     useEffect(() => {
         getData()
         return () => undefined
@@ -258,7 +259,16 @@ const ShowProject: FC = () => {
                             <h3 className='font-bold text-[24px]'>Contribute</h3>
                         </div>
                         <div className='w-4/5 mx-auto'>
-                            <PercentageSlider amount={data?.amout} days={data?.days} perstage={((showAmount[ ProjectID ] / Number(data?.amout)) * 100).toFixed(2)} />
+                            {/* <div>{showAmount[ ProjectID ]} </div> */}
+                            <pre>
+                                {
+                                    JSON.stringify(
+                                        showAmount[ ProjectID ]
+
+                                    )
+                                }
+                            </pre>
+                            <PercentageSlider amount={data?.amout} days={data?.days} perstage={((showAmount[ ProjectID ] / Number(data?.amout)) * 100 || 0.00).toFixed(2)} />
                         </div>
 
                         <div className='w-4/5 mx-auto'>

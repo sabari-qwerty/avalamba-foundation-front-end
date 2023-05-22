@@ -9,6 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (req.method === "POST") {
         // console.log('hello')
         const data = req.body
+        console.log(data)
 
         // const {
         //     name,
@@ -24,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // } = data
 
 
-        // console.log(    
+        // console.log(
         //     {
         //         name,
         //         email,
@@ -38,6 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         //         template_header,
         //     }
         // )
+        // console.log(data)
 
         // console.log(data)
         await prisma.donationDetails.create({

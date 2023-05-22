@@ -1,4 +1,4 @@
-import { FC, FormEvent, useCallback, useState } from "react";
+import { FC, FormEvent, useEffect, useState } from "react";
 import useRazorpay, { RazorpayOptions } from "react-razorpay";
 import { Button } from "@/components/common/Button/Button";
 import axios from "axios";
@@ -20,6 +20,19 @@ export const Razorpay: FC<Pay> = ({ note }) => {
     const [ currency, setCurrency ] = useState("INR")
     const [ bool, setBool ] = useState(false)
 
+    const [ data, setData ] = useState<{ [ key: string ]: number }>({})
+
+    const getData = async () => {
+        await axios.get("/api/getAllAmount").then(res => res.data).then(data => {
+            setData(data[ 'data' ])
+        })
+    }
+
+    useEffect(() => {
+        getData()
+        return () => undefined
+    }, [])
+
 
     const Razorpay = useRazorpay()
 
@@ -31,6 +44,8 @@ export const Razorpay: FC<Pay> = ({ note }) => {
     const handlePayment = async () => {
         // const order = await createOrder(params);
         console.log(amount)
+
+
 
         const res = await fetch('/api/example', { method: "POST", body: JSON.stringify({ amount, currency }) })
 
@@ -56,7 +71,7 @@ export const Razorpay: FC<Pay> = ({ note }) => {
                     razorpay_payment_id: res.razorpay_payment_id,
                     razorpay_order_id: res.razorpay_order_id,
                     razorpay_signature_id: res.razorpay_signature,
-                    template_header: note,
+                    template_headre: note,
                 }
 
                 // console.log(res)
@@ -132,7 +147,7 @@ export const Razorpay: FC<Pay> = ({ note }) => {
 
                     <div className='flex flex-col space-y-2 relative h-full  '>
 
-                        <div className='border-[.5px] py-1 rounded-lg border-[#000] indent-2 flex items-center justify-between' onClick={() => setBool(!bool)}>
+                        <div className='border-2 py-1 rounded-lg  indent-2 flex items-center justify-between' onClick={() => setBool(!bool)}>
                             <span>{currency}</span>
                             <div className={bool ? "-rotate-0" : '-rotate-90'}>
 
@@ -144,7 +159,7 @@ export const Razorpay: FC<Pay> = ({ note }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className={bool ? 'flex flex-col space-y-2 pl-2  absolute bg-white w-full top-8 shadow-md s' : "hidden"}>
+                        <div className={bool ? 'flex flex-col space-y-2 pl-2 py-3  absolute bg-white w-full top-8 shadow-md ' : "hidden"}>
                             <span onClick={() => {
                                 setCurrency("INR")
                                 setBool(!bool)

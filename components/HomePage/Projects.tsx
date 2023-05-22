@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { H2 } from '@/components/common/Heading/H2'
 import { Section } from '@/components/common/Section/Section'
 // import { Projects_blog } from '@/pages/content'
@@ -82,11 +82,20 @@ const Projects_blog = [
 
 
 export const Projects: FC = () => {
-    // const { data, isLoading, isError } = useQuery({
-    //     queryKey: [ "getData" ],
-    //     queryFn: async () => await axios('http://localhost:3000/api/razorpay').then(res => res.data)
 
-    // })
+    const [ data, setData ] = useState<{ [ key: string ]: number }>({})
+
+    const getData = async () => {
+        await axios.get("/api/getAllAmount").then(res => res.data).then(data => {
+            setData(data[ 'data' ])
+        })
+    }
+
+
+    useEffect(() => {
+        getData()
+        return () => undefined
+    }, [])
 
     return (
         <Section id="Projects">
@@ -95,7 +104,7 @@ export const Projects: FC = () => {
                 <H2 text='Projects' />
                 <div className='flex xsm:flex-col lg:flex-row gap-y-8 justify-between flex-wrap  '>
                     {
-                        Projects_blog.slice(0, 3).map((i, k) => <Link key={k} href={'/project-page'} className='lg:w-[31%] xsm:w-full mx-auto  space-y-4 '>
+                        Projects_blog.slice(0, 3).map((i, k) => <Link key={k} href={`/project-page/${i.dir}`} className='lg:w-[31%] xsm:w-full mx-auto  space-y-4 '>
                             <div className='bg-white  xsm:w-[95%] lg:w-full  xsm:mx-auto lg:mx-0 shadow-md p-4 space-y-8 rounded-md'>
 
                                 <div className=' mx-auto '>
@@ -107,7 +116,7 @@ export const Projects: FC = () => {
                                         <Paragraph text={i.text} class_='xsm:text-[12px]' />
                                     </div>
                                     <div className='pb-4'>
-                                        <PercentageSlider amount={70000} days={3} perstage={70} />
+                                        <PercentageSlider amount={70000} days={3} perstage={((data[ i.dir ] / i.amout) * 100 || 0.00).toFixed(2)} />
                                     </div>
                                 </div>
                             </div>

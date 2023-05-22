@@ -23,14 +23,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const all = await prisma.donationDetails.findMany({
 
             select: {
-                template_header: true,
+                template_headre: true,
                 amount: true
             }
         })
 
         const data: { [ key: string ]: number } = all.reduce((acc: any, item) => {
-            const { template_header, amount } = item;
-            acc[ template_header ] = (acc[ template_header ] || 0) + parseInt(amount);
+            const { template_headre, amount } = item;
+            acc[ template_headre ] = (acc[ template_headre ] || 0) + parseInt(amount);
             return acc;
         }, {});
 
