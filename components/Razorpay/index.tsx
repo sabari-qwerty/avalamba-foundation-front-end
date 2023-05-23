@@ -78,6 +78,7 @@ export const Razorpay: FC<Pay> = ({ note }) => {
                 // console.log(sendData)
 
                 await axios.post("/api/createdb", sendData)
+                window.location.replace('/#About-Us')
 
             },
             prefill: {
