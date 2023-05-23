@@ -1,15 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import { PrismaClient } from "@prisma/client"
-import RayzerPay from "razorpay";
 
 
-// const Razorpay = require('razorpay')
-// const shortid = require('shortid')
-
-interface TemplateData {
-    template_header: string;
-    amount: string;
-}
 
 const prisma = new PrismaClient()
 
