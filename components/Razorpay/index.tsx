@@ -139,7 +139,7 @@ export const Razorpay: FC<Pay> = ({ note }) => {
             <InputTag lable='Name' placeholder='Ex. Robert Jane' name='na me' type='text' setFun={setName} />
             <InputTag lable='Email' placeholder='Ex. robertjane@gmail.com' name='email' type='email' setFun={setEmail} />
             <InputTag lable='Phone Number' placeholder='Ex. 98765 43210' name='phone' type='tel' setFun={setPhone} pattern='[1-9]{1}[0-9]{9}' />
-            <InputTag lable='Pan Number' placeholder='Pan Number' name='pan' type='text' setFun={setPan} pattern='[A-Z]{5}[0-9]{4}[A-Z]{1}' />
+            <InputTag lable='Pan Number' placeholder='' name='pan' type='text' setFun={setPan} pattern='[A-Z]{5}[0-9]{4}[A-Z]{1}' />
             {/* <input type="text" placeholder='name' name='name' value={name} onChange={(e) => setName(String(e.target.value))} required className='border-[.5px] py-1 rounded-lg border-[#000] indent-2' />
 
             <input type="email" placeholder='example@example.com' name='email' value={email} onChange={(e) => setEmail(e.target.value)} required className='border-[.5px] py-1 rounded-lg border-[#000] indent-2' />
@@ -148,7 +148,7 @@ export const Razorpay: FC<Pay> = ({ note }) => {
             <div className="flex items-end space-x-2">
                 <div className="flex-1">
 
-                    <InputTag lable='Amount' placeholder="Amount" name='Amount' type='number' setFun={setAmount} />
+                    <InputTag lable='Amount' placeholder="" name='Amount' type='number' setFun={setAmount} />
                 </div>
                 <div className="w-1/5 ">
 
@@ -156,7 +156,7 @@ export const Razorpay: FC<Pay> = ({ note }) => {
 
                         <div className='border-2 py-1 rounded-lg  indent-2 flex items-center justify-between' onClick={() => setBool(!bool)}>
                             <span>{currency}</span>
-                            <div className={bool ? "-rotate-0" : '-rotate-90'}>
+                            <div className={bool ? "-rotate-90" : '-rotate-0'}>
 
                                 <div className='px-2 '>
                                     <svg width="13" height="6" viewBox="0 0 13 6" fill="none" xmlns="http://www.w3.org/2000/svg">

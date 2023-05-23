@@ -113,7 +113,7 @@ const Index: React.FC = () => {
                     <div className='flex xsm:flex-col lg:flex-row gap-y-8 justify-between flex-wrap '>
                         {
                             Projects_blog.map((i, k) => <Link href={`/project-page/${i.dir}`} key={k} className='lg:w-1/3 xsm:w-full mx-auto  space-y-4  '>
-                                <div className='bg-white  xsm:w-[95%] lg:w-full  xsm:mx-auto lg:mx-0 shadow-md p-4 space-y-8 rounded-md'>
+                                <div className='bg-white  xsm:w-[95%] lg:w-full  xsm:mx-auto lg:mx-0 shadow-md p-4 space-y-8 rounded-xl'>
 
                                     <div className=' mx-auto '>
                                         <img src="./Projects/Blog-1.jpg" alt="Blog image" className='w-full object-cover ' />

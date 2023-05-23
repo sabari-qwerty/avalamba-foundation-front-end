@@ -86,7 +86,7 @@ export const AboutUS = () => {
 
                 <H2 text='About Us' />
 
-                <Paragraph text='Avalamba Foundation is a charitable trust formed in the year 2022 by a team of young Bharatiyas based out of Chennai, India. The word “Avalamba” which literally translates into Support and sustenance - is the fundamental aim of the organisation. The foundation aims to play a vital role in preserving the rich legacy of baratiya culture, civilizational consciousness and its people, by extending maximum support.' class_='font-semibold text-lg  text-center' />
+                    <Paragraph text='Avalamba Foundation is a charitable trust formed in the year 2022 by a team of young Bharatiyas based out of Chennai, India. The word “Avalamba” which literally translates into Support and sustenance - is the fundamental aim of the organisation. The foundation aims to play a vital role in preserving the rich legacy of baratiya culture, civilizational consciousness and its people, by extending maximum support.' class_='font-medium text-lg  text-center' />
                 </div>
             </div>
         </Section>

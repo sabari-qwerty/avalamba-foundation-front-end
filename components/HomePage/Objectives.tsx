@@ -57,7 +57,7 @@ export const Objectives: FC = () => {
                                 <div className="felx flex-col space-y-4 w-4/5 m-6">
                                     <h3 className='lg:text-2xl font-bold  xsm:text-md'>{i.head}</h3>
 
-                                    <Paragraph text={i.text} class_='font-semibold lg:text-lg xsm:text-[10px] ' />
+                                    <Paragraph text={i.text} class_='font-medium lg:text-lg xsm:text-[10px] ' />
                                 </div>
                             </div>
                         </div>)

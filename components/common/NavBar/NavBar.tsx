@@ -107,7 +107,7 @@ export const NavBar: FC = () => {
                         </Link>
                         <div className='my-auto xsm:hidden lg:flex'>
                             {
-                                NavData.map((i, k) => <Link key={k} href={i.dir} className='px-2 '>{i.name}</Link>)
+                                NavData.map((i, k) => <Link key={k} href={i.dir} className='px-8 '>{i.name}</Link>)
                             }
                         </div>
                         <div className='lg:hidden xsm:inline-block my-auto'>

@@ -27,7 +27,7 @@ export const PercentageSlider: FC<Slider> = ({ perstage, amount, days }) => {
                         <span className='px-4'>{perstage}%</span>
                     </div>
                     <div className='flex justify-between w-full flex-col mt-2  '>
-                        <span className='flex w-full'>₹{amount}
+                        <span className='flex w-full'>₹{Number(amount).toLocaleString('en-US')}
                             <div className='w-full justify-between flex items-end pb-3 '>
 
                                 <sub className='px-2'> Raised</sub> <sub className='px-4'>{days}days ago</sub>
