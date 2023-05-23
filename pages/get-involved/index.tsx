@@ -73,15 +73,15 @@ const index: FC = () => {
         <Layout>
 
             <Section>
-                <div className='flex flex-col mt-6 space-y-8'>
+                <div className='flex flex-col mt-16 space-y-8'>
 
                     <H1 text='Get Involved' />
                     <Paragraph text="There are several ways you can get involved with our organisation and with the work we do." class_='text-center' />
                 </div>
             </Section>
-            <div className='lg:block xsm:hidden'>
+            <div className='lg:block xsm:hidden '>
 
-                <Section>
+                <Section className_='py-0'>
                     <svg width="1193" height="832" viewBox="0 0 1193 832" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M600.964 39C574.716 52.646 552.259 72.584 535.601 97.032C518.943 121.48 508.604 149.675 505.508 179.096C502.413 208.517 506.657 238.247 517.861 265.626C529.066 293.006 546.881 317.182 569.714 335.992C570.242 330.51 572.202 325.263 575.398 320.779C578.594 316.294 582.913 312.729 587.923 310.442C592.91 280.499 605.438 252.319 624.325 228.555C643.212 204.791 667.837 186.226 695.881 174.608C692.135 146.037 681.551 118.79 665.027 95.182C648.503 71.574 626.527 52.302 600.964 39Z" fill="#A15236" />
                         <mask id="mask0_7_2" maskUnits="userSpaceOnUse" x="571" y="148" width="58" height="58">
