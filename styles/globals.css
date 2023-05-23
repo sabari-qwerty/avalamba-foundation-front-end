@@ -200,3 +200,9 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+
+
+.paddin-0 {
+  padding-top:  0 !important;
+  padding-bottom:0 !important ;
+}
