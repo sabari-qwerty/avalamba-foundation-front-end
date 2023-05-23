@@ -160,7 +160,7 @@ export const Footer = () => {
                     </div>
                 </div>
                 <div className='border-[1px] border-[#ffffff4d] '></div>
-                <div className='flex lg:justify-between xsm:flex-col lg:flex-row xsm:justify-center xsm:items-center  space-y-4'>
+                <div className='flex lg:justify-between xsm:flex-col lg:flex-row xsm:justify-center xsm:items-center'>
                     <div className='flex justify-center  items-center align-middle'>
                         <div>
                             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -178,9 +178,10 @@ export const Footer = () => {
                         </div>
                         <div className='px-2'>Avalamba foundation All Rights Reserved.</div>
                     </div>
-                    <div>
+                    <div className=''>
                         <div className=''>Powered by <span className='font-bold'>GoZen</span> </div>
                     </div>
+
                 </div>
             </div>
         </footer>
