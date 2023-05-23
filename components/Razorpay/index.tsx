@@ -61,24 +61,30 @@ export const Razorpay: FC<Pay> = ({ note }) => {
 
             order_id: data.id,
             handler: async (res: any) => {
-                const sendData = {
-                    name,
-                    email,
-                    pan_number: pan,
-                    phone_number: phone,
-                    amount,
-                    currency,
-                    razorpay_payment_id: res.razorpay_payment_id,
-                    razorpay_order_id: res.razorpay_order_id,
-                    razorpay_signature_id: res.razorpay_signature,
-                    template_headre: note,
+                try {
+
+                    const sendData = {
+                        name,
+                        email,
+                        pan_number: pan,
+                        phone_number: phone,
+                        amount,
+                        currency,
+                        razorpay_payment_id: res.razorpay_payment_id,
+                        razorpay_order_id: res.razorpay_order_id,
+                        razorpay_signature_id: res.razorpay_signature,
+                        template_headre: note,
+                    }
+
+                    // console.log(res)
+                    // console.log(sendData)
+
+                    await axios.post("/api/createdb", sendData)
+                    window.location.replace('/#About-Us')
                 }
-
-                // console.log(res)
-                // console.log(sendData)
-
-                await axios.post("/api/createdb", sendData)
-                window.location.replace('/#About-Us')
+                catch (err) {
+                    window.location.replace('/#About-Us')
+                }
 
             },
             prefill: {
