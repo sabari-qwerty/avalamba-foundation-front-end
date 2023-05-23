@@ -23,8 +23,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const all = await prisma.donationDetails.findMany({
 
             select: {
-                amount: true,
-                template_headre: true
+                // template_headre: true,
+                // amount: true,
+                template_headre: true,
+                amount: true
             }
         })
 
