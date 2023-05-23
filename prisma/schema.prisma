@@ -11,55 +11,6 @@ datasource db {
 }
   
 
-// model DonationDetails {
-//   id             String       @id @default(uuid())
-//   name String 
-//   email String
-//   pan_number String
-//   phone_number String
-//   amount String
-//   currency String
-//   razorpay_payment_id String @unique
-//   razorpay_order_id String @unique
-//   razorpay_signature_id String @unique
-//   template_header String
-//   createdAt DateTime? @default(now())
-//   updatedAt DateTime? @updatedAt
-// }
-
-
-// model paymnetSuccess {
-//   id String @id @default(uuid())
-//   razorpay_payment_id String @unique
-//   razorpayOrderId String 
-//   razorpay_signature_id String @unique
-//   process String 
-//   createdAt DateTime? @default(now())
-//   updatedAt DateTime? @updatedAt
-//   razorpay_order_id String @unique  
-
-// }
-
-
-
-// model DonationDetails {
-  // id             String       @id @default(uuid())
-  // name String 
-  // email String
-  // pan_number String
-  // phone_number String
-  // amount String
-  // currency String
-  // razorpay_payment_id String @unique
-  // razorpay_order_id String @unique
-  // razorpay_signature_id String @unique
-  // paymnetSuccess  paymnetSuccess @relation(fields: [razorpay_order_id], references: [id])
-  // template_header String
-  // createdAt DateTime? @default(now())
-  // updatedAt DateTime? @updatedAt
-  // @@index([razorpay_order_id])
-// }
-
 
 model DonationDetails {
   id                    String          @id @default(uuid())
