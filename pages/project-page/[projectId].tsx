@@ -43,22 +43,6 @@ type dataType = {
 
 
 
-interface res {
-    id: String,
-    name: String,
-    email: String,
-    pan_number: String,
-    phone_number: String,
-    amount: String,
-    currency: String,
-    razorpay_payment_id: String,
-    razorpay_order_id: String,
-    razorpay_signature_id: String,
-    template_header: String,
-    process: String,
-    createdAt: String,
-    updatedAt: String
-}
 
 
 
@@ -154,50 +138,7 @@ const ShowProject: FC = () => {
 
 
 
-    // const amount = async () => {
-    // 
-    // const data =  getData.data?.data
-    // const data_num = Number(data.filter((i: res) => i.template_header === ProjectID).map((i: res) => i.amount).reduce((a: string, b: string) => parseInt(a) + parseInt(b)))
-    // console.log(Number(data.filter((i: res) => i.template_header === ProjectID).map((i: res) => i.amount).reduce((a: string, b: string) => parseInt(a) + parseInt(b))))
-    // console.log(num)
 
-    // 
-
-    // const [ loading, setLoading ] = useState(false)
-
-
-    // useEffect(() => {
-    //     // console.log(getData.data)
-    //     onCalculatePercentage()
-    //     // setAmount(getData.data?.data.filter((i: res) => i.template_header === ProjectID).map((i: res) => Number(i.amount)) || [ 0 ])
-    // }, [])
-
-    // const onCalculatePercentage = async () => {
-    //     try {
-
-    //         setLoading(true)
-
-    //         const res = await axios.get('/api/getAllAmount')
-
-    //         const data = res.data
-
-    //         let total = 0
-
-    //         data.filter((i: res) => i.template_header == ProjectID).forEach((item: any) => total += parseInt(item.amount))
-
-    //         setAmount(total)
-
-    //         setLoading(false)
-
-    //     } catch (err) {
-    //         console.log(err)
-    //     }
-    // }
-
-
-
-
-    // const amount = async () => await getData.data?.data.filter((i: res) => i.template_header === ProjectID).map((i: res) => i.amount).reduce((a: string, b: string) => parseInt(a) + parseInt(b))
 
     return (
         <Layout>
