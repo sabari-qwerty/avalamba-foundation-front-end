@@ -2,6 +2,9 @@ import type { NextApiRequest, NextApiResponse } from "next"
 import { PrismaClient } from "@prisma/client"
 
 
+// const Razorpay = require('razorpay')
+// const shortid = require('shortid')
+
 
 const prisma = new PrismaClient()
 
