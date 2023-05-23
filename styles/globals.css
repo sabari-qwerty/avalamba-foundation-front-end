@@ -109,6 +109,10 @@ font-family: "Segoe UI", Arial, sans-serif;
     background-color: #fff !important;
   }
 
+  .swiper-pagination-bullet {
+    background-color: #fff !important;
+    opacity: .5 !important;
+  }
 
   /* objective card */
 
