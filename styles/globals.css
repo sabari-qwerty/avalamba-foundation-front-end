@@ -105,13 +105,16 @@ font-family: "Segoe UI", Arial, sans-serif;
   transition: .6s ease-in-out;
   }  
 
-  .swiper-pagination-bullet-active {
-    background-color: #fff !important;
-  }
+
 
   .swiper-pagination-bullet {
-    background-color: #fff ;
-    opacity: .5 ;
+    background-color: #fff !important;
+    opacity: .5 !important;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: #fff !important;
+    opacity: 1 !important;
   }
 
   /* objective card */
