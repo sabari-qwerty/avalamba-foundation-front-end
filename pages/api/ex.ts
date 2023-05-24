@@ -10,5 +10,9 @@ const razorpay = new RayzerPay({
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    if (req.method == "get") {
+        const data = razorpay.payments.all()
+        res.send(data)
 
+    }
 }

@@ -6,29 +6,38 @@ import { PrismaClient } from "@prisma/client"
 // const shortid = require('shortid')
 
 
+
+
 const prisma = new PrismaClient()
+
+interface item {
+    template_headre: string | any,
+    amount: string | any
+}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     if (req.method === "GET") {
 
 
-        const all = await prisma.donationDetails.findMany({
+        const all = await prisma.$queryRaw`select template_headre, amount from "DonationDetails" dd join "PaymnetStatus" ps on dd.razorpay_order_id = ps.razorpay_order_id where PS.status = 'captured'`
+        //     .findMany({
 
-            select: {
+        //     select: {
 
-                template_headre: true,
-                amount: true
-            }
-        })
+        //         template_headre: true,
+        //         amount: true
+        //     }
+        // })
 
-        const data: { [ key: string ]: number } = all.reduce((acc: any, item) => {
+        const data: { [ key: string ]: number } = (all as item[]).reduce((acc: any, item: item) => {
             const { template_headre, amount } = item;
             acc[ template_headre ] = (acc[ template_headre ] || 0) + parseInt(amount);
             return acc;
         }, {});
 
 
+        // console.log(data)
 
         res.status(200).send({ data })
     }
