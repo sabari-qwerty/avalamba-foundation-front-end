@@ -7,9 +7,10 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:password@localhost:5432/avalamba_foundation"
+  url  	= env("NEXT_PUBLIC_DATABASE_URL")
+  directUrl = env("NEXT_PUBLIC_DIRECT_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
-  
 
   
 model DonationDetails {
