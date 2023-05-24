@@ -131,6 +131,15 @@ export const Razorpay: FC<Pay> = ({ note }) => {
     }
 
 
+    const Numbervalue = (e: string) => {
+        console.log(Number(e) < 1)
+        console.log(amount)
+
+        if (Number(e) < 1) setAmount("1")
+        else setAmount(e)
+
+    }
+
 
     return (
 
@@ -148,9 +157,10 @@ export const Razorpay: FC<Pay> = ({ note }) => {
             <div className="flex items-end space-x-2">
                 <div className="flex-1">
 
-                    <InputTag lable='Amount' placeholder="" name='Amount' type='number' setFun={setAmount} />
+                    <InputTag lable='Amount' name='Amount' type='number' value={amount} setFun={Numbervalue} />
+                    {/* <input type="number" onChange={(e) => console.log(typeof (e.target.value))} /> */}
                 </div>
-                <div className="w-1/5 ">
+                <div className="lg:w-1/5 xsm:w-1/2 ">
 
                     <div className='flex flex-col space-y-2 relative h-full  '>
 

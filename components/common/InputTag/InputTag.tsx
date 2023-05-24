@@ -17,7 +17,7 @@ export const InputTag: FC<InputTag> = ({ name, placeholder, type, pattern, setFu
     return (
         <div className='flex flex-col space-y-2'>
             <label htmlFor={name} className='font-blod text-base'>{lable}</label>
-            <input pattern={pattern} placeholder={placeholder} type={type} name={name} className='rounded-md border-collapse border-2 py-2 indent-1 text-xs' onChange={(e) => setFun(e.target.value)} required />
+            <input pattern={pattern} placeholder={placeholder} type={type} name={name} value={value} className='rounded-md border-collapse border-2 py-2 indent-1 text-xs' onChange={(e) => setFun(e.target.value)} required />
         </div>
     )
 }
