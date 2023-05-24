@@ -35,11 +35,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         res.status(200).send({
             DATA: {
 
-                key: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
-                secret: process.env.NEXT_PUBLIC_RAZORPAY_SECRET,
-                databaseUrl: process.env.NEXT_PUBLIC_DATABASE_URL,
-                direactUrl: process.env.NEXT_PUBLIC_DIRECT_URL,
-                shadiw: process.env.NEXT_PUBLIC_SHADOW_DATABASE_URL,
+                // key: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
+                // secret: process.env.NEXT_PUBLIC_RAZORPAY_SECRET,
+                // databaseUrl: process.env.NEXT_PUBLIC_DATABASE_URL,
+                // direactUrl: process.env.NEXT_PUBLIC_DIRECT_URL,
+                // shadiw: process.env.NEXT_PUBLIC_SHADOW_DATABASE_URL,
+
+                data: 'hello'
 
 
             }
