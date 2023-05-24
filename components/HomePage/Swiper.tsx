@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { H1 } from '../common/Heading/H1';
 import { H2 } from '../common/Heading/H2';
+import Image from 'next/image';
 // import { SliderImage } from '@/pages/content';
 
 const SliderImage = [
@@ -49,6 +50,7 @@ export const ImageSwper: FC = () => {
                 SliderImage.map((i, k) => {
                     return <SwiperSlide key={k} className='h-[100dvh] full-width bg-black'>
                         {
+                            // <Image src={i.src} alt='image' className='w-full h-full object-cover opacity-80' layout="fill" />
                             <img src={i.src} alt="image" className='w-full h-full object-cover opacity-80' />
                         }
                     </SwiperSlide>
