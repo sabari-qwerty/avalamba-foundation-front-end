@@ -132,8 +132,7 @@ export const Razorpay: FC<Pay> = ({ note }) => {
 
 
     const Numbervalue = (e: string) => {
-        console.log(Number(e) < 1)
-        console.log(amount)
+
 
         if (Number(e) < 1) setAmount("1")
         else setAmount(e)
