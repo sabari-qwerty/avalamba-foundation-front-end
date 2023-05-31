@@ -28,13 +28,13 @@ const ObjectivesData = [
     },
     {
         src: "/Objectives/5.png",
-        head: "Legal Aid",
-        text: "Extending legal help towards civilizational causes and collaborate with organisations that work towards making social impact and changes on ground."
+        head: "Gauraksha",
+        text: "To protect gaumata ,specifically endangered Indian breeds from extinction. The aim is to provide support in all possible ways, by assisting gaushalas and small farms in selling their products so that they remain self-sustainable and distress sale to the meat industry is avoided"
     },
     {
         src: "/Objectives/6.png",
-        head: "Medical & Educational Aid",
-        text: "To provide emergency Medical and educational aid to the needy of our country"
+        head: "Other Activities",
+        text: "Extending legal help towards civilizational causes and collaborate with organisations that work towards making social impact and changes on ground and also provide emergency Medical and educational aid to the needy of our country"
     },
 
 
