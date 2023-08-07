@@ -18,6 +18,7 @@
     "@types/react": "18.2.4",
     "@types/react-dom": "18.2.3",
     "@types/shortid": "^0.0.29",
+    "@types/swiper": "^6.0.0",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "eslint": "8.39.0",
@@ -31,11 +32,24 @@
     "react-razorpay": "^1.2.0",
     "shortid": "^2.2.16",
     "stripe": "^12.4.0",
-    "swiper": "^9.2.4",
+    "swiper": "^9.4.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
   },
   "devDependencies": {
     "razorpay": "^2.8.6"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabari-qwerty/avalamba-foundation-front-end.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sabari-qwerty/avalamba-foundation-front-end/issues"
+  },
+  "homepage": "https://github.com/sabari-qwerty/avalamba-foundation-front-end#readme"
 }

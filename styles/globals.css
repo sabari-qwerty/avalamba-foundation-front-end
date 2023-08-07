@@ -1,10 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 * {
 font-family: "Segoe UI", Arial, sans-serif;
+scroll-behavior: smooth !important;
+
 }
+
 
 
 /* .full-width {
@@ -200,9 +202,77 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-
-
 .paddin-0 {
   padding-top:  0 !important;
   padding-bottom:0 !important ;
+}
+
+
+/* time duration  */
+
+/* data {
+  
+} */
+
+
+
+/* get involved animation */
+
+.get-involved-animation-img {
+  width: 0;
+  animation: width20 2s forwards;
+}
+
+@keyframes width20 {
+  from {
+    width:0;
+  } 
+  to {
+    width: 40%;
+  }
+}
+
+
+/* fade out */
+
+.fade-out-animation {
+  animation: fade  200ms forwards;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+  
+}
+
+
+/*  */
+
+@font-face {
+  font-family: "tamilfount";
+  font-weight: bold;
+  src: url("/public/fount/SegoeUI-SemiBold.woff") format("woff")
+}
+
+@font-face {
+  font-family: "tamilfount";
+  font-weight: bold;
+  font-style: italic;
+  src: url("/public/fount/SegoeUI-BoldItalic.woff") format("woff")
+}
+
+@font-face {
+  font-family: "tamilfount";
+  font-style: italic;
+  src: url("/public/fount/SegoeUI-Italic.woff") format("woff");
+}
+
+
+.heading-tamil-fount {
+  font-family: "tamilfount", sans-serif; 
+  font-weight: bold;
 }
