@@ -6,7 +6,7 @@ import axios from "axios";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-const index = () => {
+const Index = () => {
   const [showAmount, setShowAmount] = useState<{ [key: string]: number }>({});
 
   const getData = async () => {
@@ -59,4 +59,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

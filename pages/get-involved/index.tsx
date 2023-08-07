@@ -44,7 +44,7 @@ const data = [
   },
 ];
 
-const index: FC = () => {
+const Index: FC = () => {
   // const swiperRef = useRef<s | null>(null);
 
   const count_data = {
@@ -228,4 +228,4 @@ const index: FC = () => {
   );
 };
 
-export default index;
+export default Index;
