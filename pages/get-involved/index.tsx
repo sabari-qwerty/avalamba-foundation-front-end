@@ -79,7 +79,7 @@ const Index: FC = () => {
 
   return (
     <Layout>
-      <section className="xsm:hidden  lg:flex w-full h-screen    lg:items-start">
+      <section className="xsm:hidden  lg:flex w-full h-screen    lg:items-start -z-50">
         <div className=" h-full  w-[30%] bg-[rgba(161,82,54,0.10)] ">
           <Swiper
             initialSlide={count}
