@@ -105,7 +105,13 @@ const index: FC = () => {
               className="lg:w-[40%] xsm:w-full  flex flex-col space-y-4 "
             >
               <div className="containe flex flex-col text-[#fff]">
-                <img src={i.src} alt="Avatar" className="image" />
+                <Image
+                  src={i.src}
+                  alt="Avatar"
+                  className="image"
+                  width={460}
+                  height={534}
+                />
                 <div className="overlay backround-color-overlay-team mx-auto flex flex-col items-center justify-center">
                   <div className="felx flex-col space-y-6 w-4/5">
                     <Paragraph

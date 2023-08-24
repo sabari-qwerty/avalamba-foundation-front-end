@@ -55,8 +55,8 @@ export const Objectives: FC = () => {
                 src={data.src}
                 alt="hello"
                 className="w-full h-full opacity-60 "
-                width={320}
-                height={480}
+                width={454}
+                height={580}
               />
               <div className="absolute w-full h-full flex flec-col justify-center items-center text-white  top-0">
                 <div className="   flex space-y-4 flex-col">
