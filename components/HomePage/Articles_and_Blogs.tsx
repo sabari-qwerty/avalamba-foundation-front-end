@@ -67,7 +67,7 @@ export const Articles_and_Blogs: FC = () => {
 
     <section className="py-8 space-y-8 flex flex-col justify-center items-center">
       <H2 text="Articles & Blogs" />
-      <div className="w-[90%] h-[500px] bg-[#eecbb844] flex items-center text-center justify-center text-2xl">
+      <div className="w-[90%] h-[500px] bg-[#eecbb844] flex items-center text-center justify-center lg:text-2xl text:text">
         Comming Soon.....
       </div>
     </section>

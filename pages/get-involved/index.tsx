@@ -105,10 +105,12 @@ const Index: FC = () => {
           >
             {data.map((data, key) => (
               <SwiperSlide className="w-full h-full" key={key}>
-                <img
+                <Image
                   src={data.img}
                   alt="hello "
                   className="w-full h-full object-"
+                  width={600}
+                  height={800}
                 />
               </SwiperSlide>
             ))}

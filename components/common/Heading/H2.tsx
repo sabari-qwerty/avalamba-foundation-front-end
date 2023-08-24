@@ -8,7 +8,7 @@ interface H2 {
 export const H2: FC<H2> = ({ text, className }) => {
   return (
     <h2
-      className={`font-bold lg:text-4xl xsm:text-2xl text-center ${className}`}
+      className={`font-bold lg:text-2xl 2xl:text-4xl xsm:text-lg text-center ${className}`}
     >
       {text}
     </h2>

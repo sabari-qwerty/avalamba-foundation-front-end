@@ -94,7 +94,7 @@ export const Projects: FC = () => {
 
   return (
     <Section id="Projects">
-      <div className="flex flex-col space-y-16 w-[90%]">
+      <div className="flex flex-col space-y-16 w-[90%] ">
         <H2 text="Projects" />
         <div className="flex xsm:flex-col lg:flex-row gap-y-8 justify-between flex-wrap  ">
           {Projects_blog.slice(0, 3).map((i, k) => (

@@ -51,10 +51,12 @@ export const Objectives: FC = () => {
               key={k}
               className="lg:w-[30%] xsm:w-4/5  h-[700px] overflow-hidden  relative bg-black group transition-all duration-100 ease-in-out "
             >
-              <img
+              <Image
                 src={data.src}
                 alt="hello"
                 className="w-full h-full opacity-60 "
+                width={320}
+                height={480}
               />
               <div className="absolute w-full h-full flex flec-col justify-center items-center text-white  top-0">
                 <div className="   flex space-y-4 flex-col">

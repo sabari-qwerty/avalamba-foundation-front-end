@@ -26,7 +26,7 @@ const Index = () => {
   return (
     <Layout>
       <Section className="w-full lg:h-screen py-0 ">
-        <div className="flex w-full h-full xsm:flex-col lg:flex-row ">
+        <div className="flex w-full h-full xsm:flex-col lg:flex-row justify-center items-center">
           <div className="lg:w-3/5 xsm:w-[90%] h-full flex  justify-center items-center flex-col space-y-8">
             <Image src={"/lamp.svg"} alt="lamp" width={200} height={200} />
             <h3 className="text-4xl font-semibold">

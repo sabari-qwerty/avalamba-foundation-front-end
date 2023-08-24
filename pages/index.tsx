@@ -21,13 +21,13 @@ export default function Home() {
       {/* <Projects /> */}
       {/* <Articles_and_Blogs /> */}
       <FiexedButton text="Contribute Now" />
-      <script
+      <Script
         id="optinly_script"
         async={true}
         data-app_id="c9e144b8-00a7-4c9f-b18f-e668c0e3f3d6"
         src="https://cdn.optinly.net/v1/optinly.js"
         type="text/javascript"
-      ></script>
+      />
     </Layout>
   );
 }
