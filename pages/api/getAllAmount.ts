@@ -2,8 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next"
 import { PrismaClient } from "@prisma/client"
 
 
-// const Razorpay = require('razorpay')
-// const shortid = require('shortid')
+
 
 
 
@@ -21,14 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 
         const all = await prisma.$queryRaw`select template_headre, amount from "DonationDetails" dd join "PaymnetStatus" ps on dd.razorpay_order_id = ps.razorpay_order_id where PS.status = 'captured'`
-        //     .findMany({
 
-        //     select: {
-
-        //         template_headre: true,
-        //         amount: true
-        //     }
-        // })
 
         const data: { [ key: string ]: number } = (all as item[]).reduce((acc: any, item: item) => {
             const { template_headre, amount } = item;

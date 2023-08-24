@@ -17,7 +17,7 @@ export default function Home() {
       <ImageSwper />
       <AboutUS />
       <Objectives />
-      <Projects />
+      {/* <Projects /> */}
       {/* <Articles_and_Blogs /> */}
       <FiexedButton text="Contribute Now" />
     </Layout>

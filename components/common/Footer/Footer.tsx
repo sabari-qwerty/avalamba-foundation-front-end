@@ -15,10 +15,10 @@ const NavData = [
     name: "Objectives",
     dir: "/#Objectives",
   },
-  {
-    name: "Projects",
-    dir: "/#Projects",
-  },
+  // {
+  //   name: "Projects",
+  //   dir: "/#Projects",
+  // },
   {
     name: "Team",
     dir: "/team",
@@ -30,6 +30,10 @@ const NavData = [
   {
     name: "Get Involved",
     dir: "/get-involved",
+  },
+  {
+    name: "Article",
+    dir: "/article",
   },
 ];
 
@@ -89,22 +93,18 @@ const NavData = [
 
 const SocialMediaIcon = [
   {
-    img: "/socialmedia/facebook.svg",
-    herf: "#",
+    img: "/socialmedia/Icon.svg",
+    herf: "https://www.instagram.com/avalambafoundation/",
   },
   {
     img: "/socialmedia/whitetwitter.svg",
-    herf: "#",
-  },
-  {
-    img: "/socialmedia/youtube.svg",
-    herf: "#",
+    herf: "https://twitter.com/avalambafdn",
   },
 ];
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#A15236] w-full py-16 text-[#fff] flex justify-center">
+    <footer className="bg-[#A15236] w-full py-16 text-[#fff] flex justify-center mt-20">
       {/* <div className="w-[90%] flex flex-col space-y-8 ">
         <div className="flex xsm:flex-col lg:flex-row space-y-4">
           <div className="lg:w-1/3 xsm:w-full flex flex-col space-y-4">
@@ -483,14 +483,14 @@ export const Footer = () => {
             className="object-fill w-full h-full"
           />
         </div>
-        <div className="flex lg:space-x-16 xsm:space-x-8 text-2xl">
+        <div className="flex    lg:space-x-16 flex-col lg:flex-row   text-2xl">
           {NavData.map((data, key) => (
-            <Link href={data.dir} key={key}>
+            <Link href={data.dir} key={key} className="py-2 lg:py-0">
               {data.name}
             </Link>
           ))}
         </div>
-        <div className="flex lg:space-x-16 xsm:space-x-8 ">
+        <div className="flex   lg:space-x-16 xsm:space-x-8 ">
           {SocialMediaIcon.map((data, key) => (
             <Link
               href={data.img}
@@ -502,7 +502,7 @@ export const Footer = () => {
           ))}
         </div>
         <div className="w-full h-[1px] bg-white"></div>
-        <div className="w-full flex justify-between items-center text-xl">
+        <div className="w-full flex justify-between items-center text-xl flex-col lg:flex-row">
           <span className="flex justify-center items-center space-x-3">
             <div>
               <Image src={"/copyright.svg"} alt="" width={20} height={20} />

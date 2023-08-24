@@ -58,6 +58,7 @@ export const Razorpay: FC<Pay> = ({ note }) => {
       name: "Arulmigu Ramanathaswamy Temple",
       description: "Test Transaction",
       image: "/logo/logo.png",
+      callback_url: "/#About-Us",
 
       order_id: data.id,
       handler: async (res: any) => {
@@ -79,7 +80,7 @@ export const Razorpay: FC<Pay> = ({ note }) => {
           // console.log(sendData)
 
           await axios.post("/api/createdb", sendData);
-          window.location.replace("/#About-Us");
+          await window.location.replace("/#About-Us");
         } catch (err) {
           window.location.replace("/#About-Us");
         }

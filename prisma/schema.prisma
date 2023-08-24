@@ -6,31 +6,30 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url  	= env("NEXT_PUBLIC_DATABASE_URL")
-  directUrl = env("NEXT_PUBLIC_DIRECT_URL")
+  provider          = "postgresql"
+  url               = env("NEXT_PUBLIC_DATABASE_URL")
+  directUrl         = env("NEXT_PUBLIC_DIRECT_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-  
 model DonationDetails {
-  id                    String          @id @default(uuid())
+  id                    String    @id @default(uuid())
   name                  String
   email                 String
   pan_number            String
-  phone_number      String
+  phone_number          String
   amount                String
   currency              String
-  razorpay_payment_id   String          @unique
-  razorpay_order_id     String          @unique
-  razorpay_signature_id String          @unique
+  razorpay_payment_id   String    @unique
+  razorpay_order_id     String    @unique
+  razorpay_signature_id String    @unique
   template_headre       String
-  createdAt             DateTime?       @default(now())
-  updateAt              DateTime?       @updatedAt
+  createdAt             DateTime? @default(now())
+  updateAt              DateTime? @updatedAt
 }
 
 model PaymnetStatus {
-  id                String          @id @default(uuid())
-  razorpay_order_id String?         @unique
+  id                String  @id @default(uuid())
+  razorpay_order_id String? @unique
   status            String?
 }

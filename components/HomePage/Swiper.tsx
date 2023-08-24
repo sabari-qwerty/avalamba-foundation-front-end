@@ -39,7 +39,8 @@ export const ImageSwper: FC = () => {
         pagination={{ clickable: true }}
         className="h-[100dvh] full-width"
         autoplay={{
-          delay: 2500,
+          delay: 5000,
+          disableOnInteraction: false,
         }}
       >
         {SliderImage.map((i, k) => {

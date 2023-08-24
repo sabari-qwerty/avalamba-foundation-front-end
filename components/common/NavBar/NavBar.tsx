@@ -11,10 +11,10 @@ const NavData = [
     name: "Objectives",
     dir: "/#Objectives",
   },
-  {
-    name: "Projects",
-    dir: "/#Projects",
-  },
+  // {
+  //   name: "Projects",
+  //   dir: "/#Projects",
+  // },
   {
     name: "Team",
     dir: "/team",
@@ -33,7 +33,7 @@ export const NavBar: FC = () => {
   const [bool, setBool] = useState(true);
 
   return (
-    <nav className="bg-[#A15236] w-full flex  justify-center fixed top-0 text-[#fff] z-50">
+    <nav className="bg-[#A15236] w-full flex  justify-center fixed top-0 text-[#fff] z-[100]">
       <div
         className={`flex justify-between  w-[90%] py-4 flex-col ${
           bool ? "" : "h-[100dvh]"

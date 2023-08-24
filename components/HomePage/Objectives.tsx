@@ -4,6 +4,7 @@ import { Section } from "@/components/common/Section/Section";
 // import { ObjectivesData } from '@/pages/content'
 import { Paragraph } from "@/components/common/Paragraph/Paragraph";
 import Image from "next/image";
+import Link from "next/link";
 
 const ObjectivesData = [
   {
@@ -45,24 +46,28 @@ export const Objectives: FC = () => {
         <H2 text="Objectives" />
         <div className="flex flex-wrap gap-4 w-full justify-center  ">
           {ObjectivesData.map((data, k) => (
-            <div
+            <Link
+              href={"/project-page"}
               key={k}
-              className="lg:w-[30%] xsm:w-4/5  h-[600px] overflow-hidden  relative bg-black group transition-all duration-100 ease-in-out "
+              className="lg:w-[30%] xsm:w-4/5  h-[700px] overflow-hidden  relative bg-black group transition-all duration-100 ease-in-out "
             >
               <img
                 src={data.src}
                 alt="hello"
-                className="w-full h-full opacity-80 "
+                className="w-full h-full opacity-60 "
               />
               <div className="absolute w-full h-full flex flec-col justify-center items-center text-white  top-0">
                 <div className="   flex space-y-4 flex-col">
-                  <H2 text={data.head} />
-                  <div className="group-hover:opacity-100  group-hover:h-14  h-0  opacity-0 w-4/5 mx-auto text-center transition-all duration-100 ">
+                  <h2 className="text-4xl text-center font-semibold">
+                    {data.head}
+                  </h2>
+                  {/* <H2 text={data.head} className="text-2xl" /> */}
+                  <div className="font-semibold  text-xl group-hover:opacity-100  group-hover:h-14  h-0  opacity-0 w-4/5 mx-auto text-center transition-all duration-100 pt-2">
                     {data.text}
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

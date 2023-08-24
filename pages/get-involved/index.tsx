@@ -15,6 +15,7 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/effect-fade";
 import { Section } from "@/components/common/Section/Section";
+import { Paragraph } from "@/components/common/Paragraph/Paragraph";
 
 const data = [
   {
@@ -80,7 +81,7 @@ const Index: FC = () => {
   return (
     <Layout>
       <section className="xsm:hidden  lg:flex w-full h-screen    lg:items-start -z-50">
-        <div className=" h-full  w-[30%] bg-[rgba(161,82,54,0.10)] ">
+        <div className=" h-full  w-[30%] bg-[rgba(161,82,54,0.10)] relative">
           <Swiper
             initialSlide={count}
             grabCursor={true}
@@ -99,6 +100,8 @@ const Index: FC = () => {
             }}
             effect={"creative"}
             modules={[EffectCreative, EffectFade]}
+            preventInteractionOnTransition={true}
+            noSwiping={true}
           >
             {data.map((data, key) => (
               <SwiperSlide className="w-full h-full" key={key}>
@@ -110,8 +113,9 @@ const Index: FC = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+          <div className="w-full h-full bg-transparent absolute top-0 z-50"></div>
         </div>
-        <div className="h-full  w-[70%]  justify-center items-center flex flex-col mx-auto  ">
+        <div className="h-full  w-[70%]  justify-center items-center flex flex-col mx-auto relative ">
           <Swiper
             initialSlide={count}
             className="h-[90%] w-full flex flex-col justify-center  space-y-6 "
@@ -122,6 +126,8 @@ const Index: FC = () => {
             modules={[Pagination]}
             allowSlideNext={true}
             allowSlidePrev={true}
+            preventInteractionOnTransition={true}
+            noSwiping={true}
           >
             {data.reverse().map((data, key) => (
               <SwiperSlide
@@ -132,14 +138,19 @@ const Index: FC = () => {
                   <div className="w-full ">
                     <H2
                       text={data.head}
-                      className="font-blod lg:text-3xl text-start w-full "
+                      className="font-blod lg:text-[42px] text-start w-full "
                     />
                   </div>
-                  <div className=" font-medium text-base">{data.text}</div>
+                  <Paragraph
+                    text={data.text}
+                    className="font-blod text-2xl pt-6"
+                  />
+                  {/* <p className=" font-blod text-xl">{data.text}</p> */}
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+          <div className="w-full h-[90%] bg-transparent absolute top-0 z-50"></div>
           {/* <div className="h-[90%] w-full flex flex-col justify-center  space-y-6">
             <div className="w-full ">
               <H2
@@ -216,14 +227,14 @@ const Index: FC = () => {
           </div>
         </div>
       </section>
-      <Section className="xsm:visible lg:hidden">
+      <section className="xsm:visible lg:hidden  py-0 w-full h-full flex justify-center items-center pt-28">
         <Image
           src="/GetInvolved/getin.svg"
           alt="getinvalue"
           width={320}
           height={500}
         />
-      </Section>
+      </section>
     </Layout>
   );
 };

@@ -13,21 +13,21 @@ export const Layout: FC<Layout> = ({ children }) => {
     <div className="relative">
       <NavBar />
       {children}
-      <Section id="">
+      {/* <Section id="">
         <div className="flex flex-col space-y-16 w-[90%]">
           <H2 text="Subscribe to Our News Letters !" />
           <div className=" flex justify-center">
             <input
               type="email"
               placeholder="Enter you email address"
-              className="text-sm rounded-l-full border-[1px] border-[#A15236] xsm:indent-7 lg:indent-9 w-2/5 min-h-[50px]"
+              className="text-sm rounded-l-full border-[1px] border-[#A15236] xsm:indent-7 lg:indent-9   min-h-[50px] lg:w-2/4 sm:w-[90%] w-[90%]"
             />
-            <button className="min-h-[50px] xsm:w-fit xsm:px-6   lg:px-0  bg-[#A15236] text-[#fff] lg:w-1/5 rounded-r-full">
+            <button className="min-h-[50px]  xsm:px-6   lg:px-0  bg-[#A15236] text-[#fff] w-[200px] rounded-r-full">
               Subsribe
             </button>
           </div>
         </div>
-      </Section>
+      </Section> */}
       <Footer />
     </div>
   );

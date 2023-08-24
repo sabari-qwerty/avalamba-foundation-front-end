@@ -156,7 +156,7 @@ const ShowProject: FC = () => {
         <div className="h-full lg:w-3/5 xsm:w-full overflow-auto">
           <div className="w-[90%]  mx-auto flex flex-col space-y-8 ">
             <div className="w-[95%]  mx-auto flex flex-col space-y-8">
-              <div>
+              <div className="pt-8">
                 <H2 text={String(data?.head)} className="text-start text-3xl" />
 
                 {/* <H2 text='25 quality collectors toys inspired by famous films' className='text-start text-3xl' /> */}
