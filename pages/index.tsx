@@ -20,6 +20,14 @@ export default function Home() {
       {/* <Projects /> */}
       {/* <Articles_and_Blogs /> */}
       <FiexedButton text="Contribute Now" />
+
+      <iframe
+        width="500px"
+        height="500px"
+        src="https://optin.ly.gozen.io/link?campaign_id=b5666e56-4cf4-4cc5-ab82-6bc0b3064ff5&site_id=d06e0674-5bdc-4e7b-b85d-e6f578a44f84"
+      >
+        {" "}
+      </iframe>
     </Layout>
   );
 }

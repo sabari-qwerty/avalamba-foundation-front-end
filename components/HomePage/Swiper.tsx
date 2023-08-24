@@ -15,19 +15,25 @@ import Image from "next/image";
 
 const SliderImage = [
   {
-    src: "/HeroPage/1.jpg",
+    src: "/HeroPage/new/1.jpg",
   },
   {
-    src: "/HeroPage/2.jpg",
+    src: "/HeroPage/new/2.jpg",
   },
   {
-    src: "/HeroPage/3.jpg",
+    src: "/HeroPage/new/3.jpg",
   },
   {
-    src: "/HeroPage/4.jpg",
+    src: "/HeroPage/new/4.jpg",
   },
   {
-    src: "/HeroPage/5.jpg",
+    src: "/HeroPage/new/5.jpg",
+  },
+  {
+    src: "/HeroPage/new/6.jpg",
+  },
+  {
+    src: "/HeroPage/new/7.jpg",
   },
 ];
 
@@ -48,10 +54,12 @@ export const ImageSwper: FC = () => {
             <SwiperSlide key={k} className="h-[100dvh] full-width bg-black">
               {
                 // <Image src={i.src} alt='image' className='w-full h-full object-cover opacity-80' layout="fill" />
-                <img
+                <Image
                   src={i.src}
                   alt="image"
-                  className="w-full h-full object-cover opacity-80"
+                  className="w-full h-full object-fill opacity-80"
+                  width={800}
+                  height={800}
                 />
               }
             </SwiperSlide>
@@ -76,7 +84,7 @@ export const ImageSwper: FC = () => {
         </h3> */}
         <div className="flex space-y-6 flex-col">
           <h1 className="text-5xl font-extrabold text-center heading-tamil-fount ">
-            | அறம் செய விரும்பு |
+            | அறம் செய்ய விரும்பு |
           </h1>
           <H2 text="Develop interest in performing Dharmik acts" />
         </div>
