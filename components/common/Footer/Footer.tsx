@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { Paragraph } from "../Paragraph/Paragraph";
 // import { NavData, SocialMediaIcon } from '@/pages/content'
 import Link from "next/link";
@@ -102,7 +102,11 @@ const SocialMediaIcon = [
   },
 ];
 
-export const Footer = () => {
+interface Footer {
+  bool: boolean;
+}
+
+export const Footer: FC<Footer> = ({ bool }) => {
   return (
     <footer className="bg-[#A15236] w-full py-16 text-[#fff] flex justify-center mt-20">
       {/* <div className="w-[90%] flex flex-col space-y-8 ">

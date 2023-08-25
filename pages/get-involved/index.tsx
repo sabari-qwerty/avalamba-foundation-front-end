@@ -80,8 +80,11 @@ const Index: FC = () => {
 
   return (
     <Layout>
-      <section className="xsm:hidden  lg:flex w-full h-screen    lg:items-start -z-50">
-        <div className=" h-full  w-[30%] bg-[rgba(161,82,54,0.10)] relative">
+      <section
+        className="xsm:hidden  lg:flex w-full h-screen    lg:items-start    "
+        style={{ zIndex: "-100" }}
+      >
+        <div className=" h-full  flex justify-end w-[30%] bg-[rgba(161,82,54,0.10)] relative">
           <Swiper
             initialSlide={count}
             grabCursor={true}
@@ -115,7 +118,7 @@ const Index: FC = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="w-full h-full bg-transparent absolute top-0 z-50"></div>
+          <div className="w-full h-[90%] bg-transparent absolute top-0 z-50"></div>
         </div>
         <div className="h-full  w-[70%]  justify-center items-center flex flex-col mx-auto relative ">
           <Swiper

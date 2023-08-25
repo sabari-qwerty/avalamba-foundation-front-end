@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useState } from "react";
 import { NavBar } from "./common/NavBar/NavBar";
 import { Footer } from "./common/Footer/Footer";
 import { H2 } from "./common/Heading/H2";
@@ -9,9 +9,11 @@ interface Layout {
 }
 
 export const Layout: FC<Layout> = ({ children }) => {
+  const [bool, setBool] = useState(true);
+
   return (
-    <div className="relative">
-      <NavBar />
+    <div className={`relative ${!bool && "bg-[#A15236]"}`}>
+      <NavBar bool={bool} setBool={() => setBool(!bool)} />
       {children}
       {/* <Section id="">
         <div className="flex flex-col space-y-16 w-[90%]">
@@ -28,7 +30,7 @@ export const Layout: FC<Layout> = ({ children }) => {
           </div>
         </div>
       </Section> */}
-      <Footer />
+      <Footer bool={bool} />
     </div>
   );
 };

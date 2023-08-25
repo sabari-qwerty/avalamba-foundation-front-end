@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 // import { NavData } from '@/pages/content'
 import Link from "next/link";
+import { styled } from "@tanstack/react-query-devtools/build/lib/utils";
 
 const NavData = [
   {
@@ -29,18 +30,28 @@ const NavData = [
   },
 ];
 
-export const NavBar: FC = () => {
-  const [bool, setBool] = useState(true);
+interface NavBar {
+  bool: boolean;
+  setBool: () => void;
+}
+
+export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
+  // const [bool, setBool] = useState(true);
 
   return (
-    <nav className="bg-[#A15236] w-full flex  justify-center fixed top-0 text-[#fff] z-[100]">
+    <nav
+      className={`bg-[#A15236] w-full flex  justify-center fixed top-0 text-[#fff] ${
+        bool ? "h-[10%] min-h-[100px]" : ""
+      } my-auto `}
+      style={{ zIndex: "100" }}
+    >
       <div
-        className={`flex justify-between  w-[90%] py-4 flex-col ${
+        className={`flex justify-between  align-middle h-full   w-[90%] py-4 flex-col  items-center ${
           bool ? "" : "h-[100dvh]"
         }`}
       >
-        <div className="flex justify-between w-full flex-col">
-          <div className="flex w-full justify-between">
+        <div className="flex justify-between w-full flex-col  h-full pt-2">
+          <div className="flex w-full justify-between ">
             <Link href={"/"}>
               <svg
                 width="135"
@@ -329,24 +340,20 @@ export const NavBar: FC = () => {
             <div className="lg:hidden xsm:inline-block my-auto">
               <div
                 className={`menu-btn-1 ${bool ? "" : "active"}`}
-                onClick={() => setBool(!bool)}
+                onClick={setBool}
               >
                 <span></span>
               </div>
             </div>
           </div>
           <div
-            className={` h-[80vh] w-full  flex-col justify-end    space-y-8 items-start text-3xl  ${
+            style={{ paddingBottom: "100px" }}
+            className={` h-[100vh] w-full  flex-col justify-end    space-y-8 items-start text-3xl pb-16  ${
               bool ? "hidden" : "flex"
             }`}
           >
             {NavData.map((i, k) => (
-              <Link
-                key={k}
-                href={i.dir}
-                className="px-4 "
-                onClick={() => setBool(!bool)}
-              >
+              <Link key={k} href={i.dir} className="px-4 " onClick={setBool}>
                 {i.name}
               </Link>
             ))}
