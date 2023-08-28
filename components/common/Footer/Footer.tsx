@@ -1,11 +1,6 @@
 import React, { FC } from "react";
-import { Paragraph } from "../Paragraph/Paragraph";
-// import { NavData, SocialMediaIcon } from '@/pages/content'
 import Link from "next/link";
-import { H4 } from "../Heading/H4";
 import Image from "next/image";
-import { DiagnosticCategory } from "typescript";
-
 const NavData = [
   {
     name: "About Us",
@@ -28,12 +23,12 @@ const NavData = [
   //     dir: "/#Blog"
   // },
   {
-    name: "Get Involved",
-    dir: "/get-involved",
+    name: "Blog & Article",
+    dir: "/article",
   },
   {
-    name: "Article",
-    dir: "/article",
+    name: "Get Involved",
+    dir: "/get-involved",
   },
 ];
 
@@ -497,7 +492,7 @@ export const Footer: FC<Footer> = ({ bool }) => {
         <div className="flex   lg:space-x-16 xsm:space-x-8 ">
           {SocialMediaIcon.map((data, key) => (
             <Link
-              href={data.img}
+              href={data.herf}
               key={key}
               className="bg-[rgba(255,255,255,0.10)] w-16 h-16 rounded-full flex justify-center items-center"
             >

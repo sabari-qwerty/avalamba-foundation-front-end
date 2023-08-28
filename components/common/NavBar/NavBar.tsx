@@ -21,7 +21,7 @@ const NavData = [
     dir: "/team",
   },
   {
-    name: "Article",
+    name: " Blog & Article ",
     dir: "/article",
   },
   {

@@ -29,10 +29,10 @@ const Index = () => {
         <div className="flex w-full h-full xsm:flex-col lg:flex-row justify-center items-center">
           <div className="lg:w-3/5 xsm:w-[90%] h-full flex  justify-center items-center flex-col space-y-8">
             <Image src={"/lamp.svg"} alt="lamp" width={200} height={200} />
-            <h3 className="text-4xl font-semibold">
+            <h3 className="text-4xl font-semibold md:text-center xsm:text-start w-full ">
               Undecided about the project?....
             </h3>
-            <p className="text-lg font-medium">
+            <p className="text-lg font-medium md:text-center xsm:text-start">
               you can still contribute to our general corpus.
             </p>
           </div>

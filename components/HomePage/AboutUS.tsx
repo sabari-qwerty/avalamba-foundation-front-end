@@ -6,7 +6,7 @@ import { Paragraph } from "@/components/common/Paragraph/Paragraph";
 export const AboutUS = () => {
   return (
     <Section id="About-Us">
-      <div className="flex flex-col space-y-16  w-[90%] ">
+      <div className="flex flex-col space-y-16  w-[90%] pt-8">
         {/* <div className='flex  justify-center'>
                     <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_657_106)">
@@ -83,7 +83,7 @@ export const AboutUS = () => {
 
                 </div> */}
         <div className="w-[90%]  flex justify-center flex-col space-y-5 items-center  mx-auto">
-          <H2 text="About Us" />
+          <H2 text="About Us" className="lg:text-4xl" />
 
           <Paragraph
             text="Avalamba Foundation is a charitable trust formed in the year 2022 by a team of young Bharatiyas based out of Chennai, India. The word “Avalamba” which literally translates into Support and sustenance - is the fundamental aim of the organisation. The foundation aims to play a vital role in preserving the rich legacy of baratiya culture, civilizational consciousness and its people, by extending maximum support."

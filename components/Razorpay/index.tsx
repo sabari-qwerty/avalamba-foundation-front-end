@@ -226,10 +226,12 @@ export const Razorpay: FC<Pay> = ({ note }) => {
           </div>
         </div>
       </div>
-      <Button
-        text="Contribute Now"
-        className="text-[#fff] bg-[#A15236] rounded-full "
-      />
+      <div className="pb-4">
+        <Button
+          text="Contribute Now"
+          className="text-[#fff] bg-[#A15236] rounded-full"
+        />
+      </div>
     </form>
   );
 };
