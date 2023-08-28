@@ -9,7 +9,7 @@ export const FiexedButton: FC<FiexedButton> = ({ text }) => {
   return (
     <Link href="/project-page">
       <button
-        className={` flex items-center h-[50px]  justify-center  fixed bottom-[2rem] right-[2rem] rounded-full  z-40 max-w-[300px] bg-[#FFFFFF] text-[#A15236] min-w-[250px] shadow-lg text-2xl py-4 `}
+        className={` flex items-center h-[50px]  justify-center  fixed bottom-[1rem] right-[2rem] rounded-full  z-10 max-w-[300px] bg-[#FFFFFF] text-[#A15236] min-w-[250px] shadow-lg text-2xl py-8  `}
       >
         {text}{" "}
         <span className="pl-2  h-full flex justify-center items-center my-auto">

@@ -140,7 +140,7 @@ const Index: FC = () => {
                 key={key}
               >
                 <div className=" h-full flex justify-center space-y-6 flex-col w-4/5 pl-16 ">
-                  <div className="w-full ">
+                  <div className="w-full  ">
                     <H2
                       text={data.head}
                       className="font-blod lg:text-[42px] text-start w-full "

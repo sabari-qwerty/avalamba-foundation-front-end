@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 // import { NavData } from '@/pages/content'
 import Link from "next/link";
 import { styled } from "@tanstack/react-query-devtools/build/lib/utils";
+import Image from "next/image";
 
 const NavData = [
   {
@@ -50,12 +51,19 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
           bool ? "" : "h-[100dvh]"
         }`}
       >
-        <div className="flex justify-between w-full flex-col  h-full pt-2">
+        <div className="flex justify-between w-full flex-col  h-full pt-2 ">
           <div className="flex w-full justify-between ">
-            <Link href={"/"}>
-              <svg
-                width="135"
-                height="52"
+            <Link href={"/"} className="flex justify-center  space-x-3">
+              <Image src={"/icon/icon.svg"} width={50} height={50} alt="icon" />
+              <Image
+                src={"/icon/text.svg"}
+                width={100}
+                height={100}
+                alt="icon-text"
+              />
+              {/* <svg
+                width="145"
+                height="62"
                 viewBox="0 0 135 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -328,7 +336,7 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
                     />
                   </clipPath>
                 </defs>
-              </svg>
+              </svg> */}
             </Link>
             <div className="my-auto xsm:hidden lg:flex text-xl font-semibold">
               {NavData.map((i, k) => (

@@ -9,6 +9,8 @@ interface Pay {
   note: string;
 }
 
+const Amount = ["100", "500", "1000", "10000"];
+
 export const Razorpay: FC<Pay> = ({ note }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -159,6 +161,17 @@ export const Razorpay: FC<Pay> = ({ note }) => {
         setFun={setPan}
         pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
       />
+      <div className="flex justify-between">
+        {Amount.map((data: string, key: number) => (
+          <div
+            key={key}
+            onClick={() => setAmount(data)}
+            className="bg-[#a152361a] px-2 py-4 min-w-[100px] rounded-full flex justify-center"
+          >
+            ₹{data}
+          </div>
+        ))}
+      </div>
       {/* <input type="text" placeholder='name' name='name' value={name} onChange={(e) => setName(String(e.target.value))} required className='border-[.5px] py-1 rounded-lg border-[#000] indent-2' />
 
             <input type="email" placeholder='example@example.com' name='email' value={email} onChange={(e) => setEmail(e.target.value)} required className='border-[.5px] py-1 rounded-lg border-[#000] indent-2' />
@@ -167,8 +180,8 @@ export const Razorpay: FC<Pay> = ({ note }) => {
       <div className="flex items-end space-x-2">
         <div className="flex-1">
           <InputTag
-            lable="Amount"
-            name="Amount"
+            lable="Other Amount"
+            name="Other Amount"
             type="number"
             value={amount}
             setFun={Numbervalue}

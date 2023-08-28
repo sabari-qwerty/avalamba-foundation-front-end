@@ -67,7 +67,7 @@ const index: FC = () => {
                 </div>
                 <Section /> */}
       <section className="pt-20">
-        <div className="flex flex-col mt-6 ">
+        <div className="flex flex-col mt-10 ">
           <H1 text="Meet our Founder Members" />
         </div>
       </section>
