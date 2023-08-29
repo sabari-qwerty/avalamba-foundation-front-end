@@ -55,18 +55,18 @@ export const Objectives: FC = () => {
             <Link
               href={data.href}
               key={k}
-              className="lg:w-[30%] xsm:w-[90%]  h-[700px] overflow-hidden  relative bg-black group transition-all duration-100 ease-in-out "
+              className="lg:w-[30%] xsm:w-[90%] lg:h-[400px]  2xl:h-[700px]  overflow-hidden  relative bg-black group transition-all duration-100 ease-in-out "
             >
               <Image
                 src={data.src}
                 alt="hello"
-                className="w-full h-full opacity-60 "
+                className="w-full h-full opacity-60 object-cover"
                 width={454}
                 height={580}
               />
               <div className="absolute w-full h-full flex flec-col justify-center items-center text-white  top-0">
                 <div className="   flex space-y-4 flex-col">
-                  <h2 className="text-4xl text-center font-semibold">
+                  <h2 className="xsm:text-lg md:text-xl 2xl:text-4xl text-center font-semibold">
                     {data.head}
                   </h2>
                   {/* <H2 text={data.head} className="text-2xl" /> */}

@@ -72,10 +72,13 @@ export const ImageSwper: FC = () => {
           className="text-9xl font-extrabold"
         /> */}
         <div className="flex xsm:space-y-4 lg:space-y-6 flex-col">
-          <h2 className="xsm:text-xl lg:text-5xl  font-bold text-center">
+          <h2 className="xsm:text-xl md:text-4xl   2xl:text-5xl  font-bold text-center">
             | धर्मो विश्वस्य जगत: प्रतिष्ठा |
           </h2>
-          <H2 text="Dharma is the foundation stone on which this entire universe is firmly placed" />
+          <H2
+            text="Dharma is the foundation stone on which this entire universe is firmly placed"
+            className="font-medium lg:text-2xl xsm:text-lg  text-center pt-5"
+          />
         </div>
 
         {/* <h3 className="w-full text-center text-2xl">
@@ -83,10 +86,13 @@ export const ImageSwper: FC = () => {
           placed
         </h3> */}
         <div className="flex xsm:space-y-4 lg:space-y-8 flex-col">
-          <h1 className="lg:text-5xl xsm:text-xl font-extrabold text-center heading-tamil-fount ">
+          <h1 className="xsm:text-xl md:text-4xl   2xl:text-5xl font-extrabold text-center heading-tamil-fount ">
             | அறம் செய்ய விரும்பு |
           </h1>
-          <H2 text="Develop interest in performing Dharmik acts" />
+          <H2
+            text="Develop interest in performing Dharmik acts"
+            className="font-medium lg:text-2xl xsm:text-lg  text-center pt-5"
+          />
         </div>
         {/* <H1 text="| அறம் செய விரும்பு |" className="text-4xl font-extrabold" /> */}
         {/* <H2 text="Dharma is the foundation stone on which this entire universe is firmly placed" /> */}

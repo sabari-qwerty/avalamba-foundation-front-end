@@ -36,7 +36,7 @@ const Index = () => {
               you can still contribute to our general corpus.
             </p>
           </div>
-          <div className=" lg:w-2/5 xsm:w-[90%] h-full bg-white drop-shadow-xl pt-20 space-y-4">
+          <div className=" lg:w-2/5 xsm:w-[90%] h-full bg-white drop-shadow-xl  space-y-2 pt-6">
             <div className="mx-auto w-4/5">
               <h3 className="font-bold text-[24px]">Contribute</h3>
             </div>

@@ -8,12 +8,17 @@ function index() {
   return (
     <Layout>
       <section className="w-full h-screen flex justify-center items-center flex-col space-y-14">
-        <h1 className="xsm:text-6xl lg:text-8xl font-bold"> Coming Soon</h1>
+        <h1 className="xsm:text-xl lg:text-4xl 2xl:text-8xl font-bold">
+          {" "}
+          Coming Soon
+        </h1>
         <Link
           href={"/project-page"}
           className="bg-[#A15236]  space-x-4 h-16 text-white flex justify-center align-middle items-center px-8 rounded-full"
         >
-          <div className="text-xl font-bold">Contribute Now</div>
+          <div className="xms:text-base 2xl:text-xl font-bold">
+            Contribute Now
+          </div>
           <div>
             <Image src={"/right.svg"} width={30} height={35} alt="arow" />
           </div>
