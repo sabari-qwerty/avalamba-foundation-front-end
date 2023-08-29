@@ -472,17 +472,17 @@ export const Footer: FC<Footer> = ({ bool }) => {
         </div>
       </div> */}
 
-      <div className="w-[90%] flex flex-col space-y-12 mx-auto items-center justify-center">
-        <div className=" w-[200px]">
+      <div className="w-[90%] flex flex-col space-y-8 mx-auto items-center justify-center">
+        <div className=" w-[130px]">
           <Image
             src={"/logo.svg"}
-            width={150}
+            width={100}
             height={50}
             alt="logo"
             className="object-fill w-full h-full"
           />
         </div>
-        <div className="flex    lg:space-x-16 flex-col lg:flex-row   text-2xl">
+        <div className="flex    lg:space-x-16 flex-col lg:flex-row xms:text-lg  lg:text-xl 2xl:text-2xl">
           {NavData.map((data, key) => (
             <Link href={data.dir} key={key} className="py-2 lg:py-0">
               {data.name}
@@ -494,7 +494,7 @@ export const Footer: FC<Footer> = ({ bool }) => {
             <Link
               href={data.herf}
               key={key}
-              className="bg-[rgba(255,255,255,0.10)] w-16 h-16 rounded-full flex justify-center items-center"
+              className="bg-[rgba(255,255,255,0.10)] w-14 h-14 rounded-full flex justify-center items-center"
             >
               <Image src={data.img} alt="socil" width={32} height={32} />
             </Link>

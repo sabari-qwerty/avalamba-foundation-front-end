@@ -3,6 +3,7 @@ import { NavBar } from "./common/NavBar/NavBar";
 import { Footer } from "./common/Footer/Footer";
 import { H2 } from "./common/Heading/H2";
 import { Section } from "./common/Section/Section";
+import Script from "next/script";
 
 interface Layout {
   children?: ReactNode;
@@ -30,7 +31,19 @@ export const Layout: FC<Layout> = ({ children }) => {
           </div>
         </div>
       </Section> */}
+
       <Footer bool={bool} />
+
+      {/* <Script src="https://www.googletagmanager.com/gtag/js?id=G-GDXDVKJPQX" />
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-GDXDVKJPQX');
+        `}
+        </Script> */}
     </div>
   );
 };

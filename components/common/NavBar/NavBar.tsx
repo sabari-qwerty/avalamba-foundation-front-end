@@ -41,24 +41,24 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
 
   return (
     <nav
-      className={`bg-[#A15236] w-full flex  justify-center fixed top-0 text-[#fff] ${
-        bool ? "h-[10%] min-h-[100px]" : ""
+      className={`bg-[#A15236] w-full flex  justify-center fixed top-0 text-[#fff] align-middle items-center my-auto ${
+        bool ? " h-[10%] xsm:min-h-[80px] max-h-[60px]  2xl:min-h-[80px]" : ""
       } my-auto `}
       style={{ zIndex: "100" }}
     >
       <div
-        className={`flex justify-between  align-middle h-full   w-[90%] py-4 flex-col  items-center ${
+        className={`flex justify-between  align-middle h-full   w-[90%] 2xl:py-4 flex-col  items-center ${
           bool ? "" : "h-[100dvh]"
         }`}
       >
-        <div className="flex justify-between w-full flex-col  h-full pt-2 ">
-          <div className="flex w-full justify-between ">
+        <div className="flex justify-between w-full items-center mx-auto flex-col  h-full pt-2 ">
+          <div className="flex w-full justify-between w-full h-full ">
             <Link href={"/"} className="flex justify-center  space-x-3">
-              <Image src={"/icon/icon.svg"} width={50} height={50} alt="icon" />
+              <Image src={"/icon/icon.svg"} width={40} height={0} alt="icon" />
               <Image
                 src={"/icon/text.svg"}
-                width={100}
-                height={100}
+                width={80}
+                height={80}
                 alt="icon-text"
               />
               {/* <svg
@@ -338,7 +338,7 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
                 </defs>
               </svg> */}
             </Link>
-            <div className="my-auto xsm:hidden lg:flex text-xl font-semibold">
+            <div className="my-auto xsm:hidden lg:flex lg:text-lg   font-bold">
               {NavData.map((i, k) => (
                 <Link key={k} href={i.dir} className="px-8 ">
                   {i.name}

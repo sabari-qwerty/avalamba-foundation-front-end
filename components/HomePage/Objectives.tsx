@@ -50,7 +50,7 @@ export const Objectives: FC = () => {
     <Section id="Objectives">
       <div className="w-[90%] flex flex-col space-y-16  pt-8">
         <H2 text="Objectives" className="lg:text-4xl" />
-        <div className="flex flex-wrap gap-4 w-full justify-center  ">
+        <div className="flex flex-wrap gap-4 w-full justify-center   ">
           {ObjectivesData.map((data, k) => (
             <Link
               href={data.href}
@@ -64,7 +64,7 @@ export const Objectives: FC = () => {
                 width={454}
                 height={580}
               />
-              <div className="absolute w-full h-full flex flec-col justify-center items-center text-white  top-0">
+              <div className="absolute w-full h-full flex flec-col justify-center  items-center hover:items-start hover:pt-[250px] text-white  top-0">
                 <div className="   flex space-y-4 flex-col">
                   <h2 className="xsm:text-lg md:text-xl 2xl:text-4xl text-center font-semibold">
                     {data.head}
