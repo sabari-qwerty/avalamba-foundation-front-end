@@ -26,7 +26,7 @@ export const RazorpayFroms: FC<RazorpayFroms> = ({ catgery, amount }) => {
   const [city, setCity] = useState("");
   const [State, setState] = useState("");
   const [country, setCountry] = useState("");
-  const [amount, setAmount] = useState(amount);
+  const [Amount, setAmount] = useState(amount);
 
   const RazorPay = useRazorpay();
 
