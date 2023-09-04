@@ -7,6 +7,7 @@ import { Objectives } from "@/components/HomePage/Objectives";
 import { Projects } from "@/components/HomePage/Projects";
 import { Articles_and_Blogs } from "@/components/HomePage/Articles_and_Blogs";
 import { FiexedButton } from "@/components/HomePage/FiexedButton";
+import Script from "next/script";
 // import { ImageSwper } from './HomePage/Swiper'
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +21,19 @@ export default function Home() {
       {/* <Projects /> */}
       {/* <Articles_and_Blogs /> */}
       <FiexedButton text="Contribute Now" />
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-5QK6TSQ9EQ"
+      />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          
+          gtag('config', 'G-5QK6TSQ9EQ');
+        `}
+      </Script>
     </Layout>
   );
 }

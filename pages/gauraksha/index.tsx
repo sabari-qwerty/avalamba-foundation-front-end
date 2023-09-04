@@ -364,6 +364,7 @@ const Index: FC = () => {
                     <DropDown
                       active={_option}
                       setActive={setOption}
+                      // @ts-ignore
                       list={SubDonationCatgery[catgery]}
                       lable="Select Option"
                       top="20"
@@ -482,4 +483,3 @@ const Index: FC = () => {
 };
 
 export default Index;
-
