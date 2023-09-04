@@ -64,6 +64,7 @@ export const RazorpayFroms: FC<RazorpayFroms> = ({ catgery, amount }) => {
             <DropDown
               active={option}
               setActive={setOption}
+              // @ts-ignore
               list={SubDonationCatgery[catgery]}
               lable="Select Option"
               top="20"
