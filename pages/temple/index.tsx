@@ -490,7 +490,7 @@
 // export default Index;
 
 const Index = () => {
-  return <></>;
+  return <div></div>;
 };
 
 export default Index;
