@@ -31,7 +31,7 @@ export const InputTag: FC<InputTag> = ({
         type={type}
         name={name}
         value={value}
-        className="rounded-md border-collapse border-2 py-4  text-xs indent-3"
+        className={`rounded-md border-collapse border border-[#DCE0E4] py-4  text-xs indent-3  flex  `}
         onChange={(e) => setFun(e.target.value)}
         required
       />

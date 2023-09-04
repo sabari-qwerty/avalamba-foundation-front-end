@@ -38,3 +38,6 @@ next-env.d.ts
 # rar
 .front-end.rar
 ./backup
+
+# zip
+*.zip

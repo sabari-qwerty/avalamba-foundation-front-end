@@ -494,9 +494,9 @@ export const Footer: FC<Footer> = ({ bool }) => {
             <Link
               href={data.herf}
               key={key}
-              className="bg-[rgba(255,255,255,0.10)] w-14 h-14 rounded-full flex justify-center items-center"
+              className="bg-[rgba(255,255,255,0.10)] w-10 h-10 rounded-full flex justify-center items-center"
             >
-              <Image src={data.img} alt="socil" width={32} height={32} />
+              <Image src={data.img} alt="socil" width={20} height={20} />
             </Link>
           ))}
         </div>

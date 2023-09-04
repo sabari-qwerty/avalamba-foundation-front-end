@@ -66,18 +66,18 @@ export const ImageSwper: FC = () => {
           );
         })}
       </Swiper>
-      <div className="absolute top-1/2 xsm:w-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white w-full lg:space-y-6 xsm:space-y-4">
+      <div className="absolute top-1/2 xsm:w-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white w-full lg:space-y-16 xsm:space-y-8">
         {/* <H2
           text="| धर्मो विश्वस्य जगत: प्रतिष्ठा |"
           className="text-9xl font-extrabold"
         /> */}
-        <div className="flex space-y-2  flex-col">
+        <div className="flex space-y-4  flex-col ">
           <h2 className="xsm:text-xl md:text-4xl   2xl:text-5xl  font-bold text-center">
             | धर्मो विश्वस्य जगत: प्रतिष्ठा |
           </h2>
           <H2
             text="Dharma is the foundation stone on which this entire universe is firmly placed"
-            className="font-medium lg:text-2xl xsm:text-lg  text-center pt-5"
+            className="font-medium lg:text-2xl xsm:text-lg  text-center  pt-5"
           />
         </div>
 
@@ -85,13 +85,13 @@ export const ImageSwper: FC = () => {
           Dharma is the foundation stone on which this entire universe is firmly
           placed
         </h3> */}
-        <div className="flex space-y-2  flex-col">
-          <h1 className="xsm:text-xl md:text-4xl   2xl:text-5xl font-extrabold text-center heading-tamil-fount ">
+        <div className="flex space-y-4  flex-col">
+          <h1 className="xsm:text-xl md:text-4xl   2xl:text-5xl font-bold text-center heading-tamil-fount ">
             | அறம் செய்ய விரும்பு |
           </h1>
           <H2
             text="Develop interest in performing Dharmik acts"
-            className="font-medium lg:text-2xl xsm:text-lg  text-center pt-5"
+            className="font-medium lg:text-2xl xsm:text-lg   text-center pt-5"
           />
         </div>
         {/* <H1 text="| அறம் செய விரும்பு |" className="text-4xl font-extrabold" /> */}

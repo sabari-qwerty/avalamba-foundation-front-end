@@ -52,8 +52,8 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
         }`}
       >
         <div className="flex justify-between w-full items-center mx-auto flex-col  h-full pt-2 ">
-          <div className="flex w-full justify-between w-full h-full ">
-            <Link href={"/"} className="flex justify-center  space-x-3">
+          <div className="flex w-full justify-between  h-full ">
+            <Link href={"/"} className="flex justify-center  space-x-3 ">
               <Image src={"/icon/icon.svg"} width={40} height={0} alt="icon" />
               <Image
                 src={"/icon/text.svg"}
@@ -338,9 +338,13 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
                 </defs>
               </svg> */}
             </Link>
-            <div className="my-auto xsm:hidden lg:flex lg:text-lg   font-bold">
+            <div className="my-auto xsm:hidden  lg:flex lg:text-lg   ">
               {NavData.map((i, k) => (
-                <Link key={k} href={i.dir} className="px-8 ">
+                <Link
+                  key={k}
+                  href={i.dir}
+                  className="px-8  font-semibold text-lg"
+                >
                   {i.name}
                 </Link>
               ))}

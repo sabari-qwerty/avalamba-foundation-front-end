@@ -9,7 +9,7 @@ import { PercentageSlider } from "@/components/common/PercentageSlider/Percentag
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
 import axios from "axios";
 // import { Pay } from './Pay'
-import { Razorpay } from "@/components/Razorpay/";
+import { Razorpay } from "@/components/Razorpay/oldindex";
 
 interface heading {
   head: string;

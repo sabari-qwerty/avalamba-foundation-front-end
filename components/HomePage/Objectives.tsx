@@ -11,37 +11,37 @@ const ObjectivesData = [
     src: "/Objectives/new/1.jpg",
     head: "The Temple",
     text: "To preserve our temples which act as the anchor to our civilization by means of arranging Uzhavara pani ( cleaning by devotees), supporting the community around the temple like priests, musicians, cleaners and everyone else involved directly or indirectly , arrange for pooja in rural temples that is left unattended, provide regular annadanam to people.",
-    href: "/temple",
+    href: "/donation/temple",
   },
   {
     src: "/Objectives/new/2.jpeg",
     head: "Vedic Traditions",
     text: "With rapidly dwindling vedic community, support would be extended to vaidikas such as agnihotris, ganapatis, vedapatashalas and support conducting yagnas.",
-    href: "/vedic-traditions",
+    href: "/donation/vedic-traditions",
   },
   {
     src: "/Objectives/new/3.jpeg",
     head: "Performing Arts",
     text: "Promote our rich performing arts, both classical and folk art by conducting events bringing in the best of dharmic talent, provide scholarships and constitute endowment awards, take up research projects on complex sahitya available to us in the form of several krithis.",
-    href: "/performing-arts",
+    href: "/donation/performing-arts",
   },
   {
     src: "/Objectives/new/4.jpg",
     head: "Research & Documentation",
     text: "A treasure trove of texts, inscriptions, oral traditions, manuscripts available in our country which needs meticulous documentation and research in depth. The aim would be to fund research projects that involve in preserving this rich cultural content.",
-    href: "/research-documentation",
+    href: "/donation/research-documentation",
   },
   {
     src: "/Objectives/new/5.jpeg",
     head: "Gauraksha",
     text: "To protect gaumata ,specifically endangered Indian breeds from extinction. The aim is to provide support in all possible ways, by assisting gaushalas and small farms in selling their products so that they remain self-sustainable and distress sale to the meat industry is avoided",
-    href: "/gauraksha",
+    href: "/donation/gauraksha",
   },
   {
     src: "/Objectives/new/6.jpg",
     head: "Other Activities",
     text: "Extending legal help towards civilizational causes and collaborate with organisations that work towards making social impact and changes on ground and also provide emergency Medical and educational aid to the needy of our country",
-    href: "/other",
+    href: "/donation/other",
   },
 ];
 
@@ -49,7 +49,7 @@ export const Objectives: FC = () => {
   return (
     <Section id="Objectives">
       <div className="w-[90%] flex flex-col space-y-16  pt-8">
-        <H2 text="Objectives" className="lg:text-4xl" />
+        <H2 text="Objectives" className="lg:text-4xl 2xl:text-6xl" />
         <div className="flex flex-wrap gap-4 w-full justify-center   ">
           {ObjectivesData.map((data, k) => (
             <Link
@@ -64,7 +64,7 @@ export const Objectives: FC = () => {
                 width={454}
                 height={580}
               />
-              <div className="absolute w-full h-full flex flec-col justify-center  items-center hover:items-start hover:pt-[250px] text-white  top-0">
+              <div className="absolute w-full h-full flex flec-col justify-center  items-center hover:items-start lg:hover:pt-[60px] xsm:hover:pt-[120px] md:hover:pt-[400px]  2xl:hover:pt-[250px] text-white  top-0">
                 <div className="   flex space-y-4 flex-col">
                   <h2 className="xsm:text-lg md:text-xl 2xl:text-4xl text-center font-semibold">
                     {data.head}

@@ -6,5 +6,5 @@ interface Paragraph {
 }
 
 export const Paragraph: FC<Paragraph> = ({ text, className }) => {
-  return <p className={` ${className}`}>{text}</p>;
+  return <p className={` ${className} leading-[200px]`}>{text}</p>;
 };

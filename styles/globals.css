@@ -285,3 +285,13 @@ input[type=number] {
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
   padding-bottom: 20px !important;
 }
+
+.no_padding_margin {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+.z-index {
+  z-index: 100000 !important;
+}

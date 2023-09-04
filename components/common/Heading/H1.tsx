@@ -7,7 +7,7 @@ interface h1 {
 export const H1: FC<h1> = ({ text, className }) => {
   return (
     <h1
-      className={`font-bold lg:text-4xl xsm:text-2xl text-center ${className}`}
+      className={`font-extrabold lg:text-4xl xsm:text-2xl text-center ${className}`}
     >
       {text}
     </h1>
