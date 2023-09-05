@@ -21,7 +21,27 @@ export default function Home() {
       {/* <Projects /> */}
       {/* <Articles_and_Blogs /> */}
       <FiexedButton text="Contribute Now" />
+      <Script src="https://checkout.razorpay.com/v1/checkout.js" />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-GVTRYKCK0M" />
 
+      <Script id={"google-analytics"}>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          
+          gtag('config', 'G-5QK6TSQ9EQ');
+        `}
+      </Script>
+
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-TQQMNSWH"
+          height="0"
+          width="0"
+          style={{ display: "none", visibility: "hidden" }}
+        ></iframe>
+      </noscript>
     </Layout>
   );
 }
