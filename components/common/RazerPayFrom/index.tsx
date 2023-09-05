@@ -3,7 +3,6 @@ import { H1 } from "@/components/common/Heading/H1";
 import { Section } from "@/components/common/Section/Section";
 import { FC, FormEvent, useState } from "react";
 import {
-  CommonAmount,
   CurrencyType,
   DonationCatgery,
 } from "../../../pages/CommonContent";
@@ -48,6 +47,7 @@ const SubDonationCatgery = {
   "Other Activtites": ["Azctivity"],
 };
 
+const CommonAmount = [300000, 200000, 100000, 50000, 10000, 5000];
 interface RazerPayFrom {
   value?: string;
 }
