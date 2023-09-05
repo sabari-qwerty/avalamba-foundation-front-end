@@ -1,4 +1,3 @@
-"use client";
 import { Layout } from "@/components/Layout";
 import { H2 } from "@/components/common/Heading/H2";
 import Image from "next/image";
@@ -45,7 +44,7 @@ const data = [
   },
 ];
 
-const Index: FC = () => {
+function Index() {
   // const swiperRef = useRef<s | null>(null);
 
   const count_data = {
@@ -242,6 +241,6 @@ const Index: FC = () => {
       </section>
     </Layout>
   );
-};
+}
 
 export default Index;

@@ -1,7 +1,6 @@
 import { FC, useState } from "react";
 import { InputTag } from "../common/InputTag/InputTag";
 import { DropDown } from "../DropDown";
-import { CurrencyType, SubDonationCatgery } from "@/pages/CommonContent";
 import { Button } from "../common/Button/Button";
 import Image from "next/image";
 import useRazorpay, { RazorpayOptions } from "react-razorpay";
@@ -12,6 +11,51 @@ interface RazorpayFroms {
   catgery: string;
   amount: number;
 }
+
+const DonationCatgery = [
+  "The Temple",
+  "Vedic Traditions",
+  "Performing Arts",
+  "Research & Documentation",
+  "Gauraksha",
+  "Other Activtites",
+];
+const SubDonationCatgery = {
+  "The Temple": [
+    "Uzhavarapani",
+    "Kainkaryam",
+    "Conservation & Reconstruction",
+    "Revival of daily pooja",
+  ],
+  "Vedic Traditions": [
+    "Helping Vedapatashala",
+    "Fund a nitya agnihotri",
+    "Conducting & participating in Yagnas",
+    "Revival of rare shakas of Vedas",
+  ],
+  "Performing Arts": [
+    "For procuring vadhyams (instruments)",
+    "Endowments to senior vidvans and vidushis",
+    "Conservation of heritage structures",
+    "Research & Publishing",
+  ],
+  "Research & Documentation": [
+    "Manuscript & books digitization / preservation",
+    "Conservation, curation of libraries & museums of  national importance",
+    "Documentation related to other tangible heritage assets",
+  ],
+  Gauraksha: [
+    "Feeding cows on anniversary",
+    "Rescue from slaughterhouse",
+    "Upkeep of gaushala",
+    "Other sustainable projects",
+  ],
+  "Other Activtites": ["Azctivity"],
+};
+
+const CommonAmount = [300000, 200000, 100000, 50000, 10000, 5000];
+
+const CurrencyType = ["INR", "USD"];
 
 export const RazorpayFroms: FC<RazorpayFroms> = ({ catgery, amount }) => {
   const [active, setActive] = useState(0);

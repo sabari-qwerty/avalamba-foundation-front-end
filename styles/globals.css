@@ -295,3 +295,14 @@ input[type=number] {
 .z-index {
   z-index: 100000 !important;
 }
+
+.z--index {
+  z-index: -100 !important;
+}
+
+.only-padding {
+  padding: 30px !important;
+  margin-top: 50px !important;
+
+  /* margin: 10px !important; */
+}

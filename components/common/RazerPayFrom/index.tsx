@@ -1,18 +1,19 @@
 import { Layout } from "@/components/Layout";
 import { H1 } from "@/components/common/Heading/H1";
 import { Section } from "@/components/common/Section/Section";
-import { FC, FormEvent, useState } from "react";
-import {
-  CurrencyType,
-  DonationCatgery,
-} from "../../../pages/CommonContent";
+import { FC, FormEvent, useEffect, useState } from "react";
+
 import { H2 } from "@/components/common/Heading/H2";
 import { DropDown } from "@/components/DropDown";
 import { InputTag } from "@/components/common/InputTag/InputTag";
 import Image from "next/image";
 import useRazorpay, { RazorpayOptions } from "react-razorpay";
 import axios from "axios";
-import { stringify } from "querystring";
+// import { Underdog } from "next/font/google";
+// import { stringify } from "querystring";
+// import { Underdog } from "next/font/google";
+// import { usePathname } from "next/navigation";
+// import { useRouter } from "next/router";
 
 const SubDonationCatgery = {
   "The Temple": [
@@ -48,18 +49,37 @@ const SubDonationCatgery = {
 };
 
 const CommonAmount = [300000, 200000, 100000, 50000, 10000, 5000];
+
+const CurrencyType = ["INR", "USD"];
+
 interface RazerPayFrom {
-  value?: string;
+  value?: string | any;
 }
+const DonationCatgery = [
+  "The Temple",
+  "Vedic Traditions",
+  "Performing Arts",
+  "Research & Documentation",
+  "Gauraksha",
+  "Other Activtites",
+];
 
 export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
+  console.log(value);
+
+  const [catgery, setCatgery] = useState("The Temple");
+
   const select = Object.keys(SubDonationCatgery).filter((data) =>
-    data.toLowerCase().includes(String(value))
+    data.toLocaleLowerCase().includes(value)
   );
 
-  console.log();
+  useEffect(() => {
+    if (select[0]) {
+      setCatgery(select[0]);
+    }
+    return () => undefined;
+  }, [select]);
 
-  const [catgery, setCatgery] = useState(select[0] || "The Temple");
   const [amount, setAmount] = useState<number | any>();
   const [active, setActive] = useState(0);
   const [_option, setOption] = useState(0);
@@ -73,6 +93,8 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
   const [city, setCity] = useState("");
   const [State, setState] = useState("");
   const [country, setCountry] = useState("");
+
+  console.log(catgery);
 
   const Razorpay = useRazorpay();
 
@@ -182,10 +204,10 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
             ))}
           </div>
         </div>
-        <div className="w-[90%] sticky top-[80px]  ">
+        <div className="w-[90%] sticky top-[80px] bg-white h-full only-padding  ">
           <H2 text={catgery} className="xsm:text-center lg:text-start w-full" />
         </div>
-        <div className="w-full h-[1px] bg-[#EDEFF1]"></div>
+        <div className="w-full h-[1px] bg-[#EDEFF1] "></div>
         <div className="w-[90%]">
           <span className="font-blod p">Choose Amount</span>
           <div className="flex lg:justify-between xsm:justify-start xsm:gap-4 lg:gap-0 pt-8 flex-wrap ">
@@ -204,11 +226,11 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
           </div>
           <div>
             <form
-              className="flex flex-col space-y-6 pt-8"
+              className="flex flex-col space-y-6 pt-8 z--index"
               onSubmit={handleSubmit}
             >
               <div className="flex justify-between lg:space-x-6 xsm:flex-col lg:flex-row ">
-                <div className="lg:w-[30%] xsm:w-full   relative">
+                <div className="lg:w-[30%] xsm:w-full   relative -z-40">
                   <DropDown
                     active={active}
                     setActive={setActive}
@@ -228,7 +250,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
 
               <div className="flex lg:space-x-12 lg:flex-row xsm:flex-col pt-4  ">
                 <div className="flex flex-col lg:w-1/2 xsm:w-full space-y-6 ">
-                  <div className="relative">
+                  <div className="relative -z-40">
                     <DropDown
                       active={_option}
                       setActive={setOption}
