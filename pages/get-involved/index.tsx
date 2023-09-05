@@ -148,7 +148,7 @@ const Index: FC = () => {
                   </div>
                   <Paragraph
                     text={data.text}
-                    className="font-blod text-2xl pt-6"
+                    className="font-blod text-2xl pt-6 leading-relaxed"
                   />
                   {/* <p className=" font-blod text-xl">{data.text}</p> */}
                 </div>
