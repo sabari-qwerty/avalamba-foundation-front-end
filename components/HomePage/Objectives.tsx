@@ -49,7 +49,7 @@ export const Objectives: FC = () => {
   return (
     <Section id="Objectives">
       <div className="w-[90%] flex flex-col space-y-16  pt-8">
-        <H2 text="Objectives" className="lg:text-4xl 2xl:text-6xl" />
+        <H2 text="Objectives" className="lg:text-5xl 2xl:text-5xl" />
         <div className="flex flex-wrap gap-4 w-full justify-center   ">
           {ObjectivesData.map((data, k) => (
             <Link

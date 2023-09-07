@@ -85,7 +85,7 @@ export const AboutUS = () => {
         <div className="w-[90%]  flex justify-center flex-col space-y-5 items-center  mx-auto">
           <H2
             text="About Us"
-            className="lg:text-6xl 2xl:text-6xl lg:font-bold"
+            className="lg:text-5xl 2xl:text-5xl lg:font-bold"
           />
 
           <Paragraph
