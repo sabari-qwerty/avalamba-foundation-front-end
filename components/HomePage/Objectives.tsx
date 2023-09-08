@@ -64,13 +64,14 @@ export const Objectives: FC = () => {
                 width={454}
                 height={580}
               />
-              <div className="absolute w-full h-full flex flec-col justify-center  items-center hover:items-start lg:hover:pt-[60px] xsm:hover:pt-[120px] md:hover:pt-[400px]  2xl:hover:pt-[250px] text-white  top-0">
+              <div className="absolute w-full h-full flex flec-col justify-center  items-center  text-white  top-0">
                 <div className="   flex space-y-4 flex-col">
                   <h2 className="xsm:text-lg md:text-xl 2xl:text-4xl text-center font-semibold">
                     {data.head}
                   </h2>
                   {/* <H2 text={data.head} className="text-2xl" /> */}
-                  <div className="font-semibold text-base  2xl:text-xl group-hover:opacity-100  group-hover:h-14  h-0  opacity-0 w-4/5 mx-auto text-center transition-all duration-100 pt-2">
+                  {/* <div className="font-semibold text-base  2xl:text-xl group-hover:opacity-100  group-hover:h-14  h-0  opacity-0 w-4/5 mx-auto text-center transition-all duration-100 pt-2"> */}
+                  <div className="font-semibold text-base mx-auto text-center group-hover:opacity-100 opacity-0 group-hover:inline-block hidden transition-all duration-200  w-[90%]">
                     {data.text}
                   </div>
                 </div>

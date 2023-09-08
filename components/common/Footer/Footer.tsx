@@ -103,7 +103,7 @@ interface Footer {
 
 export const Footer: FC<Footer> = ({ bool }) => {
   return (
-    <footer className="bg-[#A15236] w-full py-16 text-[#fff] flex justify-center mt-20 relative">
+    <footer className="bg-[#A15236] w-full py-8 text-[#fff] flex justify-center mt-20 relative">
       {/* <div className="w-[90%] flex flex-col space-y-8 ">
         <div className="flex xsm:flex-col lg:flex-row space-y-4">
           <div className="lg:w-1/3 xsm:w-full flex flex-col space-y-4">

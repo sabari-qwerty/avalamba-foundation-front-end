@@ -90,7 +90,7 @@ export const AboutUS = () => {
 
           <Paragraph
             text="Avalamba Foundation is a charitable trust formed in the year 2022 by a team of young Bharatiyas based out of Chennai, India. The word “Avalamba” which literally translates into Support and sustenance - is the fundamental aim of the organisation. The foundation aims to play a vital role in preserving the rich legacy of baratiya culture, civilizational consciousness and its people, by extending maximum support."
-            className="font-medium lg:text-3xl xsm:text-lg  text-center pt-5 "
+            className="font-medium lg:text-2xl xsm:text-lg  text-center pt-5 leading-[200px] "
           />
         </div>
       </div>

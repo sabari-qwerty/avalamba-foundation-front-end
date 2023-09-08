@@ -9,6 +9,7 @@ import { InputTag } from "@/components/common/InputTag/InputTag";
 import Image from "next/image";
 import useRazorpay, { RazorpayOptions } from "react-razorpay";
 import axios from "axios";
+import { TearmsAndConditions } from "@/components/TearmsAndConditions";
 // import { Underdog } from "next/font/google";
 // import { stringify } from "querystring";
 // import { Underdog } from "next/font/google";
@@ -186,7 +187,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
   return (
     <Layout>
       <Section className="space-y-14 flex xsm:flex-col relative">
-        <div className="pt-14">
+        <div className="pt-14 ">
           <H1 text="Your Online Contributions Towards" />
         </div>
         <div className="w-[90%]  justify-center bg-[#A15236] text-white  rounded-2xl  py-3 px-8">
@@ -204,10 +205,10 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
             ))}
           </div>
         </div>
-        <div className="w-[90%] sticky top-[80px] bg-white h-full only-padding  ">
+        <div className="w-[90%] sticky top-[80px] bg-white h-full only-padding border-b border-[#EDEFF1]">
           <H2 text={catgery} className="xsm:text-center lg:text-start w-full" />
         </div>
-        <div className="w-full h-[1px] bg-[#EDEFF1] "></div>
+        {/* <div className="w-full h-[1px] bg-[#EDEFF1] "></div> */}
         <div className="w-[90%]">
           <span className="font-blod p">Choose Amount</span>
           <div className="flex lg:justify-between xsm:justify-start xsm:gap-4 lg:gap-0 pt-8 flex-wrap ">
@@ -366,6 +367,11 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
               </div>
             </form>
           </div>
+        </div>
+
+        <div className="w-[90%] h-[1px] bg-[#EDEFF1]"></div>
+        <div className="w-[90%]">
+          <TearmsAndConditions />
         </div>
       </Section>
     </Layout>
