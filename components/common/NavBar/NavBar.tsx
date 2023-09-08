@@ -41,8 +41,8 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
 
   return (
     <nav
-      className={`bg-[#A15236] w-full flex  justify-center fixed top-0 text-[#fff] align-middle items-center my-auto ${
-        bool ? " h-[10%] xsm:min-h-[80px] max-h-[60px]  2xl:min-h-[80px]" : ""
+      className={`bg-[#A15236] w-full flex  justify-center sticky top-0 text-[#fff] align-middle items-center my-auto ${
+        bool ? " h-[10%] xsm:min-h-[60px] max-h-[80px]  2xl:min-h-[60px] " : ""
       } my-auto `}
       style={{ zIndex: "100" }}
     >
@@ -52,7 +52,11 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
         }`}
       >
         <div className="flex justify-between w-full items-center mx-auto flex-col  h-full pt-2 ">
-          <div className="flex w-full justify-between  h-full ">
+          <div
+            className={`flex w-full justify-between  h-full  ${
+              bool ? "" : "pt-7"
+            }`}
+          >
             <Link href={"/"} className="flex justify-center  space-x-3 ">
               <Image src={"/icon/icon.svg"} width={40} height={0} alt="icon" />
               <Image

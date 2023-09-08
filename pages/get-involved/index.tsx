@@ -15,6 +15,9 @@ import "swiper/css/effect-creative";
 import "swiper/css/effect-fade";
 import { Section } from "@/components/common/Section/Section";
 import { Paragraph } from "@/components/common/Paragraph/Paragraph";
+import { Devonshire } from "next/font/google";
+import { Footer } from "@/components/common/Footer/Footer";
+import { NavBar } from "@/components/common/NavBar/NavBar";
 
 const data = [
   {
@@ -76,14 +79,13 @@ function Index() {
   //     }
   //   };
   // }, []);
+  const [bool, setBool] = useState(true);
 
   return (
-    <Layout>
-      <section
-        className="xsm:hidden  lg:flex w-full h-screen    lg:items-start    "
-        style={{ zIndex: "-100" }}
-      >
-        <div className=" h-full  flex justify-end w-[30%] bg-[rgba(161,82,54,0.10)] relative">
+    <div className="flex flex-col ">
+      <NavBar bool={bool} setBool={() => setBool(!bool)} />
+      <section className="xsm:hidden  lg:flex   w-full   lg:items-start  z-50  full-width-nav">
+        <div className=" h-full  flex justify-end w-[30%] bg-[rgba(161,82,54,0.10)] relative ">
           <Swiper
             initialSlide={count}
             grabCursor={true}
@@ -117,7 +119,7 @@ function Index() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="w-full h-[90%] bg-transparent absolute top-0 z-50"></div>
+          <div className="w-full h-[90%] bg-transparent absolute top-0"></div>
         </div>
         <div className="h-full  w-[70%]  justify-center items-center flex flex-col mx-auto relative ">
           <Swiper
@@ -154,7 +156,7 @@ function Index() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="w-full h-[90%] bg-transparent absolute top-0 z-50"></div>
+          <div className="w-full h-[90%] bg-transparent absolute top-0 "></div>
           {/* <div className="h-[90%] w-full flex flex-col justify-center  space-y-6">
             <div className="w-full ">
               <H2
@@ -239,7 +241,8 @@ function Index() {
           height={500}
         />
       </section>
-    </Layout>
+      <Footer bool={true} />
+    </div>
   );
 }
 

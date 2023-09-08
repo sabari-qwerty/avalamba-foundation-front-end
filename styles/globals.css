@@ -306,3 +306,9 @@ input[type=number] {
 
   /* margin: 10px !important; */
 }
+
+
+
+.full-width-nav {
+  height: calc(100vh - 80px) !important;
+}
