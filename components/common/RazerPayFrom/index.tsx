@@ -70,16 +70,16 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
 
   const [catgery, setCatgery] = useState("The Temple");
 
-  const select = Object.keys(SubDonationCatgery).filter((data) =>
-    data.toLocaleLowerCase().includes(value)
-  );
+  // const select = Object.keys(SubDonationCatgery).filter((data) =>
+  //   data.toLocaleLowerCase().includes(value)
+  // );
 
-  useEffect(() => {
-    if (select[0]) {
-      setCatgery(select[0]);
-    }
-    return () => undefined;
-  }, [select]);
+  // useEffect(() => {
+  //   if (select[0]) {
+  //     setCatgery(select[0]);
+  //   }
+  //   return () => undefined;
+  // }, [select]);
 
   const [amount, setAmount] = useState<number | any>();
   const [active, setActive] = useState(0);
@@ -192,20 +192,24 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
         </div>
         <div className="w-[90%]  justify-center bg-[#A15236] text-white  rounded-2xl  py-3 px-8">
           <div className="w-full flex lg:justify-between  xms:justify-start flex-wrap xsm:px-2 lg:px-0 xsm:space-y-2 lg:space-y-0">
-            {DonationCatgery.map((data: string, key: number) => (
+            {DonationCatgery.map((_data: string, key: number) => (
               <span
                 className={`text-xl  hover:bg-white py-3 px-6 rounded-lg duration-200 hover:text-[#A15236] font-medium ${
-                  catgery == data ? "bg-white text-[#A15236]" : ""
+                  catgery == _data ? "bg-white text-[#A15236]" : ""
                 }`}
                 key={key}
-                onClick={() => setCatgery(data)}
+                onClick={() => setCatgery(_data)}
+                // onClick={() => {
+
+                //   console.log(_data);
+                // }}
               >
-                {data}
+                {_data}
               </span>
             ))}
           </div>
         </div>
-        <div className="w-[90%] sticky top-[80px] bg-white h-full only-padding border-b border-[#EDEFF1]">
+        <div className="w-[90%] sticky top-[80px] bg-white h-full only-padding border-b border-[#EDEFF1] z-50">
           <H2 text={catgery} className="xsm:text-center lg:text-start w-full" />
         </div>
         {/* <div className="w-full h-[1px] bg-[#EDEFF1] "></div> */}
@@ -231,7 +235,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
               onSubmit={handleSubmit}
             >
               <div className="flex justify-between lg:space-x-6 xsm:flex-col lg:flex-row ">
-                <div className="lg:w-[30%] xsm:w-full   relative -z-40">
+                <div className="lg:w-[30%] xsm:w-full   relative">
                   <DropDown
                     active={active}
                     setActive={setActive}
@@ -251,7 +255,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
 
               <div className="flex lg:space-x-12 lg:flex-row xsm:flex-col pt-4  ">
                 <div className="flex flex-col lg:w-1/2 xsm:w-full space-y-6 ">
-                  <div className="relative -z-40">
+                  <div className="relative ">
                     <DropDown
                       active={_option}
                       setActive={setOption}

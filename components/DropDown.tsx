@@ -1,5 +1,4 @@
 import { Dispatch, FC, useState, SetStateAction } from "react";
-import { space } from "postcss/lib/list";
 import Image from "next/image";
 
 interface DropDown {
@@ -14,11 +13,11 @@ export const DropDown: FC<DropDown> = ({ active, list, setActive, lable }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex flex-col space-y-2 w-full  z-30 ">
+    <div className="flex flex-col space-y-2 w-full    ">
       <div className="">{lable}</div>
       <div
         onClick={() => setOpen(!open)}
-        className="border border-[#DCE0E4] rounded-lg py-3  flex justify-between items-center align-middle "
+        className="border border-[#DCE0E4] rounded-lg py-3  flex justify-between items-center align-middle cursor-pointer"
       >
         <div className="w-[90%]   flex justify-between mx-auto  align-middle h-full">
           <div>{list[active]}</div>
@@ -33,9 +32,9 @@ export const DropDown: FC<DropDown> = ({ active, list, setActive, lable }) => {
       </div>
       {open && (
         <div
-          className={`flex flex-col space-y-2 absolute top-20 w-full bg-white drop-shadow-lg z-40 `}
+          className={`flex flex-col space-y-2 absolute top-20 w-full bg-white drop-shadow-lg  z-20 `}
         >
-          <div className="w-[90%]  mx-auto flex justify-start">
+          <div className="w-[95%]  mx-auto flex justify-start">
             <div className=" w-full mx-auto ">
               <div className="flex flex-col space-y-2">
                 {list.map((data: string, key: number) => (
@@ -45,7 +44,7 @@ export const DropDown: FC<DropDown> = ({ active, list, setActive, lable }) => {
                       setActive(key);
                       setOpen(!open);
                     }}
-                    className="hover:bg-[#a7a7a756] py-2 "
+                    className="hover:bg-[#a7a7a756] py-2 pl-2  my-2"
                   >
                     {data}
                   </span>
