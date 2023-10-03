@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 * {
+
 font-family: "Segoe UI", Arial, sans-serif;
 scroll-behavior: smooth !important;
 
@@ -9,40 +10,6 @@ scroll-behavior: smooth !important;
 
 
 
-/* .full-width {
-    width: 100% !important;
-  }
-  
-  .swiper-pagination-bullet-active {
-    background-color: #fff !important;
-  }
-  
-  html,
-  body {
-    height: 100%;
-    margin:0;
-  }
-  body {
-    display: flex;
-    
-    flex-direction: column;
-  }
-  
-  #__next {
-    flex: 1;
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-  
-  }
-  
-  .hide-scroll-bar {
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
-  }
-  .hide-scroll-bar::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome 
-  } */
 
 
   /* hambueger */
@@ -307,6 +274,9 @@ input[type=number] {
   /* margin: 10px !important; */
 }
 
+.remove-left {
+  padding-left:0 ;
+}
 
 
 .full-width-nav {

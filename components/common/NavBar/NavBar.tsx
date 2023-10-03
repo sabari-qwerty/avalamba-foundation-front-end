@@ -41,7 +41,7 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
 
   return (
     <nav
-      className={`bg-[#A15236] w-full flex  justify-center sticky top-0 text-[#fff] align-middle items-center my-auto ${
+      className={`bg-[#A15236] w-full flex  justify-center sticky top-0 text-[#fff] align-middle items-center my-auto py-4 ${
         bool ? " h-[10%] xsm:min-h-[60px] max-h-[80px]  2xl:min-h-[60px] " : ""
       } my-auto `}
       style={{ zIndex: "100" }}
@@ -51,9 +51,10 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
           bool ? "" : "h-[100dvh]"
         }`}
       >
-        <div className="flex justify-between w-full items-center mx-auto flex-col  h-full pt-2 ">
+        {/* <div className="flex justify-between w-full items-center mx-auto flex-col  h-full pt-2 align-middle my-auto bg-black "> */}
+        <div className="flex  justify-between w-full mx-auto ">
           <div
-            className={`flex w-full justify-between  h-full  ${
+            className={`flex w-full justify-between  h-full items-center   ${
               bool ? "" : "pt-7"
             }`}
           >
@@ -342,12 +343,12 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
                 </defs>
               </svg> */}
             </Link>
-            <div className="my-auto xsm:hidden  lg:flex lg:text-lg   ">
+            <div className="my-auto xsm:hidden  lg:flex lg:text-md    ">
               {NavData.map((i, k) => (
                 <Link
                   key={k}
                   href={i.dir}
-                  className="px-8  font-semibold text-lg"
+                  className="px-6  font-medium text-md"
                 >
                   {i.name}
                 </Link>

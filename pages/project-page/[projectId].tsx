@@ -129,7 +129,7 @@ const ShowProject: FC = () => {
 
   return (
     <Layout>
-      <div className=" flex mx-auto w-[90%]   mt-20 relative xsm:flex-col lg:flex-row ">
+      <div className=" flex mx-auto w-[90%]    relative xsm:flex-col lg:flex-row ">
         {/* <button onClick={() => console.log(num)}>butto</button> */}
         {/* <div className=' h-full w-3/5 mt-20  ' >
                         <div className='w-[95%]  mx-auto flex flex-col space-y-8'>

@@ -186,15 +186,17 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
 
   return (
     <Layout>
-      <Section className="space-y-14 flex xsm:flex-col relative">
-        <div className="pt-14 ">
+      <Section className=" flex xsm:flex-col relative">
+        <div className="pb-[60px]">
           <H1 text="Your Online Contributions Towards" />
         </div>
-        <div className="w-[90%]  justify-center bg-[#A15236] text-white  rounded-2xl  py-3 px-8">
+        <div className="w-[90%]  justify-center bg-[#A15236] text-white  rounded-2xl  p-6">
+          {/* <div className="bg-[#A15236] py-6 rounded-2xl w-[90%] overflow-auto "> */}
           <div className="w-full flex lg:justify-between  xms:justify-start flex-wrap xsm:px-2 lg:px-0 xsm:space-y-2 lg:space-y-0">
+            {/* <div className="pl-2 flex text-white justify-between "> */}
             {DonationCatgery.map((_data: string, key: number) => (
               <span
-                className={`text-xl  hover:bg-white py-3 px-6 rounded-lg duration-200 hover:text-[#A15236] font-medium ${
+                className={`text-lg     hover:bg-white py-2 px-4 rounded-lg duration-200 hover:text-[#A15236] font-medium ${
                   catgery == _data ? "bg-white text-[#A15236]" : ""
                 }`}
                 key={key}
@@ -209,13 +211,16 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
             ))}
           </div>
         </div>
-        <div className="w-[90%] sticky top-[80px] bg-white h-full only-padding border-b border-[#EDEFF1] z-50">
-          <H2 text={catgery} className="xsm:text-center lg:text-start w-full" />
+        <div className="w-[90%] sticky top-[80px] bg-white h-full pt-16 pb- border-b border-[#EDEFF1] pb-8 z-50">
+          <H2
+            text={catgery}
+            className="xsm:text-center lg:text-start w-full lg:text-3xl  lg:font-bold"
+          />
         </div>
         {/* <div className="w-full h-[1px] bg-[#EDEFF1] "></div> */}
-        <div className="w-[90%]">
+        <div className="w-[90%] pt-12">
           <span className="font-blod p">Choose Amount</span>
-          <div className="flex lg:justify-between xsm:justify-start xsm:gap-4 lg:gap-0 pt-8 flex-wrap ">
+          <div className="flex  lg:justify-between xsm:justify-start xsm:gap-4 lg:gap-0 pt-8 flex-wrap ">
             {CommonAmount.map((data: number, key: number) => (
               <span
                 onClick={() => {
@@ -223,7 +228,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
                   console.log(data);
                 }}
                 key={key}
-                className="text- py-3 px-6 rounded-lg bg-[#a152361a] font-bold "
+                className="text- py-3 px-[50px] rounded-lg bg-[#a152361a] font-bold "
               >
                 ₹ {data}
               </span>
@@ -234,8 +239,8 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
               className="flex flex-col space-y-6 pt-8 z--index"
               onSubmit={handleSubmit}
             >
-              <div className="flex justify-between lg:space-x-6 xsm:flex-col lg:flex-row ">
-                <div className="lg:w-[30%] xsm:w-full   relative">
+              <div className="flex justify-between lg:space-x-12 xsm:flex-col lg:flex-row ">
+                <div className="lg:w-[50%] xsm:w-full   relative">
                   <DropDown
                     active={active}
                     setActive={setActive}
@@ -243,7 +248,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
                     lable="Currency"
                   />
                 </div>
-                <div className="lg:w-[70%] xsm:w-full overflow-hidden">
+                <div className="lg:w-[50%] xsm:w-full overflow-hidden">
                   <InputTag
                     lable="Other Amount"
                     type="number"
@@ -351,7 +356,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
                   />
                 </div>
               </div>
-              <div className="w-full mx-auto pt-6">
+              <div className="w-full mx-auto pt-6 pb-12">
                 <div className="w-fit mx-auto ">
                   <button
                     className="mx-auto w-full bg-[#A15236] px-36 py-4 rounded-full text-white text-xl flex space-x-2 "
@@ -373,8 +378,8 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
           </div>
         </div>
 
-        <div className="w-[90%] h-[1px] bg-[#EDEFF1]"></div>
-        <div className="w-[90%]">
+        <div className="w-[90%] h-[1px] bg-[#EDEFF1] "></div>
+        <div className="w-[90%] pt-8">
           <TearmsAndConditions />
         </div>
       </Section>

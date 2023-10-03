@@ -66,9 +66,12 @@ const index: FC = () => {
                     <H1 text='Get Involved' />
                 </div>
                 <Section /> */}
-      <section className="pt-20">
-        <div className="flex flex-col mt-10 ">
-          <H1 text="Meet our Founder Members" />
+      <section className="pt-[80px] pb-[60px]">
+        <div className="flex flex-col  ">
+          <H1
+            text="Meet our Founder Members"
+            className="lg:text-4xl  lg:font-bold"
+          />
         </div>
       </section>
       {/* <Section>
@@ -97,7 +100,7 @@ const index: FC = () => {
                     }
                 </div>
             </Section> */}
-      <section className="flex lg:flex-col xsm:flex-row  pt-9  w-full mx-auto justify-center items-center">
+      <section className="flex lg:flex-col xsm:flex-row    w-full mx-auto justify-center items-center">
         <div className="flex flex-wrap   w-[80%] justify-center gap-16 pt-6 mx-auto  xsm:flex-col lg:flex-row items-center   ">
           {TeamData.map((i, k) => (
             <div
@@ -110,14 +113,14 @@ const index: FC = () => {
                   <div className="felx flex-col space-y-6 w-4/5">
                     <Paragraph
                       text={i.text}
-                      className="font-semibold text-lg"
+                      className="font-normal text-base"
                     />
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-center w-full  space-x-8">
+              <div className="flex items-center justify-center w-full  space-x-6">
                 <div className="">
-                  <h3 className=" text-center font-bold text-xl">{i.name}</h3>
+                  <h3 className=" text-center font-bold text-2xl">{i.name}</h3>
                 </div>
                 <a href={i.twitter} target="_blank">
                   <Image

@@ -28,12 +28,12 @@ const data = [
   {
     img: "/GetInvolved/2.png",
     head: "Volunteer on Ground",
-    text: "You can be a volunteer for all our projects and travel across the length and breath of the county",
+    text: "You can be a volunteer for all our projects and travel across the length and breath of the county.",
   },
   {
     img: "/GetInvolved/3.png",
     head: "Write for Us",
-    text: "Love Writing? You can write blog and articles on various topics relate to our culture, that interest you",
+    text: "Love Writing? You can write blog and articles on various topics relate to our culture, that interest you.",
   },
   {
     img: "/GetInvolved/4.png",
@@ -121,7 +121,7 @@ function Index() {
           </Swiper>
           <div className="w-full h-[90%] bg-transparent absolute top-0"></div>
         </div>
-        <div className="h-full  w-[70%]  justify-center items-center flex flex-col mx-auto relative ">
+        <div className="h-full  w-[70%]   justify-center items-center flex flex-col mx-auto relative   ">
           <Swiper
             initialSlide={count}
             className="h-[90%] w-full flex flex-col justify-center  space-y-6 "
@@ -144,12 +144,12 @@ function Index() {
                   <div className="w-full  ">
                     <H2
                       text={data.head}
-                      className="font-blod lg:text-[42px] text-start w-full "
+                      className="font-blod lg:text-[40px]   text-start w-full "
                     />
                   </div>
                   <Paragraph
                     text={data.text}
-                    className="font-blod text-2xl pt-6 leading-relaxed"
+                    className="font-blod text-md pt-6 leading-relaxed"
                   />
                   {/* <p className=" font-blod text-xl">{data.text}</p> */}
                 </div>
@@ -169,11 +169,11 @@ function Index() {
             </div>
           </div> */}
           <div className="h-[10%]  flex  w-full justify-between items-center bg-[rgba(161,82,54,0.10)] ">
-            <div className="w-11/12 flex justify-between items-center mx-auto">
-              <div className="flex space-x-2 items-center   h-full ">
+            <div className="w-[100%] flex justify-between items-center mx-auto">
+              <div className="flex space-x-2 items-center   h-full  pl-16">
                 {data.reverse().map((data, key) => (
                   <div
-                    className={`w-3 h-3 ${
+                    className={`w-[10px] h-[10px] ${
                       // @ts-ignore
                       key == count_data[count]
                         ? "bg-[#A15236]"
@@ -183,7 +183,7 @@ function Index() {
                   ></div>
                 ))}
               </div>
-              <div className="flex space-x-8 ">
+              <div className="flex space-x-3 pr-16 ">
                 <button
                   onClick={() => {
                     // @ts-ignore

@@ -49,7 +49,7 @@ export const Objectives: FC = () => {
   return (
     <Section id="Objectives">
       <div className="w-[90%] flex flex-col space-y-16  pt-8">
-        <H2 text="Objectives" className="lg:text-5xl 2xl:text-5xl" />
+        <H2 text="Objectives" className="lg:text-4xl  lg:font-bold" />
         <div className="flex flex-wrap gap-4 w-full justify-center   ">
           {ObjectivesData.map((data, k) => (
             <Link
@@ -66,12 +66,12 @@ export const Objectives: FC = () => {
               />
               <div className="absolute w-full h-full flex flec-col justify-center  items-center  text-white  top-0">
                 <div className="   flex space-y-4 flex-col">
-                  <h2 className="xsm:text-lg md:text-xl 2xl:text-4xl text-center font-semibold">
+                  <h2 className="xsm:text-lg md:text-2xl 2xl:text-4xl text-center font-semibold">
                     {data.head}
                   </h2>
                   {/* <H2 text={data.head} className="text-2xl" /> */}
                   {/* <div className="font-semibold text-base  2xl:text-xl group-hover:opacity-100  group-hover:h-14  h-0  opacity-0 w-4/5 mx-auto text-center transition-all duration-100 pt-2"> */}
-                  <div className="font-semibold text-base mx-auto text-center group-hover:opacity-100 opacity-0 group-hover:inline-block hidden transition-all duration-200  w-[90%]">
+                  <div className="font-normal text-base mx-auto text-center group-hover:opacity-100  opacity-0 group-hover:inline-block hidden transition-all duration-200  w-[90%]">
                     {data.text}
                   </div>
                 </div>
