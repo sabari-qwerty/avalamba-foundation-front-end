@@ -1,6 +1,6 @@
 # Block all crawlers for /accounts
 User-agent: *
-Disallow: /fiejf
+Disallow: /
 
 
 # Allow all crawlers
