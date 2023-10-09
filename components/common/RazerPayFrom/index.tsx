@@ -143,6 +143,8 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
 
           await axios.post("/api/createdb", sendData);
           await window.location.replace("/#About-Us");
+
+
           console.log("not error");
         } catch (err) {
           window.location.replace("/#About-Us");
