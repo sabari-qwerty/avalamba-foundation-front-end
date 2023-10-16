@@ -83,8 +83,8 @@ export const RazorpayFroms: FC<RazorpayFroms> = ({ catgery, amount }) => {
   // console.log({ Amount });
   // console.log(catgery);
   return (
-    <form className="flex flex-col space-y-6">
-      <div className="flex justify-between space-x-6 ">
+    <form className="flex flex-col space-y-6 bg-black">
+      <div className="flex justify-between space-x-6  ">
         <div className="w-[30%]  relative">
           <DropDown
             active={active}

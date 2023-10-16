@@ -482,14 +482,18 @@ export const Footer: FC<Footer> = ({ bool }) => {
             className="object-fill w-full h-full"
           />
         </div>
-        <div className="flex    lg:space-x-11 flex-col lg:flex-row xms:text-md  lg:text-md 2xl:text-md px-6  font-normal ">
+        <div className="flex     lg:space-x-11 flex-col lg:flex-row xms:text-md  lg:text-md 2xl:text-md px-6  font-normal ">
           {NavData.map((data, key) => (
-            <Link href={data.dir} key={key} className="py-2 lg:py-0">
+            <Link
+              href={data.dir}
+              key={key}
+              className="py-2 lg:py-0 lg:w-fit xsm:w-full text-center"
+            >
               {data.name}
             </Link>
           ))}
         </div>
-        <div className="flex   lg:space-x-8 xsm:space-x-8 ">
+        <div className="flex   lg:space-x-8 xsm:space-x-8  ">
           {SocialMediaIcon.map((data, key) => (
             <Link
               href={data.herf}
@@ -501,14 +505,14 @@ export const Footer: FC<Footer> = ({ bool }) => {
           ))}
         </div>
         <div className="w-full h-[1px] bg-white"></div>
-        <div className="w-full flex justify-between items-center text-md flex-col lg:flex-row">
-          <span className="flex justify-center items-center space-x-3">
+        <div className="w-full flex justify-between items-center text-md flex-col  xsm:space-y-4 lg:space-y-0 lg:flex-row">
+          <span className="flex lg:justify-start items-center space-x-3 xsm:w-full  ">
             <div>
               <Image src={"/copyright.svg"} alt="" width={20} height={20} />
             </div>
             <div>Avalamba foundation All Rights Reserved.</div>
           </span>
-          <span>Powered by GoZen</span>
+          <span className="w-full lg:text-end   ">Powered by GoZen</span>
         </div>
       </div>
     </footer>

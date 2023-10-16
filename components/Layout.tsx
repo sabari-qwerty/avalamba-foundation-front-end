@@ -10,10 +10,11 @@ interface Layout {
 }
 
 export const Layout: FC<Layout> = ({ children }) => {
-  const [bool, setBool] = useState(true);
+  const [bool, setBool] = useState(false);
 
   return (
-    <div className={`relative ${!bool && "bg-[#A15236]"}`}>
+    // <div className={`relative ${!bool && "bg-[#A15236]"}`}>
+    <div className={`relative `}>
       <NavBar bool={bool} setBool={() => setBool(!bool)} />
       {children}
       {/* <Section id="">

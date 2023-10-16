@@ -84,16 +84,16 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
   const [amount, setAmount] = useState<number | any>();
   const [active, setActive] = useState(0);
   const [_option, setOption] = useState(0);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [pan, setPan] = useState("");
+  const [name, setName] = useState();
+  const [phone, setPhone] = useState();
+  const [email, setEmail] = useState();
+  const [pan, setPan] = useState();
   const [message, setMessage] = useState("");
   const [address, setAddress] = useState("");
   const [pin, setPin] = useState();
-  const [city, setCity] = useState("");
-  const [State, setState] = useState("");
-  const [country, setCountry] = useState("");
+  const [city, setCity] = useState();
+  const [State, setState] = useState();
+  const [country, setCountry] = useState();
 
   console.log(catgery);
 
@@ -143,9 +143,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
 
           await axios.post("/api/createdb", sendData);
           await window.location.replace("/#About-Us");
-
-
-          console.log("not error");
+          return () => console.log("not error");
         } catch (err) {
           window.location.replace("/#About-Us");
           console.log({ err });
@@ -159,6 +157,13 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
       notes: {
         catgery,
         sub_catgery: sub_donation_catgery,
+        pan,
+        address,
+        city,
+        state: State,
+        country,
+        pin,
+        name,
       },
       theme: {
         color: "#A15236",
@@ -188,17 +193,17 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
 
   return (
     <Layout>
-      <Section className=" flex xsm:flex-col relative">
+      <Section className=" flex xsm:flex-col relative  ">
         <div className="pb-[60px]">
           <H1 text="Your Online Contributions Towards" />
         </div>
         <div className="w-[90%]  justify-center bg-[#A15236] text-white  rounded-2xl  p-6">
           {/* <div className="bg-[#A15236] py-6 rounded-2xl w-[90%] overflow-auto "> */}
-          <div className="w-full flex lg:justify-between  xms:justify-start flex-wrap xsm:px-2 lg:px-0 xsm:space-y-2 lg:space-y-0">
+          <div className="w-full flex lg:justify-between  xms:justify-start flex-nowrap xsm:px-2 lg:px-0 xsm:space-x-16 lg:space-x-0 lg:space-y-0 overflow-auto">
             {/* <div className="pl-2 flex text-white justify-between "> */}
             {DonationCatgery.map((_data: string, key: number) => (
               <span
-                className={`text-lg     hover:bg-white py-2 px-4 rounded-lg duration-200 hover:text-[#A15236] font-medium ${
+                className={`text-lg     hover:bg-white py-2 px-4 rounded-lg duration-200 hover:text-[#A15236] font-medium min-w-max ${
                   catgery == _data ? "bg-white text-[#A15236]" : ""
                 }`}
                 key={key}
@@ -230,18 +235,32 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
                   console.log(data);
                 }}
                 key={key}
-                className="text- py-3 px-[50px] rounded-lg bg-[#a152361a] font-bold "
+                className={`text- py-3 px-[50px] rounded-lg bg-[#a152361a] font-bold  ${
+                  data == amount ? "border-2  border-[#A15236]" : ""
+                }`}
               >
                 ₹ {data}
               </span>
             ))}
+
+            <input
+              type="number"
+              placeholder="other amount"
+              className="
+              rounded-lg border-collapse border border-[#DCE0E4] py-4  text-base   
+              indent-5   "
+              onChange={(e) => {
+                setAmount(e.target.value);
+              }}
+              value={amount}
+            />
           </div>
           <div>
             <form
               className="flex flex-col space-y-6 pt-8 z--index"
               onSubmit={handleSubmit}
             >
-              <div className="flex justify-between lg:space-x-12 xsm:flex-col lg:flex-row ">
+              <div className="flex justify-between space-y-6 lg:space-x-12 xsm:flex-col lg:flex-row ">
                 <div className="lg:w-[50%] xsm:w-full   relative">
                   <DropDown
                     active={active}
@@ -302,7 +321,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
                     <InputTag
                       type="text"
                       placeholder=""
-                      lable="Pan Number"
+                      lable="PAN Number"
                       name="pan"
                       setFun={setPan}
                       pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
@@ -318,7 +337,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
                     />
                   </div>
                 </div>
-                <div className="flex flex-col lg:w-1/2 xsm:w-full space-y-6">
+                <div className="flex flex-col lg:w-1/2 xsm:w-full space-y-6 xsm:pt-6">
                   <div className="flex flex-col space-y-2">
                     <label htmlFor="Address" className="font-blod text-base">
                       Address
@@ -361,10 +380,10 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
               <div className="w-full mx-auto pt-6 pb-12">
                 <div className="w-fit mx-auto ">
                   <button
-                    className="mx-auto w-full bg-[#A15236] px-36 py-4 rounded-full text-white text-xl flex space-x-2 "
+                    className="mx-auto w-full bg-[#A15236] px-28 py-4 rounded-full text-white text-xl flex space-x-2 "
                     type="submit"
                   >
-                    <span>Donate Now</span>
+                    <span className="w">Donate Now</span>
                     <div>
                       <Image
                         src="/right.svg"

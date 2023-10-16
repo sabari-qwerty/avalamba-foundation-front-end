@@ -9,9 +9,7 @@ scroll-behavior: smooth !important;
 }
 
 
-
-
-
+ 
   /* hambueger */
   
   .menu-btn-1 {
@@ -250,8 +248,10 @@ input[type=number] {
 }
 
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-  padding-bottom: 20px !important;
+  padding-bottom: 30px !important;
 }
+
+
 
 .no_padding_margin {
   padding: 0 !important;

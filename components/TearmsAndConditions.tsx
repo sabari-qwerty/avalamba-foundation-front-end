@@ -11,7 +11,7 @@ const Tearms_And_conditions = [
 export const TearmsAndConditions: FC = () => {
   return (
     <div className="flex flex-col space-y-6">
-      <H2 text="Tearms & Conditions" className="w-full flex  p-0" />
+      <H2 text="Terms and Conditions" className="w-full flex  p-0" />
 
       <ul className="list-disc flex flex-col space-y-4 pl-4">
         {Tearms_And_conditions.map((data, key) => (

@@ -15,69 +15,123 @@ import Image from "next/image";
 
 const SliderImage = [
   {
-    src: "/HeroPage/new/1.jpg",
+    src: "/HeroPage/new/new/1.jpg",
   },
   {
-    src: "/HeroPage/new/2.jpg",
+    src: "/HeroPage/new/new/2.jpg",
   },
   {
-    src: "/HeroPage/new/3.jpg",
+    src: "/HeroPage/new/new/3.jpg",
   },
   {
-    src: "/HeroPage/new/4.jpg",
+    src: "/HeroPage/new/new/4.jpg",
   },
   {
-    src: "/HeroPage/new/5.jpg",
+    src: "/HeroPage/new/new/5.jpg",
   },
   {
-    src: "/HeroPage/new/6.jpg",
+    src: "/HeroPage/new/new/6.jpg",
   },
   {
-    src: "/HeroPage/new/7.jpg",
+    src: "/HeroPage/new/new/7.jpg",
+  },
+];
+
+const SliderMobile = [
+  {
+    src: "/HeroPage/new/new/mobile/1.jpg",
+  },
+  {
+    src: "/HeroPage/new/new/mobile/2.jpg",
+  },
+  {
+    src: "/HeroPage/new/new/mobile/3.jpg",
+  },
+  {
+    src: "/HeroPage/new/new/mobile/4.jpg",
+  },
+  {
+    src: "/HeroPage/new/new/mobile/5.jpg",
+  },
+  {
+    src: "/HeroPage/new/new/mobile/6.jpg",
+  },
+  {
+    src: "/HeroPage/new/new/mobile/7.jpg",
   },
 ];
 
 export const ImageSwper: FC = () => {
   return (
     <div className="relative">
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-        pagination={{ clickable: true }}
-        className="h-[100dvh] full-width"
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-      >
-        {SliderImage.map((i, k) => {
-          return (
-            <SwiperSlide key={k} className="h-[100dvh] full-width bg-black">
-              {
-                // <Image src={i.src} alt='image' className='w-full h-full object-cover opacity-80' layout="fill" />
-                <Image
-                  src={i.src}
-                  alt="image"
-                  className="w-full h-full object-fill opacity-80"
-                  width={800}
-                  height={800}
-                />
-              }
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-      <div className="absolute top-1/2 xsm:w-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white w-full lg:space-y-16 xsm:space-y-8">
+      <div className="xsm:hidden lg:block">
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          pagination={{ clickable: true }}
+          className="h-[95dvh] full-width "
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+        >
+          {SliderImage.map((i, k) => {
+            return (
+              <SwiperSlide key={k} className="h-[100dvh] full-width bg-black">
+                {
+                  // <Image src={i.src} alt='image' className='w-full h-full object-cover opacity-80' layout="fill" />
+                  <Image
+                    src={i.src}
+                    alt="image"
+                    className="w-full h-full object-fill "
+                    width={800}
+                    height={800}
+                  />
+                }
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+      <div className="xsm:block lg:hidden">
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          pagination={{ clickable: true }}
+          className="h-[95dvh] full-width "
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+        >
+          {SliderMobile.map((i, k) => {
+            return (
+              <SwiperSlide key={k} className="h-[100dvh] full-width bg-black">
+                {
+                  // <Image src={i.src} alt='image' className='w-full h-full object-cover opacity-80' layout="fill" />
+                  <Image
+                    src={i.src}
+                    alt="image"
+                    className="w-full h-full object-fill "
+                    width={800}
+                    height={800}
+                  />
+                }
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+      <div className="absolute top-1/2 xsm:w-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-white w-full lg:space-y-16 xsm:space-y-14">
         {/* <H2
           text="| धर्मो विश्वस्य जगत: प्रतिष्ठा |"
           className="text-9xl font-extrabold"
         /> */}
-        <div className="flex space-y-4  flex-col ">
-          <h2 className="xsm:text-xl md:text-4xl   2xl:text-5xl  font-bold text-center">
+        <div className="flex   flex-col ">
+          <h2 className="xsm:text-3xl md:text-5xl   2xl:text-5xl  font-bold text-center">
             | धर्मो विश्वस्य जगत: प्रतिष्ठा |
           </h2>
           <H2
             text="Dharma is the foundation stone on which this entire universe is firmly placed"
-            className="font-medium lg:text-2xl xsm:text-lg  text-center  pt-5"
+            className="font-medium lg:text-2xl xsm:text-lg  text-center  pt-3"
           />
         </div>
 
@@ -85,13 +139,13 @@ export const ImageSwper: FC = () => {
           Dharma is the foundation stone on which this entire universe is firmly
           placed
         </h3> */}
-        <div className="flex space-y-4  flex-col">
-          <h1 className="xsm:text-xl md:text-4xl   2xl:text-5xl font-bold text-center heading-tamil-fount ">
+        <div className="flex   flex-col">
+          <h1 className="xsm:text-3xl md:text-4xl   2xl:text-5xl font-bold text-center heading-tamil-fount ">
             | அறம் செய்ய விரும்பு |
           </h1>
           <H2
             text="Develop interest in performing Dharmik acts"
-            className="font-medium lg:text-2xl xsm:text-lg   text-center pt-5"
+            className="font-medium lg:text-2xl xsm:text-lg   text-center pt-3"
           />
         </div>
         {/* <H1 text="| அறம் செய விரும்பு |" className="text-4xl font-extrabold" /> */}

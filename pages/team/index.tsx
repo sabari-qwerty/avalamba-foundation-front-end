@@ -5,6 +5,7 @@ import { H1 } from "@/components/common/Heading/H1";
 // import { TeamData } from '../content'
 import { Paragraph } from "@/components/common/Paragraph/Paragraph";
 import Image from "next/image";
+import { FiexedButton } from "@/components/HomePage/FiexedButton";
 // import { TeamSocilaIcon } from '../content'
 
 const TeamData = [
@@ -120,7 +121,9 @@ const index: FC = () => {
               </div>
               <div className="flex items-center justify-center w-full  space-x-6">
                 <div className="">
-                  <h3 className=" text-center font-bold text-2xl">{i.name}</h3>
+                  <h3 className=" lg:text-center text-start font-bold text-2xl">
+                    {i.name}
+                  </h3>
                 </div>
                 <a href={i.twitter} target="_blank">
                   <Image
@@ -133,6 +136,9 @@ const index: FC = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="z-50">
+          <FiexedButton text="Contribute Now" />
         </div>
       </section>
       {/* <Section className='pt-20 pb-0'>

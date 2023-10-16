@@ -18,6 +18,8 @@ import { Paragraph } from "@/components/common/Paragraph/Paragraph";
 import { Devonshire } from "next/font/google";
 import { Footer } from "@/components/common/Footer/Footer";
 import { NavBar } from "@/components/common/NavBar/NavBar";
+import { FiexedButton } from "@/components/HomePage/FiexedButton";
+import { Button } from "@/components/common/Button/Button";
 
 const data = [
   {
@@ -79,7 +81,7 @@ function Index() {
   //     }
   //   };
   // }, []);
-  const [bool, setBool] = useState(true);
+  const [bool, setBool] = useState(false);
 
   return (
     <div className="flex flex-col ">
@@ -137,14 +139,14 @@ function Index() {
           >
             {data.reverse().map((data, key) => (
               <SwiperSlide
-                className="w-full h-full  my-auto    flex justify-center   items-center bg-[url('/GetInvolved/background-1.jpg')]  bg-no-repeat object-cover"
+                className="w-full h-full  my-auto    flex justify-center   items-center bg-[url('/GetInvolved/background-1.jpg')]  bg-no-repeat object-cover bg-white"
                 key={key}
               >
                 <div className=" h-full flex justify-center space-y-6 flex-col w-4/5 pl-16 ">
                   <div className="w-full  ">
                     <H2
                       text={data.head}
-                      className="font-blod lg:text-[40px]   text-start w-full "
+                      className="font-blod lg:text-[40px] 2xl:text-4xl   text-start w-full "
                     />
                   </div>
                   <Paragraph
@@ -152,6 +154,11 @@ function Index() {
                     className="font-blod text-md pt-6 leading-relaxed"
                   />
                   {/* <p className=" font-blod text-xl">{data.text}</p> */}
+                  <div className="w-full ">
+                    <button className=" flex items-center xsm:h-[50px]  justify-center   rounded-full  z-10 max-w-[350px] bg-[#A15236] text-[#fff] xsm:min-w-[150px] lg:min-w-[150px] shadow-lg xsm:text-base md:text-lg  z xsm:py-  2xl:py-2">
+                      Contact Us
+                    </button>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
@@ -163,12 +170,12 @@ function Index() {
                 text={data[count].head}
                 className="font-bold lg:text-4xl text-start w-full "
               />
-            </div>
+            </div>`
             <div className="w-4/5 font-semibold text-xl">
               {data[count].text}
             </div>
           </div> */}
-          <div className="h-[10%]  flex  w-full justify-between items-center bg-[rgba(161,82,54,0.10)] ">
+          <div className="h-[10%]  flex  w-full justify-between items-center bg-[rgba(161,82,54,0.10)] bg-[url('/GetInvolved/background-1.jpg')]  ">
             <div className="w-[100%] flex justify-between items-center mx-auto">
               <div className="flex space-x-2 items-center   h-full  pl-16">
                 {data.reverse().map((data, key) => (
@@ -183,7 +190,7 @@ function Index() {
                   ></div>
                 ))}
               </div>
-              <div className="flex space-x-3 pr-16 ">
+              <div className="flex space-x-3 pr-16  ">
                 <button
                   onClick={() => {
                     // @ts-ignore
@@ -242,6 +249,9 @@ function Index() {
         />
       </section>
       <Footer bool={true} />
+      <div className="-z-51">
+        <FiexedButton text="Contribute Now" className="bottom-[2rem]" />
+      </div>
     </div>
   );
 }
