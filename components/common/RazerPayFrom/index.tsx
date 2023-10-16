@@ -49,7 +49,7 @@ const SubDonationCatgery = {
   "Other Activtites": ["Azctivity"],
 };
 
-const CommonAmount = [300000, 200000, 100000, 50000, 10000, 5000];
+const CommonAmount = [200000, 100000, 50000, 10000, 5000];
 
 const CurrencyType = ["INR", "USD"];
 
@@ -227,7 +227,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
         {/* <div className="w-full h-[1px] bg-[#EDEFF1] "></div> */}
         <div className="w-[90%] pt-12">
           <span className="font-blod p">Choose Amount</span>
-          <div className="flex  lg:justify-between xsm:justify-start xsm:gap-4 lg:gap-0 pt-8 flex-wrap ">
+          <div className="flex   lg:justify-between xsm:justify-start xsm:gap-4 lg:gap-0 pt-8 flex-wrap ">
             {CommonAmount.map((data: number, key: number) => (
               <span
                 onClick={() => {
@@ -235,11 +235,11 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
                   console.log(data);
                 }}
                 key={key}
-                className={`text- py-3 px-[50px] rounded-lg bg-[#a152361a] font-bold  ${
+                className={`text- py-3 px-[50px] rounded-lg bg-[#a152361a] font-bold  flex justify-center items-center  ${
                   data == amount ? "border-2  border-[#A15236]" : ""
                 }`}
               >
-                ₹ {data}
+                ₹ {data.toLocaleString("en-US")}
               </span>
             ))}
 
@@ -257,10 +257,10 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
           </div>
           <div>
             <form
-              className="flex flex-col space-y-6 pt-8 z--index"
+              className="flex flex-col space-y-6 pt-8 z--index "
               onSubmit={handleSubmit}
             >
-              <div className="flex justify-between space-y-6 lg:space-x-12 xsm:flex-col lg:flex-row ">
+              <div className="flex justify-between xsm:space-y-6 lg:space-y-0 lg:space-x-12 xsm:flex-col lg:flex-row ">
                 <div className="lg:w-[50%] xsm:w-full   relative">
                   <DropDown
                     active={active}
@@ -337,7 +337,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
                     />
                   </div>
                 </div>
-                <div className="flex flex-col lg:w-1/2 xsm:w-full space-y-6 xsm:pt-6">
+                <div className="flex flex-col lg:w-1/2 xsm:w-full space-y-6 xsm:pt-6 lg:pt-0">
                   <div className="flex flex-col space-y-2">
                     <label htmlFor="Address" className="font-blod text-base">
                       Address
