@@ -235,7 +235,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
                   console.log(data);
                 }}
                 key={key}
-                className={`text- py-3 px-[50px] rounded-lg bg-[#a152361a] font-bold  flex justify-center items-center  ${
+                className={` h-fit py-4 px-[50px]    rounded-lg bg-[#a152361a] font-bold  flex justify-center items-center  ${
                   data == amount ? "border-2  border-[#A15236]" : ""
                 }`}
               >
