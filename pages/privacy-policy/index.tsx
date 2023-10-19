@@ -52,24 +52,24 @@ your personal information. "
             className=""
           />
           <ul className="list-disc flex flex-col space-y-3 px-5">
-            {Data_Collection.map((data) => (
-              <li>{data}</li>
+            {Data_Collection.map((data, key) => (
+              <li key={key}>{data}</li>
             ))}
           </ul>
         </div>
         <div className="flex flex-col space-y-6">
           <h2 className="font-bold  text-xl ">Refund and Cancellations </h2>
           <ul className="list-disc flex flex-col space-y-3 px-5 ">
-            {Refund_and_cacellation.map((data) => (
-              <li>{data}</li>
+            {Refund_and_cacellation.map((data, key) => (
+              <li key={key}>{data}</li>
             ))}
           </ul>
         </div>
         <div className="flex flex-col space-y-6">
           <h2 className="font-bold  text-xl ">Copyroght</h2>
           <ul className="list-disc flex flex-col space-y-3 px-5">
-            {copayright.map((data) => (
-              <li>{data}</li>
+            {copayright.map((data, key) => (
+              <li key={key}>{data}</li>
             ))}
           </ul>
         </div>
