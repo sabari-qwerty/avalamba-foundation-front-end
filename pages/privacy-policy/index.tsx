@@ -32,7 +32,7 @@ const index: FC = () => {
     <Layout>
       <main className="w-4/5 mx-auto flex flex-col space-y-12 pt-8 ">
         <div className="py-4">
-          <H1 text="Avalamba Foundation Provacy Policy" />
+          <H1 text="Avalamba Foundation Privacy Policy" />
         </div>
         <div className="flex flex-col space-y-6">
           <h2 className="font-bold  text-xl ">
