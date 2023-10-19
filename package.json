@@ -24,7 +24,7 @@
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
     "next": "13.3.4",
-    "nodemailer": "^6.9.5",
+    "nodemailer": "^6.9.6",
     "postcss": "8.4.23",
     "razorpay-typescript": "^1.0.12",
     "react": "18.2.0",
