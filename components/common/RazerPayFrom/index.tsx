@@ -245,7 +245,7 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
 
             <input
               type="number"
-              placeholder="other amount"
+              placeholder="Other amount"
               className="
               rounded-lg border-collapse border border-[#DCE0E4] py-4  text-base   
               indent-5   "

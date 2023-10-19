@@ -66,7 +66,7 @@ your personal information. "
           </ul>
         </div>
         <div className="flex flex-col space-y-6">
-          <h2 className="font-bold  text-xl ">Copyroght</h2>
+          <h2 className="font-bold  text-xl ">Copyright</h2>
           <ul className="list-disc flex flex-col space-y-3 px-5">
             {copayright.map((data, key) => (
               <li key={key}>{data}</li>
