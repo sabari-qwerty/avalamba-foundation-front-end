@@ -34,6 +34,10 @@ const NavData = [
     name: "Privacy Policy",
     dir: "/privacy-policy",
   },
+  {
+    name: "Refund and Cancellations",
+    dir: "/refund-and-cancellations",
+  },
 ];
 
 // const SocialMediaIcon = [

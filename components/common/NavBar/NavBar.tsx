@@ -29,10 +29,6 @@ const NavData = [
     name: "Get Involved",
     dir: "/get-involved",
   },
-  {
-    name: "Privacy Policy",
-    dir: "/privacy-policy",
-  },
 ];
 
 interface NavBar {

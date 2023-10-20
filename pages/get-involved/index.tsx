@@ -155,7 +155,10 @@ function Index() {
                   />
                   {/* <p className=" font-blod text-xl">{data.text}</p> */}
                   <div className="w-full ">
-                    <button className=" flex items-center xsm:h-[50px]  justify-center   rounded-full  z-10 max-w-[350px] bg-[#A15236] text-[#fff] xsm:min-w-[150px] lg:min-w-[150px] shadow-lg xsm:text-base md:text-lg  z xsm:py-  2xl:py-2">
+                    <button
+                      className=" flex items-center xsm:h-[50px]  justify-center   rounded-full  z-10 max-w-[350px] bg-[#A15236] text-[#fff] xsm:min-w-[150px] lg:min-w-[150px] shadow-lg xsm:text-base md:text-lg  z xsm:py-  2xl:py-2"
+                      id="click-a-button"
+                    >
                       Contact Us
                     </button>
                   </div>

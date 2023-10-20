@@ -399,10 +399,10 @@ export const RazerPayFrom: FC<RazerPayFrom> = ({ value }) => {
           </div>
         </div>
 
-        <div className="w-[90%] h-[1px] bg-[#EDEFF1] "></div>
-        <div className="w-[90%] pt-8">
+        {/* <div className="w-[90%] h-[1px] bg-[#EDEFF1] "></div> */}
+        {/* <div className="w-[90%] pt-8">
           <TearmsAndConditions />
-        </div>
+        </div> */}
       </Section>
     </Layout>
   );

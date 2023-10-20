@@ -16,12 +16,6 @@ const Data_Collection = [
   "Please visit razorpay website to know more about their policy on data security. ",
 ];
 
-const Refund_and_cacellation = [
-  "Currently, we accept donations only in Indian rupees and only from Indian bank accounts.",
-  "The approval for exemption under 80G is under process and status will be updated soon. ",
-  "For refunds and cancellations, kindly contact us at contact@avalambafoundation.com within 7 days from date of payment.",
-];
-
 const copayright = [
   "All the contents in the website including images, logos, creatives, audio and video clips are the exclusive property of Avalamba Foundation and other copyright owners.",
   "Any reproduction, modification or distribution of content without the prior permission of Avalamba Foundation will be a violation of Indian and International Laws. ",
@@ -31,12 +25,18 @@ const index: FC = () => {
   return (
     <Layout>
       <main className="w-4/5 mx-auto flex flex-col space-y-12 pt-8 ">
-        <div className="py-4">
-          <H1 text="Avalamba Foundation Privacy Policy" />
-        </div>
+        <section className="pt-[60px] pb-[60px]">
+          <div className="flex flex-col  ">
+            <H1
+              text="Avalamba Foundation Privacy Policy"
+              className="lg:text-4xl  lg:font-bold"
+            />
+          </div>
+        </section>
+
         <div className="flex flex-col space-y-6">
           <h2 className="font-bold  text-xl ">
-            Privacy Policy, Terms and Conditions.{" "}
+            Privacy Policy, Terms and Conditions{" "}
           </h2>
           <Paragraph
             text="By using our website, you agree to all the terms conditions and privacy policies. You agree to not use 
@@ -57,14 +57,7 @@ your personal information. "
             ))}
           </ul>
         </div>
-        <div className="flex flex-col space-y-6">
-          <h2 className="font-bold  text-xl ">Refund and Cancellations </h2>
-          <ul className="list-disc flex flex-col space-y-3 px-5 ">
-            {Refund_and_cacellation.map((data, key) => (
-              <li key={key}>{data}</li>
-            ))}
-          </ul>
-        </div>
+
         <div className="flex flex-col space-y-6">
           <h2 className="font-bold  text-xl ">Copyright</h2>
           <ul className="list-disc flex flex-col space-y-3 px-5">
