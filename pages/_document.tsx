@@ -21,14 +21,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ></noscript>
         <Main />
         <NextScript />
-
+        {/* 
         <script
           id="optinly_script"
           async={true}
           data-app_id="40d1bcf3-9ed2-408e-912e-c2e5b9c93cc4"
           src="https://cdn.optinly.net/v1/optinly.js"
           type="text/javascript"
-        />
+        /> */}
       </body>
     </Html>
   );
