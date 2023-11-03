@@ -60,10 +60,11 @@
 // };
 
 // export default Index;
-import { RazerPayFrom } from "@/components/common/RazerPayFrom";
+// import { RazerPayFrom } from "@/components/common/RazerPayFrom";
+import { PhonePe } from "@/components/common/phonepe";
 
 const Index = () => {
-  return <RazerPayFrom />;
+  return <PhonePe />;
 };
 
 export default Index;

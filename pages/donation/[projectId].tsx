@@ -1,4 +1,5 @@
 import { RazerPayFrom } from "@/components/common/RazerPayFrom";
+import { PhonePe } from "@/components/common/phonepe";
 import { usePathname } from "next/navigation";
 import { FC, useEffect, useState } from "react";
 
@@ -40,7 +41,8 @@ const Index: FC = () => {
     }
     return () => undefined;
   }, [path]);
-  return <RazerPayFrom value={Value} />;
+  // return <RazerPayFrom value={Value} />;
+  return <PhonePe value={Value} />;
 };
 
 export default Index;
