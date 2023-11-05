@@ -66,15 +66,17 @@ export default async function handler(
         },
       });
 
-
       var return_data;
       try {
-        return_data = await axios.post("http://127.0.0.1:3000/api/phonepe", {
-          marchantUserId,
-          merchantTransactionId,
-          amount: amount,
-          phone,
-        });
+        return_data = await axios.post(
+          "https://www.avalambafoundation.com/api/phonepe",
+          {
+            marchantUserId,
+            merchantTransactionId,
+            amount: amount,
+            phone,
+          }
+        );
       } catch (error) {
         console.log(error);
       }

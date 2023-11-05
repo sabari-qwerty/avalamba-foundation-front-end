@@ -111,10 +111,10 @@ export const PhonePe: FC<prop> = ({ value }) => {
     };
     const res = await axios.post("/api/createdb", data);
 
-    console.log(res.data.data?.data?.instrumentResponse?.redirectInfo?.url);
-    // await redireactWindwow(
-    //   res.data.data?.data?.instrumentResponse?.redirectInfo?.url
-    // );
+    // console.log(res.data.data?.data?.instrumentResponse?.redirectInfo?.url);
+    await redireactWindwow(
+      res.data.data?.data?.instrumentResponse?.redirectInfo?.url
+    );
   };
 
   const genrateid = () => {
