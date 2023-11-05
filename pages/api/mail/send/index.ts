@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { createTransport } from "nodemailer";
+import { emit } from "process";
 
 export default async function handler(
   req: NextApiRequest,
@@ -18,9 +19,9 @@ export default async function handler(
     });
 
     const mailoptions = {
-      from: "sabariqwerty@zohomail.in",
+      from: "okey54@ethereal.email",
       to: email,
-      subject: "text",
+      subject: "Test Email",
       // text: "i am sabari",
 
       html: `
