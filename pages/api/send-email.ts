@@ -48,13 +48,11 @@ export default async function handler(
 
       console.log("here", amount);
       const transporter = createTransport({
-        host: "smtp.zoho.in",
-        port: 465,
-        secure: true,
-
+        host: "smtp.ethereal.email",
+        port: 587,
         auth: {
-          user: "sabariqwerty@zohomail.in",
-          pass: "s@b@r!007",
+          user: "calista.ritchie25@ethereal.email",
+          pass: "rekAcgurrJETAGsy7M",
         },
       });
 
@@ -205,7 +203,7 @@ export default async function handler(
                         <td style="border:none !important; outline: none !important;">${sub_catgery}</td>
                         <td style="border:none !important; outline: none !important;">1</td>
                         <td style="border:none !important; outline: none !important;">${
-                          amount / 100
+                          amount 
                         }</td>
                     </tr>
                 </tbody>
@@ -218,7 +216,7 @@ export default async function handler(
                             Total</td>
                         <td
                             style="border: none !important; border-top: 1px solid #A15236 !important; background-color: #A15236 !important; color: #fff !important;">
-                            Rs. ${amount / 100}
+                            Rs. ${amount}
 
                         </td>
                     </tr>

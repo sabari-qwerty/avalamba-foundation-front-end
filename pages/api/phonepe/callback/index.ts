@@ -28,6 +28,7 @@ interface response {
 }
 
 import { Prisma } from "@prisma/client";
+import axios from "axios";
 // export default async function handler(
 //   req: NextApiRequest,
 //   res: NextApiResponse
@@ -140,7 +141,24 @@ export default async function handler(
         },
       });
 
-      console.log(create_data);
+      const find_email = await prisma.donationDetails.findUnique({
+        where: {
+          merchantTransactionId: json.data.merchantTransactionId,
+        },
+      });
+
+      if (find_email) {
+        console.log(find_email.sub_category);
+        const send_email = await axios.post(
+          "https://www.avalambafoundation.com/api/mail/send",
+          {
+            merchantTransactionId: find_email.marchantUserId.slice(),
+            amount: find_email.amount,
+            email: find_email.email,
+            catgery: find_email.sub_category,
+          }
+        );
+      }
 
       return res.status(200).send({ success: true });
     } catch (err) {
