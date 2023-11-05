@@ -15,11 +15,9 @@ export default async function handler(
       merchantTransactionId: merchantTransactionId,
       merchantUserId: marchantUserId,
       amount: Number(amount) * 100,
-      redirectUrl:
-        "https://1d07-2405-201-e039-d00f-aed9-994b-fbed-6d5b.ngrok-free.app/#About-Us",
+      redirectUrl: "https://www.avalambafoundation.com/#About-Us",
       redirectMode: "REDIRECT",
-      callbackUrl:
-        "https://1d07-2405-201-e039-d00f-aed9-994b-fbed-6d5b.ngrok-free.app/api/phonepe/callback",
+      callbackUrl: "https://www.avalambafoundation.com/api/phonepe/callback",
       mobileNumber: phone,
       paymentInstrument: {
         type: "PAY_PAGE",
