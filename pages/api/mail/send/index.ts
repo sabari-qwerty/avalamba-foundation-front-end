@@ -13,13 +13,13 @@ export default async function handler(
       host: "smtp.ethereal.email",
       port: 587,
       auth: {
-        user: "calista.ritchie25@ethereal.email",
-        pass: "rekAcgurrJETAGsy7M",
+        user: "joanny.deckow87@ethereal.email",
+        pass: "cJ4rdC4h31DqC6VKqf",
       },
     });
 
     const mailoptions = {
-      from: "okey54@ethereal.email",
+      from: "joanny.deckow87@ethereal.email",
       to: email,
       subject: "Test Email",
       // text: "i am sabari",
