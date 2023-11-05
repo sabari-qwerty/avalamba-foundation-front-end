@@ -7,19 +7,20 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const { amount, marchantUserId, merchantTransactionId } = req.body;
+    // const { amount, marchantUserId, merchantTransactionId } = req.body;
+    const { amount, marchantUserId, merchantTransactionId, phone } = req.body;
 
     const payload = {
       merchantId: "PGTESTPAYUAT",
       merchantTransactionId: merchantTransactionId,
       merchantUserId: marchantUserId,
-      amount: amount,
+      amount: Number(amount) * 100,
       redirectUrl:
-        "https://e093-2405-201-e021-18c9-9d8c-35e7-e312-27c1.ngrok-free.app/",
+        "https://2c60-2405-201-e039-d00f-6ce1-97e-5ee4-e0a3.ngrok-free.app/#About-Us",
       redirectMode: "REDIRECT",
       callbackUrl:
-        "https://31c7-2405-201-e021-18c9-eaa7-964-ee35-ee5e.ngrok-free.app/api/phonepe/callback",
-      mobileNumber: "6373836008",
+        "https://2c60-2405-201-e039-d00f-6ce1-97e-5ee4-e0a3.ngrok-free.app/api/phonepe/callback",
+      mobileNumber: phone,
       paymentInstrument: {
         type: "PAY_PAGE",
       },
@@ -46,6 +47,8 @@ export default async function handler(
 
     const response = await axios.post(url, data, { headers });
 
-    res.status(200).send({ data: response.data.data });
+    return res.status(200).send({ data: response.data });
+
+    // return res.status(200).send({ data: "ok" });
   }
 }

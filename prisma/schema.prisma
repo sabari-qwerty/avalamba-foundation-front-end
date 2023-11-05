@@ -4,8 +4,8 @@
 datasource db {
   provider = "postgresql"
   url      = env("NEXT_PUBLIC_DATABASE_URL")
-  // directUrl         = env("NEXT_PUBLIC_DIRECT_URL")
-  // shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  directUrl         = env("NEXT_PUBLIC_DIRECT_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 //  old
@@ -92,3 +92,23 @@ model DonationDetails {
 //   cardType              String
 //   pgtra
 // }
+
+model PaymnetStatus {
+  id                    String @id @unique @default(uuid())
+  code                  String
+  message               String
+  merchantId            String
+  merchantTransactionId String @unique
+  transactionId         String @unique
+  amount                Int
+  state                 String
+  responseCode          String
+  type                  String
+  cardType              String
+  pgTransactionId       String
+  bankTransactionId     String
+  pgAuthorizationCode   String
+  arn                   String
+  bankId                String
+  brn                   String
+}

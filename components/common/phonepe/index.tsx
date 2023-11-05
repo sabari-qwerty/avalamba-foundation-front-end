@@ -1,6 +1,6 @@
 import { Layout } from "@/components/Layout";
 import axios from "axios";
-import { FC, FormEvent, useState } from "react";
+import { FC, FormEvent, useEffect, useState } from "react";
 import { Section } from "../Section/Section";
 import { H1 } from "../Heading/H1";
 import { H2 } from "../Heading/H2";
@@ -61,7 +61,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
 
   const [catgery, setCatgery] = useState("The Temple");
 
-  const [amount, setAmount] = useState<number | any>(10);
+  const [amount, setAmount] = useState<number | any>();
   const [active, setActive] = useState(0);
   const [_option, setOption] = useState(0);
   const [name, setName] = useState("test_name");
@@ -75,15 +75,21 @@ export const PhonePe: FC<prop> = ({ value }) => {
   const [State, setState] = useState("test state");
   const [country, setCountry] = useState("test country");
 
+  const [merchantTransactionId, setMerchantTransactionId] = useState("");
+
+  const [marchantUserId, setMarchantUserId] = useState("");
+
   const name_ = SubDonationCatgery[catgery];
   const sub_donation_catgery = name_[_option];
 
   // create merchat Transaction id
-  const merchantTransactionId =
-    "MTID" + crypto.randomUUID().split("-").join("");
+  // const merchantTransactionId =
+  //   "MTID" + crypto.randomUUID().split("-").join("");
 
   // create marchant user id
-  const marchantUserId = "MUID" + crypto.randomUUID().split("-").join("");
+  // const marchantUserId = "MUID" + crypto.randomUUID().split("-").join("");
+
+  const redireactWindwow = (url: string) => window.location.replace(url);
 
   const handleCreateDb = async () => {
     const data = {
@@ -103,8 +109,25 @@ export const PhonePe: FC<prop> = ({ value }) => {
       marchantUserId,
       merchantTransactionId,
     };
-    await axios.post("/api/createdb", data);
+    const res = await axios.post("/api/createdb", data);
+
+    await redireactWindwow(
+      res.data.data?.data?.instrumentResponse?.redirectInfo?.url
+    );
   };
+
+  const genrateid = () => {
+    const userID = "MUID" + crypto.randomUUID().split("-").join("");
+    setMarchantUserId(userID);
+
+    const transactionID = "MTID" + crypto.randomUUID().split("-").join("");
+    setMerchantTransactionId(transactionID);
+  };
+
+  useEffect(() => {
+    genrateid();
+    return () => undefined;
+  }, [amount]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();

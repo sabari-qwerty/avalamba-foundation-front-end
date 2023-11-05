@@ -28,7 +28,25 @@ export default async function handler(
         merchantTransactionId,
       } = req.body;
 
-      await prisma.donationDetails.create({
+      // console.log({
+      //   name,
+      //   email,
+      //   phone,
+      //   pan_number,
+      //   primary_category,
+      //   sub_category,
+      //   amount,
+      //   message,
+      //   address,
+      //   pin_number,
+      //   state,
+      //   country,
+      //   city,
+      //   marchantUserId,
+      //   merchantTransactionId,
+      // });
+
+      const create_data = await prisma.donationDetails.create({
         data: {
           name,
           email,
@@ -36,29 +54,38 @@ export default async function handler(
           pan_number,
           primary_category,
           sub_category,
-          amount,
+          amount: Number(amount),
           message,
           address,
           pin_number,
           state,
           country,
           city,
-          marchantUserId,
-          merchantTransactionId,
+          marchantUserId: marchantUserId,
+          merchantTransactionId: merchantTransactionId,
         },
       });
 
-      const data = await axios.post("/api/phonepe", {
-        marchantUserId,
-        merchantTransactionId,
-        amount,
-      });
 
-      console.log(data);
+      var return_data;
+      try {
+        return_data = await axios.post("http://127.0.0.1:3000/api/phonepe", {
+          marchantUserId,
+          merchantTransactionId,
+          amount: amount,
+          phone,
+        });
+      } catch (error) {
+        console.log(error);
+      }
 
-      res.status(200).send({ data });
+      console.log("here");
+
+      return res.status(200).send({ data: return_data?.data?.data });
     }
   } catch (error) {
+    console.log(error);
+
     res.status(500).send({ status: "error", message: error });
   }
 }
