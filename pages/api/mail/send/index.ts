@@ -134,7 +134,7 @@ export default async function handler(
             </div>
             <div class="nav-secound-div">
                 <div>INVOICE</div>
-                <div>${merchantTransactionId}</div>
+                <div>#${String(merchantTransactionId).slice(-16)}</div>
             </div>
         </header>
 
