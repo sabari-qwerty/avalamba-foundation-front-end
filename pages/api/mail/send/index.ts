@@ -9,6 +9,7 @@ export default async function handler(
   if (req.method == "POST") {
     const { merchantTransactionId, amount, email, catgery } = req.body;
 
+    console.log("init");
     const transporter = createTransport({
       host: "smtp.ethereal.email",
       port: 587,
@@ -209,12 +210,15 @@ export default async function handler(
       `,
     };
 
+    console.log("process");
     transporter.sendMail(mailoptions, (error, info) => {
       if (error) {
         return console.log("Error:", error);
       }
       console.log("Email sent:", info.response);
     });
+
+    console.log("done");
 
     return res.status(200).json({
       conagratelate: "email is sended",
