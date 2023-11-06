@@ -212,15 +212,21 @@ export default async function handler(
     console.log("process");
 
     try {
-      transporter.sendMail(mailoptions, (error, info) => {
-        console.log("i am sending");
+      const info = await new Promise((resolve, reject) => {
+        transporter.sendMail(mailoptions, (error, info) => {
+          console.log("i am sending");
 
-        if (error) {
-          return console.log("Error:", error);
-        }
-        console.log("Email sent:", info.response);
+          if (error) {
+            reject(error);
+            return console.log("Error:", error);
+          }
+          console.log("Email sent:", info.response);
+
+          resolve(info);
+        });
       });
     } catch (err) {
+      console.log("sending failed======>");
       console.log(err);
     }
 
