@@ -7,6 +7,9 @@ import { H2 } from "../Heading/H2";
 import { DropDown } from "@/components/DropDown";
 import { InputTag } from "../InputTag/InputTag";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { couldStartTrivia } from "typescript";
+import Link from "next/link";
 
 interface prop {
   value?: string;
@@ -50,13 +53,40 @@ export const PhonePe: FC<prop> = ({ value }) => {
 
   const CurrencyType = ["INR", "USD"];
 
+  // const DonationCatgery = [
+  //   "The Temple",
+  //   "Vedic Traditions",
+  //   "Performing Arts",
+  //   "Research & Documentation",
+  //   "Gauraksha",
+  //   "Other Activtites",
+  // ];
+
   const DonationCatgery = [
-    "The Temple",
-    "Vedic Traditions",
-    "Performing Arts",
-    "Research & Documentation",
-    "Gauraksha",
-    "Other Activtites",
+    {
+      dir: "/donation/temple",
+      name: "The Temple",
+    },
+    {
+      dir: "/donation/vedic-traditions",
+      name: "Vedic Traditions",
+    },
+    {
+      dir: "/donation/performing-arts",
+      name: "Performing Arts",
+    },
+    {
+      dir: "/donation/research-documentation",
+      name: "Research & Documentation",
+    },
+    {
+      dir: "/donation/gauraksha",
+      name: "Gauraksha",
+    },
+    {
+      dir: "/donation/other",
+      name: "Other Activtites",
+    },
   ];
 
   const [catgery, setCatgery] = useState("The Temple");
@@ -81,6 +111,20 @@ export const PhonePe: FC<prop> = ({ value }) => {
 
   const name_ = SubDonationCatgery[catgery];
   const sub_donation_catgery = name_[_option];
+
+  const pathName = usePathname();
+
+  useEffect(() => {
+    const data = pathName;
+
+    if (data) {
+      const catgery = data.split("/").splice(-1);
+      const seleted_catgery = Object.keys(SubDonationCatgery).filter((data) =>
+        data.toLocaleLowerCase().includes(catgery[0].split("-")[0])
+      );
+      setCatgery(seleted_catgery[0]);
+    }
+  });
 
   // create merchat Transaction id
   // const merchantTransactionId =
@@ -127,6 +171,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
 
   useEffect(() => {
     genrateid();
+
     return () => undefined;
   }, [amount]);
 
@@ -145,24 +190,27 @@ export const PhonePe: FC<prop> = ({ value }) => {
           {/* <div className="bg-[#A15236] py-6 rounded-2xl w-[90%] overflow-auto "> */}
           <div className="w-full flex lg:justify-between  xms:justify-start flex-nowrap xsm:px-2 lg:px-0 xsm:space-x-16 lg:space-x-0 lg:space-y-0 overflow-auto">
             {/* <div className="pl-2 flex text-white justify-between "> */}
-            {DonationCatgery.map((_data: string, key: number) => (
-              <span
-                className={`text-lg     hover:bg-white py-2 px-4 rounded-lg duration-200 hover:text-[#A15236] font-medium min-w-max ${
-                  catgery == _data ? "bg-white text-[#A15236]" : ""
-                }`}
-                key={key}
-                onClick={() => setCatgery(_data)}
-                // onClick={() => {
+            {DonationCatgery.map(
+              (data: { dir: string; name: string }, key: number) => (
+                <Link
+                  href={data.dir}
+                  className={`text-lg     hover:bg-white py-2 px-4 rounded-lg duration-200 hover:text-[#A15236] font-medium min-w-max ${
+                    catgery == data.name ? "bg-white text-[#A15236]" : ""
+                  }`}
+                  key={key}
+                  onClick={() => setCatgery(data.name)}
+                  // onClick={() => {
 
-                //   console.log(_data);
-                // }}
-              >
-                {_data}
-              </span>
-            ))}
+                  //   console.log(_data);
+                  // }}
+                >
+                  {data.name}
+                </Link>
+              )
+            )}
           </div>
         </div>
-        <div className="w-[90%] sticky top-[80px] bg-white h-full pt-16 pb- border-b border-[#EDEFF1] pb-8 z-50">
+        <div className="w-[90%] sticky top-[60px] bg-white h-full pt-16 pb- border-b border-[#EDEFF1] pb-8 z-50">
           <H2
             text={catgery}
             className="xsm:text-center lg:text-start w-full lg:text-3xl  lg:font-bold"

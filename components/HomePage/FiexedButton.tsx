@@ -8,7 +8,7 @@ interface FiexedButton {
 
 export const FiexedButton: FC<FiexedButton> = ({ text, className }) => {
   return (
-    <Link href="/project-page">
+    <Link href="/donation/temple">
       <button
         className={` xsm:hidden md:flex   items-center xsm:h-[50px]  justify-center  fixed bottom-[1rem] right-[2rem] rounded-full  z-10 max-w-[350px] bg-[#FFFFFF] text-[#A15236] xsm:min-w-[230px] lg:min-w-[250px] shadow-lg xsm:text-base md:text-lg  2xl:text-2xl xsm:py-2 lg:py-4 2xl:py-8  ${className} `}
       >
