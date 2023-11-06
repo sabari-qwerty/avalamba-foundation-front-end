@@ -211,6 +211,8 @@ export default async function handler(
 
     console.log("process");
     transporter.sendMail(mailoptions, (error, info) => {
+      console.log("i am sending");
+
       if (error) {
         return console.log("Error:", error);
       }
