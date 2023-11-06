@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { createTransport } from "nodemailer";
-import { emit } from "process";
 
 export default async function handler(
   req: NextApiRequest,
@@ -14,13 +13,13 @@ export default async function handler(
       host: "smtp.ethereal.email",
       port: 587,
       auth: {
-        user: "evangeline54@ethereal.email",
-        pass: "GKtnvWA1bBjMHN6kAT",
+        user: "carissa.kirlin@ethereal.email",
+        pass: "8XC3YRnqgGXDnPBju7",
       },
     });
 
     const mailoptions = {
-      from: "evangeline54@ethereal.email",
+      from: "carissa.kirlin@ethereal.email",
       to: email,
       subject: "Test Email",
       // text: "i am sabari",
