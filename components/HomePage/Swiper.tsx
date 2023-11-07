@@ -18,38 +18,25 @@ const SliderImage = [
     src: "/HeroPage/new/new/1.jpg",
   },
   {
-    src: "/HeroPage/new/new/2.jpg",
+    src: "/HeroPage/new/new/6.jpg",
   },
+
   {
-    src: "/HeroPage/new/new/3.jpg",
+    src: "/HeroPage/new/new/7.jpg",
   },
   {
     src: "/HeroPage/new/new/4.jpg",
   },
   {
-    src: "/HeroPage/new/new/5.jpg",
-  },
-  {
-    src: "/HeroPage/new/new/6.jpg",
-  },
-  {
-    src: "/HeroPage/new/new/7.jpg",
+    src: "/HeroPage/new/new/3.jpg",
   },
 ];
 
 const SliderMobile = [
   {
-    src: "/HeroPage/new/new/mobile/1.jpg",
+    src: "/HeroPage/new/new/mobile/7.jpg",
   },
-  {
-    src: "/HeroPage/new/new/mobile/2.jpg",
-  },
-  {
-    src: "/HeroPage/new/new/mobile/3.jpg",
-  },
-  {
-    src: "/HeroPage/new/new/mobile/4.jpg",
-  },
+
   {
     src: "/HeroPage/new/new/mobile/5.jpg",
   },
@@ -57,7 +44,10 @@ const SliderMobile = [
     src: "/HeroPage/new/new/mobile/6.jpg",
   },
   {
-    src: "/HeroPage/new/new/mobile/7.jpg",
+    src: "/HeroPage/new/new/mobile/3.jpg",
+  },
+  {
+    src: "/HeroPage/new/new/mobile/2.jpg",
   },
 ];
 

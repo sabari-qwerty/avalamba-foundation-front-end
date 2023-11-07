@@ -136,6 +136,12 @@ export default async function handler(
             amount: find_email.amount,
             email: find_email.email,
             catgery: find_email.sub_category,
+            name: find_email.name,
+            phone: find_email.phone,
+            address: find_email.address,
+            city: find_email.city,
+            state: find_email.state,
+            zip: find_email.pin_number,
           }
         );
       }

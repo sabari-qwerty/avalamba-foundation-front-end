@@ -36,15 +36,15 @@ export const Layout: FC<Layout> = ({ children }) => {
       <Footer bool={bool} />
 
       {/* <Script src="https://www.googletagmanager.com/gtag/js?id=G-GDXDVKJPQX" />
-        <Script id="google-analytics">
-          {`
+      <Script id="google-analytics">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
           gtag('config', 'G-GDXDVKJPQX');
         `}
-        </Script> */}
+      </Script> */}
     </div>
   );
 };

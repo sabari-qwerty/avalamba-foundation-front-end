@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface FiexedButton {
   text?: string;
@@ -31,6 +32,10 @@ export const FiexedButton: FC<FiexedButton> = ({ text, className }) => {
             />
           </svg>
         </span>
+      </button>
+
+      <button className="{` xsm:flex md:hidden   items-center xsm:h-[50px]  justify-center  fixed bottom-[1rem] right-[2rem] rounded-full  z-10    shadow-2xl   2xl:text-2xl xsm:py-2 lg:py-4 2xl:py-8">
+        <Image src="/donation.svg" alt="donation icon" width={50} height={50} />
       </button>
     </Link>
   );

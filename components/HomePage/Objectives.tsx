@@ -52,8 +52,7 @@ export const Objectives: FC = () => {
         <H2 text="Objectives" className="lg:text-4xl  lg:font-bold" />
         <div className="flex flex-wrap gap-4 w-full justify-center   ">
           {ObjectivesData.map((data, k) => (
-            <Link
-              href={data.href}
+            <div
               key={k}
               className="lg:w-[30%] xsm:w-[90%] lg:h-[400px]  2xl:h-[700px]  overflow-hidden  relative bg-black group transition-all duration-100 ease-in-out "
             >
@@ -76,7 +75,7 @@ export const Objectives: FC = () => {
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

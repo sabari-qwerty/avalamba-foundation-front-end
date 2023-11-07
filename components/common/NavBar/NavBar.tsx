@@ -21,10 +21,10 @@ const NavData = [
     name: "Team",
     dir: "/team",
   },
-  {
-    name: " Blogs & Articles ",
-    dir: "/article",
-  },
+  // {
+  //   name: " Blogs & Articles ",
+  //   dir: "/article",
+  // },
   {
     name: "Get Involved",
     dir: "/get-involved",
@@ -98,7 +98,7 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
                 />
               </Link>
             </div>
-            <div className="w-full flex justify-end p ">
+            <div className="w-full flex justify-end ">
               <div
                 className={`menu-btn-1 ${bool ? "active" : ""}`}
                 onClick={setBool}
@@ -108,7 +108,7 @@ export const NavBar: FC<NavBar> = ({ bool, setBool }) => {
             </div>
           </div>
           <div
-            className={`h-full flex justify-end space-y-8   pb-10 flex-col text-3xl ${
+            className={`h-full flex justify-center space-y-8   pb-10 flex-col text-3xl ${
               !bool && "hidden"
             }`}
           >

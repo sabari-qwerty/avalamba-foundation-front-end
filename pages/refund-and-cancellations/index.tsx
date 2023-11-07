@@ -15,7 +15,7 @@ const Index = () => {
         <section className="pt-[60px] pb-[60px]">
           <div className="flex flex-col  ">
             <H1
-              text="Avalamba Foundation Refund and Cancellation Policy"
+              text=" Refund and Cancellation Policy"
               className="lg:text-4xl  lg:font-bold"
             />
           </div>
@@ -25,7 +25,7 @@ const Index = () => {
           <h2 className="font-bold  text-xl ">
             Refund and Cancellation Policy
           </h2>
-          <ul className="list-disc flex flex-col space-y-3 px-5 ">
+          <ul className="list-disc text-lg flex flex-col space-y-3 px-5 ">
             {Refund_and_cacellation.map((data, key) => (
               <li key={key}>{data}</li>
             ))}

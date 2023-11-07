@@ -22,10 +22,10 @@ const NavData = [
   //     name: "Blog",
   //     dir: "/#Blog"
   // },
-  {
-    name: "Blog & Article",
-    dir: "/article",
-  },
+  // {
+  //   name: "Blog & Article",
+  //   dir: "/article",
+  // },
   {
     name: "Get Involved",
     dir: "/get-involved",

@@ -18,7 +18,7 @@ const TeamData = [
   {
     name: "Venkatesh TS",
     src: "/Abouts/2.png",
-    text: "Venkatesh, dearly called as “Tinku”, a student of IIM Lucknow Is a Human Resources Organisational Development & Change Management professional. He is a Strategy Consultant for an IT Startup. He actively renovated few temples and restored the festive rituals to keep their communities around the temple to engage with their own local culture. He is deeply Religious, an Indian History enthusiast who anchored several photo walk & heritage walks. He is also a learner of Veda and Vedanta. Keen in propagating Vedic philosophy of Sri Vedanta Desika in Sanskrit & Tamil. He is also a part time writer in online news media.",
+    text: "Venkatesh is a proud alumnus of IIM Lucknow & Anna university. He is a full time professional in the domain of Organisational Development & Change Management. He is also a Strategy Consultant for an IT Start up. He is someone who deeply values bharatiya culture and its ritualistic practices. As a history enthusiast, he has anchored several photo walk & heritage walks. He keenly propagates Vedic philosophy of Sri Vedanta Desika in Sanskrit & Tamil.",
     twitter: "https://twitter.com/tweets_tinku",
   },
   {
@@ -31,7 +31,8 @@ const TeamData = [
     name: "Aravindh Parthasarathy",
     src: "/Abouts/4.png",
     text: "Aravindh is a finance and taxation professional in a multinational conglomerate. He is a recipient of several awards by many NGOs He also received the Rashtrapathi award from the Ex-President Dr. Pratibha Patil, for his outstanding work towards social welfare. Since childhood, he has been active in reviving temples and protecting cows. He is a vendantin & a veena player.",
-    twitter: "",
+    twitter:
+      "https://twitter.com/Aravindh_partha?t=Z4LT4pGcUFHMk8UiPyLIDQ&s=08",
   },
 ];
 

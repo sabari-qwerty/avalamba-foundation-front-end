@@ -13,7 +13,7 @@ function index() {
           Coming Soon
         </h1>
         <Link
-          href={"/project-page"}
+          href={"/donation/temple"}
           className="bg-[#A15236]  space-x-4 h-16 text-white flex justify-center align-middle items-center px-8 rounded-full"
         >
           <div className="xms:text-base 2xl:text-xl font-bold">

@@ -81,7 +81,7 @@ export default async function handler(
         console.log(error);
       }
 
-      console.log("here");
+
 
       return res.status(200).send({ data: return_data?.data?.data });
     }

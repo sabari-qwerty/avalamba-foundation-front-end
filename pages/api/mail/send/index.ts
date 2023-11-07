@@ -6,20 +6,38 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method == "POST") {
-    const { merchantTransactionId, amount, email, catgery } = req.body;
+    const init_date = new Date();
+
+    const fromat_date =
+      init_date.getDate() +
+      "-" +
+      (init_date.getMonth() + 1) +
+      "-" +
+      init_date.getFullYear();
+
+    const {
+      merchantTransactionId,
+      amount,
+      email,
+      catgery,
+      name,
+      address,
+      zip,
+      phone,
+    } = req.body;
 
     console.log("init");
     const transporter = createTransport({
       host: "smtp.ethereal.email",
       port: 587,
       auth: {
-        user: "morris.sawayn47@ethereal.email",
-        pass: "gAsb7EqYB2qtQ3PGxk",
+        user: "gerald.schneider67@ethereal.email",
+        pass: "CkCU16uZwQuWCrK4AH",
       },
     });
 
     const mailoptions = {
-      from: "morris.sawayn47@ethereal.email",
+      from: "gerald.schneider67@ethereal.email",
       to: email,
       subject: "Test Email",
       // text: "i am sabari",
@@ -33,79 +51,8 @@ export default async function handler(
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
-            color: black;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            padding: 30px 0;
-            margin: 0;
-        }
-
-        header,
-        .address,
-        table {
-            width: 100% !important;
-            margin: auto;
-            max-width: 600px !important;
-            min-width: 400px !important;
-        }
-
-        footer {
-            width: 100% !important;
-            max-width: 700px !important;
-            min-width: 320px !important;
-            margin: auto;
-        }
-
-        header {
-            padding: 20px 10px;
-            text-align: center;
-        }
-
-        header img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .nav-secound-div {
-            text-align: right;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -0.92;
-        }
-
-
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            border: none;
-        }
-
-        th,
-        td {
-            border: 1px solid #A15236;
-            padding: 15px;
-            text-align: center;
-        }
-
-        th {
-            background: #A15236;
-            color: #fff;
-        }
-
-        tfoot td:last-child,
-        tfoot td:nth-child(2) {
-            background: #A15236;
-            color: #fff;
-        }
-
         footer {
             background-color: #FBF4EF;
-            margin-top: 40px;
             padding: 20px 0;
             text-align: center;
         }
@@ -114,81 +61,142 @@ export default async function handler(
             max-width: 50px;
             height: auto;
         }
-
-        .perimaer-gap {
-            padding: 30px 0;
-        }
     </style>
 </head>
 
 <body>
-
     <div
         style="max-width:700px !important ; border: 1px solid rgba(0, 0, 0, 0.281); margin: auto; background-color: #fff;">
 
-        <header class="perimaer-gap">
-            <div style="float: left; min-width: 200px; height: 59px; ">
+        <div style="width: 100%; padding-top: 50px; padding-bottom:20px ; ">
+            <center>
+                <img src="https://avalambafoundation.com/mail/full.png" alt="avalamba foundation " />
+            </center>
+        </div>
 
-                <img src='https://avalambafoundation.com/mail/full.png' alt="full-logo"
-                    style="width: 100%; height: 100%;" />
-            </div>
-            <div class="nav-secound-div">
-                <div>INVOICE</div>
-                <div>#${String(merchantTransactionId).slice(-16)}</div>
-            </div>
-        </header>
+        <div style="width: 100%; text-align: center;">
+            <h3>
+                <u>
+                    Donation Receipt
+                </u>
+            </h3>
+        </div>
 
-        <div class="perimaer-gap address" style="font-style: normal;">
-            <div>Bill To</div>
-            <div>
-                <h2>Avalamba Foundation</h2>
-                <div>
-                    19/8, 2nd Floor, Suriyaram Apartments,<br>
-                    Justice Sundharam Road,<br> Mylapore - 600004
+        <div style="width: 100%; padding: 20px;">
+
+            <div style="padding: 12px;">
+                <span>
+                    <b>
+                        Date
+                    </b>
+                </span>: <span>${fromat_date}</span>
+            </div>
+
+            <div style="padding: 12px;">
+                <span>
+                    <b>
+
+                        Receipt Number
+                    </b>
+                </span> : <span>
+                    #${merchantTransactionId}
+                </span>
+            </div>
+
+            <div style="padding: 12px;">
+                <span>
+                    <b>
+
+                        Donation made towards
+                    </b>
+                </span>:
+                <span>${catgery}</span>
+            </div>
+            <div style="padding: 12px;">
+                <span>
+                    <b>
+
+                        Full Name
+                    </b>
+                </span>:
+                <span>
+                    ${name}
+                </span>
+            </div>
+
+            <div style="padding: 12px;">
+                <span>
+                    <b>
+
+                        Address
+                    </b>
+                </span>: <address style="display: inline-block;">
+                ${address}
+                </address>
+            </div>
+            <div style="padding: 12px;">
+                <span>
+                    <b>
+                        Pin Code
+                    </b>
+                </span>: <span>
+                    ${zip}
+                </span>
+            </div>
+            <div style="padding: 12px;">
+                <span>
+                    <b>
+
+                        Phone Number
+                    </b>
+                </span>:
+                <span>6383736009</span>
+            </div>
+            <div style="padding: 12px;">
+                <span>
+                    <b>
+
+                        PAN
+                    </b>
+                </span>:
+                <span>${phone}</span>
+            </div>
+            <div style="padding: 12px;">
+                <span>
+                    <b>
+                        Email
+                    </b>
+                </span>:
+                <span>${email}</span>
+            </div>
+            <div style="padding: 12px;">
+                <span>
+                    <b>
+                        Donation Amount
+                    </b>
+                </span>:
+                <span>
+                    ${amount}
+                </span>
+            </div>
+
+            <div style="  padding-left: 12px; text-align: end; padding-right:50px ;">
+                For Avalamba Foundation
+            </div>
+
+
+            <div style="padding: 16px; padding-left:12px; ">
+                <div style="  padding-right: 50px; ">
+                    <div style="display: flex; justify-content: end; ">
+                        <img src="https://avalambafoundation.com/mail/signature.jpeg" alt="signature" />
+                    </div>
+                    <h4 style="text-align: end">Authorised Signatory</h4>
                 </div>
             </div>
+
         </div>
 
-        <div class="perimaer-gap">
-            <table style="border:none !important; outline: none !important;">
-                <thead style="border:none !important; outline: none !important;">
-                    <tr style="border:none !important; outline: none !important;">
-                        <th style="border:none !important; outline: none !important;">#</th>
-                        <th style="border:none !important; outline: none !important;">Name</th>
-                        <th style="border:none !important; outline: none !important;">Qty</th>
-                        <th style="border:none !important; outline: none !important;">Price(RS)</th>
-                    </tr>
-                </thead>
-                <tbody style="border:none !important; outline: none !important;">
-                    <tr style="border:none !important; outline: none !important;">
-                        <td style="border:none !important; outline: none !important;">1</td>
-                        <td style="border:none !important; outline: none !important;">${catgery}</td>
-                        <td style="border:none !important; outline: none !important;">1</td>
-                        <td style="border:none !important; outline: none !important;">${amount}</td>
-                    </tr>
-                </tbody>
-                <tfoot style="border: none !important; outline: none !important;">
-                    <tr style="border: none !important; outline: none !important;">
-                        <td colspan="2" style="border: none !important; border-top: 1px solid #A15236 !important;"></td>
-                        <td
-                            style="border: none !important; border-top: 1px solid #A15236 !important; background: #A15236 !important; color: #fff !important;">
-                            Sub
-                            Total</td>
-                        <td
-                            style="border: none !important; border-top: 1px solid #A15236 !important; background-color: #A15236 !important; color: #fff !important;">
-                            Rs. ${amount}
-
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-
-        <div style="width: 100%; display: flex; justify-content: end; ">
-            <img src="https://avalambafoundation.com/mail/signature.jpeg" alt="signature">
-        </div>
-
-        <footer style="margin-top: 50px;">
+        <footer>
             <div>
                 <div>
                     <img src='https://avalambafoundation.com/mail/off.png' alt="offlogo" />
@@ -201,11 +209,9 @@ export default async function handler(
             </div>
         </footer>
     </div>
-
 </body>
 
 </html>
-
       `,
     };
 

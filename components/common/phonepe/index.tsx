@@ -91,16 +91,16 @@ export const PhonePe: FC<prop> = ({ value }) => {
 
   const [catgery, setCatgery] = useState("The Temple");
 
-  const [amount, setAmount] = useState<number | any>();
+  const [amount, setAmount] = useState<number | any>(10);
   const [active, setActive] = useState(0);
   const [_option, setOption] = useState(0);
-  const [name, setName] = useState("test_name");
-  const [phone, setPhone] = useState("6393837310");
+  const [name, setName] = useState("test");
+  const [phone, setPhone] = useState("9090909090");
   const [email, setEmail] = useState("test@gmail.com");
   const [pan, setPan] = useState("ABCTY1234D");
-  const [message, setMessage] = useState("hello");
-  const [address, setAddress] = useState("fun address");
-  const [pin, setPin] = useState("641004");
+  const [message, setMessage] = useState("test message");
+  const [address, setAddress] = useState("test address");
+  const [pin, setPin] = useState("9090");
   const [city, setCity] = useState("test city");
   const [State, setState] = useState("test state");
   const [country, setCountry] = useState("test country");
@@ -112,19 +112,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
   const name_ = SubDonationCatgery[catgery];
   const sub_donation_catgery = name_[_option];
 
-  const pathName = usePathname();
-
-  useEffect(() => {
-    const data = pathName;
-
-    if (data) {
-      const catgery = data.split("/").splice(-1);
-      const seleted_catgery = Object.keys(SubDonationCatgery).filter((data) =>
-        data.toLocaleLowerCase().includes(catgery[0].split("-")[0])
-      );
-      setCatgery(seleted_catgery[0]);
-    }
-  });
+  // const pathName = usePathname();
 
   // create merchat Transaction id
   // const merchantTransactionId =
@@ -155,7 +143,9 @@ export const PhonePe: FC<prop> = ({ value }) => {
     };
     const res = await axios.post("/api/createdb", data);
 
-    // console.log(res.data.data?.data?.instrumentResponse?.redirectInfo?.url);
+    console.log(res);
+
+    console.log(res.data.data?.data?.instrumentResponse?.redirectInfo?.url);
     await redireactWindwow(
       res.data.data?.data?.instrumentResponse?.redirectInfo?.url
     );
@@ -336,7 +326,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
                     </label>
                     <textarea
                       name="Address"
-                      className="w-full min-h-[155px] border  rounded-md  border-[#DCE0E4]"
+                      className="w-full min-h-[155px] border  rounded-md  border-[#DCE0E4] indent-3"
                       maxLength={250}
                       onChange={(e) => setAddress(e.target.value)}
                       value={address}

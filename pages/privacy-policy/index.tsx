@@ -27,10 +27,7 @@ const index: FC = () => {
       <main className="w-4/5 mx-auto flex flex-col space-y-12 pt-8 ">
         <section className="pt-[60px] pb-[60px]">
           <div className="flex flex-col  ">
-            <H1
-              text="Avalamba Foundation Privacy Policy"
-              className="lg:text-4xl  lg:font-bold"
-            />
+            <H1 text=" Privacy Policy" className="lg:text-4xl  lg:font-bold" />
           </div>
         </section>
 
@@ -60,7 +57,7 @@ your personal information. "
 
         <div className="flex flex-col space-y-6">
           <h2 className="font-bold  text-xl ">Copyright</h2>
-          <ul className="list-disc flex flex-col space-y-3 px-5">
+          <ul className="list-disc flex flex-col space-y-3 px-5 text-lg">
             {copayright.map((data, key) => (
               <li key={key}>{data}</li>
             ))}

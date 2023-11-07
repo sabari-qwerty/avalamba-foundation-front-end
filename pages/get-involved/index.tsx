@@ -9,6 +9,8 @@ import {
   Pagination,
   SwiperOptions,
   Swiper as SwiperInstance,
+  Navigation,
+  Autoplay,
 } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-creative";
@@ -121,7 +123,7 @@ function Index() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="w-full h-[90%] bg-transparent absolute top-0"></div>
+          <div className="w-full h-fit bg-transparent absolute top-0"></div>
         </div>
         <div className="h-full  w-[70%]   justify-center items-center flex flex-col mx-auto relative   ">
           <Swiper
@@ -151,7 +153,7 @@ function Index() {
                   </div>
                   <Paragraph
                     text={data.text}
-                    className="font-blod text-md pt-6 leading-relaxed"
+                    className="font-blod text-lg pt-6 leading-relaxed"
                   />
                   {/* <p className=" font-blod text-xl">{data.text}</p> */}
                   <div className="w-full ">
@@ -243,13 +245,48 @@ function Index() {
           </div>
         </div>
       </section>
-      <section className="xsm:visible lg:hidden  py-0 w-full h-full flex justify-center items-center pt-28">
-        <Image
-          src="/GetInvolved/getin.svg"
-          alt="getinvalue"
-          width={320}
-          height={500}
-        />
+      <section className="xsm:visible lg:hidden  py-0 w-full h-full flex justify-center items-center ">
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          className=" w-full relative"
+        >
+          {data.map((data, key) => (
+            <SwiperSlide key={key} className="relative">
+              <Image
+                src={data.img}
+                alt="img text"
+                width={320}
+                height={320}
+                className="w-full h-full"
+              />
+              <div className="absolute w-full h-full bg-[#00000062] top-0">
+                <div className="w-full h-full flex justify-center flex-col  items-center  text-white">
+                  <H2
+                    text={data.head}
+                    className="font-blod lg:text-[40px] 2xl:text-4xl   text-center w-full"
+                  />
+                  <Paragraph
+                    text={data.text}
+                    className="font-blod text-lg pt-6 leading-relaxed text-center w-[90%]"
+                  />
+                  <div className=" py-5">
+                    <button
+                      className=" flex items-center xsm:h-[50px]  justify-center   rounded-full  z-10 max-w-[350px] bg-[#A15236] text-[#fff] xsm:min-w-[150px] lg:min-w-[150px] shadow-lg xsm:text-base md:text-lg  z xsm:py-  2xl:py-2"
+                      id="click-a-button"
+                    >
+                      Contact Us
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
       <Footer bool={true} />
       <div className="-z-51">
