@@ -48,17 +48,18 @@ export default async function handler(
 
       console.log("here", amount);
       const transporter = createTransport({
-        host: "smtp.ethereal.email",
-        port: 587,
+        host: "smtp.zoho.com",
+        secure: true,
+        port: 465,
         auth: {
-          user: "calista.ritchie25@ethereal.email",
-          pass: "rekAcgurrJETAGsy7M",
+          user: "noreply@avalambafoundation.com",
+          pass: "Avalamba2023&",
         },
       });
 
       const mailoptions = {
-        from: "sabariqwerty@zohomail.in",
-        to: email,
+        from: "noreply@avalambafoundation.com",
+        to: "sabarikrishnan000@gmail.com",
         subject: "text",
         // text: "i am sabari",
 
@@ -202,9 +203,7 @@ export default async function handler(
                         <td style="border:none !important; outline: none !important;">1</td>
                         <td style="border:none !important; outline: none !important;">${sub_catgery}</td>
                         <td style="border:none !important; outline: none !important;">1</td>
-                        <td style="border:none !important; outline: none !important;">${
-                          amount 
-                        }</td>
+                        <td style="border:none !important; outline: none !important;">${amount}</td>
                     </tr>
                 </tbody>
                 <tfoot style="border: none !important; outline: none !important;">

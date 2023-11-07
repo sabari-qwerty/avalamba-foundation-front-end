@@ -28,19 +28,20 @@ export default async function handler(
 
     console.log("init");
     const transporter = createTransport({
-      host: "smtp.ethereal.email",
+      host: "smtp.zoho.com",
+      secure: true,
       port: 587,
       auth: {
-        user: "gerald.schneider67@ethereal.email",
-        pass: "CkCU16uZwQuWCrK4AH",
+        user: "noreply@avalambafoundation.com",
+        pass: "Avalamba2023&",
       },
     });
 
     const mailoptions = {
-      from: "gerald.schneider67@ethereal.email",
-      to: email,
+      from: "noreply@avalambafoundation.com",
+      to: "sabarikrishnan000@gmail.com",
       subject: "Test Email",
-      // text: "i am sabari",
+      text: "i am sabari",
 
       html: `
       <!DOCTYPE html>
