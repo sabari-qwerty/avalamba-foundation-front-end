@@ -91,19 +91,19 @@ export const PhonePe: FC<prop> = ({ value }) => {
 
   const [catgery, setCatgery] = useState("The Temple");
 
-  const [amount, setAmount] = useState<number | any>(10);
+  const [amount, setAmount] = useState<number | any>();
   const [active, setActive] = useState(0);
   const [_option, setOption] = useState(0);
-  const [name, setName] = useState("test");
-  const [phone, setPhone] = useState("9090909090");
-  const [email, setEmail] = useState("test@gmail.com");
-  const [pan, setPan] = useState("ABCTY1234D");
-  const [message, setMessage] = useState("test message");
-  const [address, setAddress] = useState("test address");
-  const [pin, setPin] = useState("9090");
-  const [city, setCity] = useState("test city");
-  const [State, setState] = useState("test state");
-  const [country, setCountry] = useState("test country");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [pan, setPan] = useState("");
+  const [message, setMessage] = useState("");
+  const [address, setAddress] = useState("");
+  const [pin, setPin] = useState("");
+  const [city, setCity] = useState("");
+  const [State, setState] = useState("");
+  const [country, setCountry] = useState("");
 
   const [merchantTransactionId, setMerchantTransactionId] = useState("");
 
