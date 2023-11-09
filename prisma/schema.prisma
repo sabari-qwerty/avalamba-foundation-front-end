@@ -4,8 +4,8 @@
 datasource db {
   provider          = "postgresql"
   url               = env("NEXT_PUBLIC_DATABASE_URL")
-  // directUrl         = env("NEXT_PUBLIC_DIRECT_URL")
-  // shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  directUrl         = env("NEXT_PUBLIC_DIRECT_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 //  old
@@ -65,7 +65,7 @@ generator client {
 // }
 
 model DonationDetails {
-  id                    String @id @unique @default(uuid())
+  id                    String    @id @unique @default(uuid())
   name                  String
   email                 String
   phone                 String
@@ -79,8 +79,10 @@ model DonationDetails {
   state                 String
   country               String
   city                  String
-  marchantUserId        String @unique
-  merchantTransactionId String @unique
+  marchantUserId        String    @unique
+  merchantTransactionId String    @unique
+  createAt              DateTime? @default(now())
+  updateAt              DateTime? @updatedAt
 }
 
 // model PaymnetStatus {

@@ -1,50 +1,46 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { createTransport } from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method == "POST") {
-    const init_date = new Date();
+  try {
+    if (req.method === "POST") {
+      const init_date = new Date();
 
-    const fromat_date =
-      init_date.getDate() +
-      "-" +
-      (init_date.getMonth() + 1) +
-      "-" +
-      init_date.getFullYear();
+      const {
+        id,
+        merchantTransactionId,
+        amount,
+        email,
+        catgery,
+        name,
+        address,
+        zip,
+        phone,
+        pan,
+        create,
+      } = req.body;
 
-    const {
-      merchantTransactionId,
-      amount,
-      email,
-      catgery,
-      name,
-      address,
-      zip,
-      phone,
-    } = req.body;
+      console.log(create);
 
-    console.log("init");
-    const transporter = createTransport({
-      host: "smtp.zoho.com",
-      secure: true,
-      port: 587,
-      auth: {
-        user: "noreply@avalambafoundation.com",
-        pass: "Avalamba2023&",
-      },
-    });
+      const isoDate = new Date(create);
 
-    const mailoptions = {
-      from: "noreply@avalambafoundation.com",
-      to: "sabarikrishnan000@gmail.com",
-      subject: "Test Email",
-      text: "i am sabari",
+      const options = { year: "numeric", month: "numeric", day: "numeric" };
 
-      html: `
-      <!DOCTYPE html>
+      //   @ts-ignore
+      const fromat_date = isoDate.toLocaleDateString("en-in", options);
+
+      const data = await resend.emails.send({
+        from: "noreply@avalambafoundation.com",
+        to: [email],
+        subject: "Donation Receipt",
+
+        html: `
+        <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -66,8 +62,54 @@ export default async function handler(
 </head>
 
 <body>
+    <div style="max-width:700px !important; min-width: 320px  !important; margin: auto; ">
+        Namaskaram!<br />
+        <br />
+        Avalamba Foundation thanks you for your generous donation towards a dharmic cause. We extend our
+        heartfelt<br />
+        <br />
+
+        gratitude to you for this gesture.<br />
+        <br />
+
+        Please find the attached soft copy of the donation receipt.<br />
+        <br />
+
+        Kindly Note:<br />
+        <br />
+
+        1) The approval for exemption under 80G is under process and status will be updated soon.<br />
+        <br />
+
+        2) For refunds , cancellations and any other payment related queries , kindly contact us at<br />
+        <br />
+
+        contact@avalambafoundation.com or call us at +91 9566272778 within 7 days from date of payment.<br />
+        <br />
+
+        We look forward for your continued support.<br />
+        <br />
+        With Regards,<br />
+        <br />
+
+        Donor care team.<br />
+        <br />
+
+        Avalamba Foundation<br />
+        <br />
+
+        Chennai<br />
+        <br />
+        <br />
+
+        <a href="${process.env.NEXT_PUBLIC_PAGE_URL}/downlaodpdf?id=${id}">Download pdf here</a>
+        <br />
+        <br />
+    </div>
     <div
         style="max-width:700px !important ; border: 1px solid rgba(0, 0, 0, 0.281); margin: auto; background-color: #fff;">
+
+
 
         <div style="width: 100%; padding-top: 50px; padding-bottom:20px ; ">
             <center>
@@ -77,9 +119,7 @@ export default async function handler(
 
         <div style="width: 100%; text-align: center;">
             <h3>
-                <u>
-                    Donation Receipt
-                </u>
+                Donation Receipt
             </h3>
         </div>
 
@@ -132,7 +172,7 @@ export default async function handler(
                         Address
                     </b>
                 </span>: <address style="display: inline-block;">
-                ${address}
+                    ${address}
                 </address>
             </div>
             <div style="padding: 12px;">
@@ -151,7 +191,7 @@ export default async function handler(
                         Phone Number
                     </b>
                 </span>:
-                <span>6383736009</span>
+                <span>${phone}</span>
             </div>
             <div style="padding: 12px;">
                 <span>
@@ -160,7 +200,7 @@ export default async function handler(
                         PAN
                     </b>
                 </span>:
-                <span>${phone}</span>
+                <span>${pan}</span>
             </div>
             <div style="padding: 12px;">
                 <span>
@@ -180,67 +220,71 @@ export default async function handler(
                     ${amount}
                 </span>
             </div>
-
-            <div style="  padding-left: 12px; text-align: end; padding-right:50px ;">
-                For Avalamba Foundation
-            </div>
+            <br />
+            <br />
 
 
-            <div style="padding: 16px; padding-left:12px; ">
-                <div style="  padding-right: 50px; ">
-                    <div style="display: flex; justify-content: end; ">
-                        <img src="https://avalambafoundation.com/mail/signature.jpeg" alt="signature" />
-                    </div>
-                    <h4 style="text-align: end">Authorised Signatory</h4>
-                </div>
-            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-right: 35px;">
+                <tr>
+                    <td align="right">
+                        <h5>
+                            For Avalamba Foundation
+                        </h5>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td align="right">
+                        <img src="https://avalambafoundation.com/mail/signature.jpeg" alt="img" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        <h5>
+                            For Avalamba Foundation
+                        </h5>
+                    </td>
+                </tr>
+
+            </table>
         </div>
 
-        <footer>
-            <div>
-                <div>
-                    <img src='https://avalambafoundation.com/mail/off.png' alt="offlogo" />
-                </div>
-                <h3>Avalamba Foundation</h3>
-                <div style="font-style: normal;">
-                    19/8, 2nd Floor, Suriyaram Apartments,<br>
-                    Justice Sundharam Road, Mylapore.
-                </div>
+        <div class="footer" style="background-color: #FBF4EF; padding: 20px 0; text-align: center; ">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center" style="padding: 10px; ">
+                        <h3 style=" margin: 0;">Avalamba Foundation</h3>
+                    </td>
+                </tr>
+            </table>
+
+            <div style="font-style: normal; text-align: center; margin-top: 10px;">
+                Reg Address: 19/8, 2nd Floor, Suryaram<br />
+                Aartments, Justice Sundaram Road, Mylapore,<br />
+                Chennai 600004, Tamil Nadu, India,<br />
+                <a href="http://www.avalambafoundation.com"
+                    style="color: #000; text-decoration: none;">www.avalambafoundation.com</a><br />
+                <strong>Reg No:</strong>: 184/IV/2022<br />
+                PAN: AAJTA3643A
             </div>
-        </footer>
+        </div>
     </div>
 </body>
 
 </html>
-      `,
-    };
-
-    console.log("process");
-
-    try {
-      const info = await new Promise((resolve, reject) => {
-        transporter.sendMail(mailoptions, (error, info) => {
-          console.log("i am sending");
-
-          if (error) {
-            reject(error);
-            return console.log("Error:", error);
-          }
-          console.log("Email sent:", info.response);
-
-          resolve(info);
-        });
+        `,
       });
-    } catch (err) {
-      console.log("sending failed======>");
-      console.log(err);
+
+      console.log(data);
+
+      return res.status(200).json({
+        conagratelate: "email is sended",
+      });
     }
-
-    console.log("done");
-
-    return res.status(200).json({
-      conagratelate: "email is sended",
+  } catch (err) {
+    return res.status(400).json({
+      error: err,
     });
   }
 }

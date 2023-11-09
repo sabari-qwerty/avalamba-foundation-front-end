@@ -24,8 +24,6 @@ export default async function handler(
         state,
         country,
         city,
-        marchantUserId,
-        merchantTransactionId,
       } = req.body;
 
       // console.log({
@@ -46,6 +44,11 @@ export default async function handler(
       //   merchantTransactionId,
       // });
 
+      const marchantUserId = "MUID" + crypto.randomUUID().split("-").join("");
+      const merchantTransactionId =
+        "MTID" + crypto.randomUUID().split("-").join("");
+
+
       const create_data = await prisma.donationDetails.create({
         data: {
           name,
@@ -61,15 +64,15 @@ export default async function handler(
           state,
           country,
           city,
-          marchantUserId: marchantUserId,
-          merchantTransactionId: merchantTransactionId,
+          marchantUserId,
+          merchantTransactionId,
         },
       });
 
       var return_data;
       try {
         return_data = await axios.post(
-          "https://www.avalambafoundation.com/api/phonepe",
+          `${process.env.NEXT_PUBLIC_PAGE_URL}/api/phonepe`,
           {
             marchantUserId,
             merchantTransactionId,

@@ -7,8 +7,7 @@ import { H2 } from "../Heading/H2";
 import { DropDown } from "@/components/DropDown";
 import { InputTag } from "../InputTag/InputTag";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { couldStartTrivia } from "typescript";
+
 import Link from "next/link";
 
 interface prop {
@@ -94,20 +93,16 @@ export const PhonePe: FC<prop> = ({ value }) => {
   const [amount, setAmount] = useState<number | any>();
   const [active, setActive] = useState(0);
   const [_option, setOption] = useState(0);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [pan, setPan] = useState("");
-  const [message, setMessage] = useState("");
-  const [address, setAddress] = useState("");
-  const [pin, setPin] = useState("");
-  const [city, setCity] = useState("");
-  const [State, setState] = useState("");
-  const [country, setCountry] = useState("");
-
-  const [merchantTransactionId, setMerchantTransactionId] = useState("");
-
-  const [marchantUserId, setMarchantUserId] = useState("");
+  const [name, setName] = useState("sabari");
+  const [phone, setPhone] = useState("6383736008");
+  const [email, setEmail] = useState("sabarikrishnan000@gmail.com");
+  const [pan, setPan] = useState("ABCTY1234D");
+  const [message, setMessage] = useState("test message");
+  const [address, setAddress] = useState("test address");
+  const [pin, setPin] = useState("8283");
+  const [city, setCity] = useState("test city");
+  const [State, setState] = useState("test STATE");
+  const [country, setCountry] = useState("test  country");
 
   const name_ = SubDonationCatgery[catgery];
   const sub_donation_catgery = name_[_option];
@@ -138,8 +133,6 @@ export const PhonePe: FC<prop> = ({ value }) => {
       state: State,
       country,
       city,
-      marchantUserId,
-      merchantTransactionId,
     };
     const res = await axios.post("/api/createdb", data);
 
@@ -151,20 +144,6 @@ export const PhonePe: FC<prop> = ({ value }) => {
     );
   };
 
-  const genrateid = () => {
-    const userID = "MUID" + crypto.randomUUID().split("-").join("");
-    setMarchantUserId(userID);
-
-    const transactionID = "MTID" + crypto.randomUUID().split("-").join("");
-    setMerchantTransactionId(transactionID);
-  };
-
-  useEffect(() => {
-    genrateid();
-
-    return () => undefined;
-  }, [amount]);
-
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     handleCreateDb();
@@ -173,12 +152,12 @@ export const PhonePe: FC<prop> = ({ value }) => {
   return (
     <Layout>
       <Section className=" flex xsm:flex-col relative  ">
-        <div className="pb-[60px]">
+        <div className="pb-[60px] xsm:w-[90%] lg:w-full">
           <H1 text="Your Online Contributions Towards" />
         </div>
-        <div className="w-[90%]  justify-center bg-[#A15236] text-white  rounded-2xl  p-6">
+        <div className="w-[90%]  justify-center bg-[#A15236] text-white  rounded-2xl xsm:px-3 xsm:py-4 lg:p-6  ">
           {/* <div className="bg-[#A15236] py-6 rounded-2xl w-[90%] overflow-auto "> */}
-          <div className="w-full flex lg:justify-between  xms:justify-start flex-nowrap xsm:px-2 lg:px-0 xsm:space-x-16 lg:space-x-0 lg:space-y-0 overflow-auto">
+          <div className="w-full flex lg:justify-between  xms:justify-start flex-nowrap xsm:px-2 lg:px-0 xsm:space-x-3 lg:space-x-0 lg:space-y-0 overflow-auto scrollbar-hide">
             {/* <div className="pl-2 flex text-white justify-between "> */}
             {DonationCatgery.map(
               (data: { dir: string; name: string }, key: number) => (
@@ -209,7 +188,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
         {/* <div className="w-full h-[1px] bg-[#EDEFF1] "></div> */}
         <div className="w-[90%] pt-12">
           <span className="font-blod p">Choose Amount</span>
-          <div className="flex   lg:justify-between xsm:justify-start xsm:gap-4 lg:gap-0 pt-8 flex-wrap ">
+          <div className=" flex    lg:justify-between xsm:justify-start xsm:gap-4 lg:gap-0 pt-8 flex-wrap ">
             {CommonAmount.map((data: number, key: number) => (
               <span
                 onClick={() => {
@@ -217,7 +196,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
                   console.log(data);
                 }}
                 key={key}
-                className={` h-fit py-4 px-[50px]    rounded-lg bg-[#a152361a] font-bold  flex justify-center items-center  ${
+                className={` h-fit py-4 lg:px-[50px]  xsm:w-[45%] lg:w-fit   rounded-lg bg-[#a152361a] font-bold  flex justify-center items-center  ${
                   data == amount ? "border-2  border-[#A15236]" : ""
                 }`}
               >
@@ -229,7 +208,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
               type="number"
               placeholder="Other amount"
               className="
-            rounded-lg border-collapse border border-[#DCE0E4] py-4  text-base   
+            rounded-lg border-collapse border border-[#DCE0E4] py-4  text-base   xsm:w-[45%] lg:w-fit
             indent-5   "
               onChange={(e) => {
                 setAmount(e.target.value);
@@ -326,7 +305,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
                     </label>
                     <textarea
                       name="Address"
-                      className="w-full min-h-[155px] border  rounded-md  border-[#DCE0E4] indent-3"
+                      className="w-full min-h-[155px] border  rounded-md  border-[#DCE0E4] indent-3 pt-2"
                       maxLength={250}
                       onChange={(e) => setAddress(e.target.value)}
                       value={address}
@@ -362,7 +341,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
               <div className="w-full mx-auto pt-6 pb-12">
                 <div className="w-fit mx-auto ">
                   <button
-                    className="mx-auto w-full bg-[#A15236] px-28 py-4 rounded-full text-white text-xl flex space-x-2 "
+                    className="mx-auto w-full bg-[#A15236] lg:px-28 xsm:px-10 py-4 rounded-full text-white text-xl flex space-x-2 "
                     type="submit"
                   >
                     <span className="w">Donate Now</span>

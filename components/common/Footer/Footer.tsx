@@ -514,13 +514,15 @@ export const Footer: FC<Footer> = ({ bool }) => {
         </div>
         <div className="w-full h-[1px] bg-white"></div>
         <div className="w-full flex justify-between items-center text-md flex-col  xsm:space-y-4 lg:space-y-0 lg:flex-row">
-          <span className="flex lg:justify-start items-center space-x-3 xsm:w-full  ">
+          <span className="flex lg:justify-start items-center space-x-1 xsm:w-full xsm:justify-center  ">
             <div>
               <Image src={"/copyright.svg"} alt="" width={20} height={20} />
             </div>
             <div>Avalamba foundation All Rights Reserved.</div>
           </span>
-          <span className="w-full lg:text-end   ">Powered by GoZen</span>
+          <span className="w-full lg:text-end  xsm:text-center  ">
+            Powered by GoZen
+          </span>
         </div>
       </div>
     </footer>

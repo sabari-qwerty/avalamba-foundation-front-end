@@ -130,8 +130,9 @@ export default async function handler(
       if (find_email) {
         console.log(find_email.sub_category);
         const send_email = await axios.post(
-          "https://www.avalambafoundation.com/api/mail/send",
+          `${process.env.NEXT_PUBLIC_PAGE_URL}/api/mail/send`,
           {
+            id: find_email.id,
             merchantTransactionId: find_email.marchantUserId.slice(),
             amount: find_email.amount,
             email: find_email.email,
@@ -142,6 +143,8 @@ export default async function handler(
             city: find_email.city,
             state: find_email.state,
             zip: find_email.pin_number,
+            pan: find_email.pan_number,
+            create: find_email.createAt,
           }
         );
       }

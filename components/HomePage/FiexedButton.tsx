@@ -34,8 +34,14 @@ export const FiexedButton: FC<FiexedButton> = ({ text, className }) => {
         </span>
       </button>
 
-      <button className="{` xsm:flex md:hidden   items-center xsm:h-[50px]  justify-center  fixed bottom-[1rem] right-[2rem] rounded-full  z-10    shadow-2xl   2xl:text-2xl xsm:py-2 lg:py-4 2xl:py-8">
-        <Image src="/donation.svg" alt="donation icon" width={50} height={50} />
+      <button className="{` xsm:flex md:hidden   items-center xsm:h-[60px] xsm:w-[60px]  justify-center  fixed bottom-[2rem] right-[2rem] rounded-full  z-10    shadow-2xl   2xl:text-2xl xsm:py-2 lg:py-4 2xl:py-8">
+        <Image
+          src="/donation.svg"
+          alt="donation icon"
+          width={60}
+          height={60}
+          className="w-full"
+        />
       </button>
     </Link>
   );

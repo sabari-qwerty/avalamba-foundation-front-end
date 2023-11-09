@@ -148,12 +148,12 @@ function Index() {
                   <div className="w-full  ">
                     <H2
                       text={data.head}
-                      className="font-blod lg:text-[40px] 2xl:text-4xl   text-start w-full "
+                      className="lg:text-4xl   lg:font-bold  lg:text-left "
                     />
                   </div>
                   <Paragraph
                     text={data.text}
-                    className="font-blod text-lg pt-6 leading-relaxed"
+                    className="font-medium lg:text-lg xsm:text-lg  text-left pt-5 leading-[200px] "
                   />
                   {/* <p className=" font-blod text-xl">{data.text}</p> */}
                   <div className="w-full ">
