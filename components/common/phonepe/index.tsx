@@ -50,7 +50,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
 
   const CommonAmount = [200000, 100000, 50000, 10000, 5000];
 
-  const CurrencyType = ["INR", "USD"];
+  const CurrencyType = ["INR"];
 
   // const DonationCatgery = [
   //   "The Temple",
@@ -90,19 +90,19 @@ export const PhonePe: FC<prop> = ({ value }) => {
 
   const [catgery, setCatgery] = useState("The Temple");
 
-  const [amount, setAmount] = useState<number | any>(1);
+  const [amount, setAmount] = useState<number | any>(0);
   const [active, setActive] = useState(0);
   const [_option, setOption] = useState(0);
-  const [name, setName] = useState("sabari");
-  const [phone, setPhone] = useState("6383736008");
-  const [email, setEmail] = useState("sabariqwerty001@gmail.com");
-  const [pan, setPan] = useState("ABCTY1234D");
-  const [message, setMessage] = useState("test message");
-  const [address, setAddress] = useState("test address");
-  const [pin, setPin] = useState("9213");
-  const [city, setCity] = useState("test city");
-  const [State, setState] = useState("test state");
-  const [country, setCountry] = useState("test country");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [pan, setPan] = useState("");
+  const [message, setMessage] = useState("");
+  const [address, setAddress] = useState("");
+  const [pin, setPin] = useState("");
+  const [city, setCity] = useState("");
+  const [State, setState] = useState("");
+  const [country, setCountry] = useState("");
   const [disabled, setDisabled] = useState(false);
 
   const name_ = SubDonationCatgery[catgery];
@@ -355,6 +355,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
                     disabled={disabled}
                   >
                     <span className="w">Donate Now</span>
+
                     <div>
                       <Image
                         src="/right.svg"

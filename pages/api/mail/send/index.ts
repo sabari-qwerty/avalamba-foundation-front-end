@@ -217,7 +217,7 @@ export default async function handler(
                     </b>
                 </span>:
                 <span>
-                    ${amount}
+                    ₹ ${amount}
                 </span>
             </div>
             <br />
