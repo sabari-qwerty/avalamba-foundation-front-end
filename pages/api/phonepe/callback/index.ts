@@ -90,16 +90,16 @@ export default async function handler(
       if (json.data.paymentInstrument.type === "UPI") {
         const upi = await prisma.paymentUPI.create({
           data: {
-            code: json.code,
-            message: json.message,
-            merchantId: json.data.merchantId,
-            merchantTransactionId: json.data.merchantTransactionId,
+            code: String(json.code),
+            message: String(json.message),
+            merchantId: String(json.data.merchantId),
+            merchantTransactionId: String(json.data.merchantTransactionId),
             transactionId: json.data.transactionId,
             amount: json.data.amount / 100,
-            state: json.data.state,
-            responseCode: json.data.responseCode,
-            type: json.data.paymentInstrument.type,
-            utr: json.data.paymentInstrument.utr,
+            state: String(json.data.state),
+            responseCode: String(json.data.responseCode),
+            type: String(json.data.paymentInstrument.type),
+            utr: String(json.data.paymentInstrument.utr),
           },
         });
       }
@@ -107,15 +107,17 @@ export default async function handler(
       if (json.data.paymentInstrument.type === "CARD") {
         const card = await prisma.paymentCard.create({
           data: {
-            merchantId: json.data.merchantId,
-            merchantTransactionId: json.data.merchantTransactionId,
-            transactionId: json.data.transactionId,
+            merchantId: String(json.data.merchantId),
+            merchantTransactionId: String(json.data.merchantTransactionId),
+            transactionId: String(json.data.transactionId),
             amount: json.data.amount / 100,
             state: json.data.state,
-            responseCode: json.data.responseCode,
-            type: json.data.paymentInstrument.type,
-            cardType: json.data.paymentInstrument.cardType,
-            pgTransactionId: json.data.paymentInstrument.pgTransactionId,
+            responseCode: String(json.data.responseCode),
+            type: String(json.data.paymentInstrument.type),
+            cardType: String(json.data.paymentInstrument.cardType),
+            pgTransactionId: String(
+              json.data.paymentInstrument.pgTransactionId
+            ),
             bankTransactionId: String(
               json.data.paymentInstrument.bankTransactionId
             ),
@@ -134,16 +136,19 @@ export default async function handler(
       if (json.data.paymentInstrument.type === "NETBANKING") {
         const net = await prisma.netBanKing.create({
           data: {
-            merchantId: json.data.merchantId,
-            merchantTransactionId: json.data.merchantTransactionId,
-            transactionId: json.data.transactionId,
+            merchantId: String(json.data.merchantId),
+            merchantTransactionId: String(json.data.merchantTransactionId),
+            transactionId: String(json.data.transactionId),
             amount: json.data.amount / 100,
-            state: json.data.state,
-            responseCode: json.data.responseCode,
-            type: json.data.paymentInstrument.type,
-            pgTransactionId: json.data.paymentInstrument.pgTransactionId,
-            pgServiceTransactionId:
-              json.data.paymentInstrument.pgServiceTransactionId,
+            state: String(json.data.state),
+            responseCode: String(json.data.responseCode),
+            type: String(json.data.paymentInstrument.type),
+            pgTransactionId: String(
+              json.data.paymentInstrument.pgTransactionId
+            ),
+            pgServiceTransactionId: String(
+              json.data.paymentInstrument.pgServiceTransactionId
+            ),
             bankTransactionId: String(
               json.data.paymentInstrument.bankTransactionId
             ),
