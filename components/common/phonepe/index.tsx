@@ -93,16 +93,17 @@ export const PhonePe: FC<prop> = ({ value }) => {
   const [amount, setAmount] = useState<number | any>();
   const [active, setActive] = useState(0);
   const [_option, setOption] = useState(0);
-  const [name, setName] = useState("sabari");
-  const [phone, setPhone] = useState("6383736008");
-  const [email, setEmail] = useState("sabarikrishnan000@gmail.com");
-  const [pan, setPan] = useState("ABCTY1234D");
-  const [message, setMessage] = useState("test message");
-  const [address, setAddress] = useState("test address");
-  const [pin, setPin] = useState("8283");
-  const [city, setCity] = useState("test city");
-  const [State, setState] = useState("test STATE");
-  const [country, setCountry] = useState("test  country");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [pan, setPan] = useState("");
+  const [message, setMessage] = useState("");
+  const [address, setAddress] = useState("");
+  const [pin, setPin] = useState("");
+  const [city, setCity] = useState("");
+  const [State, setState] = useState("");
+  const [country, setCountry] = useState("");
+  const [disabled, setDisabled] = useState(false);
 
   const name_ = SubDonationCatgery[catgery];
   const sub_donation_catgery = name_[_option];
@@ -119,29 +120,35 @@ export const PhonePe: FC<prop> = ({ value }) => {
   const redireactWindwow = (url: string) => window.location.replace(url);
 
   const handleCreateDb = async () => {
-    const data = {
-      name,
-      email,
-      phone,
-      pan_number: pan,
-      primary_category: catgery,
-      sub_category: sub_donation_catgery,
-      amount,
-      message,
-      address,
-      pin_number: pin,
-      state: State,
-      country,
-      city,
-    };
-    const res = await axios.post("/api/createdb", data);
+    try {
+      setDisabled(true);
+      const data = {
+        name,
+        email,
+        phone,
+        pan_number: pan,
+        primary_category: catgery,
+        sub_category: sub_donation_catgery,
+        amount,
+        message,
+        address,
+        pin_number: pin,
+        state: State,
+        country,
+        city,
+      };
+      const res = await axios.post("/api/createdb", data);
 
-    console.log(res);
+      console.log(res);
 
-    console.log(res.data.data?.data?.instrumentResponse?.redirectInfo?.url);
-    await redireactWindwow(
-      res.data.data?.data?.instrumentResponse?.redirectInfo?.url
-    );
+      console.log(res.data.data?.data?.instrumentResponse?.redirectInfo?.url);
+      await redireactWindwow(
+        res.data.data?.data?.instrumentResponse?.redirectInfo?.url
+      );
+    } catch (err) {
+      setDisabled(false);
+      console.log(err);
+    }
   };
 
   const handleSubmit = (e: FormEvent) => {
@@ -211,7 +218,9 @@ export const PhonePe: FC<prop> = ({ value }) => {
             rounded-lg border-collapse border border-[#DCE0E4] py-4  text-base   xsm:w-[45%] lg:w-fit
             indent-5   "
               onChange={(e) => {
-                setAmount(e.target.value);
+                setAmount(
+                  Number(e.target.value) > 1 ? Number(e.target.value) : 1
+                );
               }}
               value={amount}
             />
@@ -343,6 +352,7 @@ export const PhonePe: FC<prop> = ({ value }) => {
                   <button
                     className="mx-auto w-full bg-[#A15236] lg:px-28 xsm:px-10 py-4 rounded-full text-white text-xl flex space-x-2 "
                     type="submit"
+                    disabled={disabled}
                   >
                     <span className="w">Donate Now</span>
                     <div>

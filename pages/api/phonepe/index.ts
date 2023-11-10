@@ -12,7 +12,7 @@ export default async function handler(
       const { amount, marchantUserId, merchantTransactionId, phone } = req.body;
 
       const payload = {
-        merchantId: "PGTESTPAYUAT",
+        merchantId: process.env.NEXT_PUBLIC_PHONEPE_Merchant_ID as string,
         merchantTransactionId: merchantTransactionId,
         merchantUserId: marchantUserId,
         amount: Number(amount) * 100,
@@ -29,10 +29,12 @@ export default async function handler(
 
       const sha256 =
         createHash("sha256")
-          .update(base64 + "/pg/v1/pay099eb0cd-02cf-4e2a-8aca-3e6c6aff0399")
-          .digest("hex") + "###1";
+          .update(
+            base64 + `/pg/v1/pay${process.env.NEXT_PUBLIC_PHONEPE_API_KEY}`
+          )
+          .digest("hex") + `###${process.env.NEXT_PUBLIC_PHONEPE_KEY_INDEX}`;
 
-      const url = "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay";
+      const url = "https://api.phonepe.com/apis/hermes/pg/v1/pay";
 
       const headers = {
         "Content-Type": "application/json",
