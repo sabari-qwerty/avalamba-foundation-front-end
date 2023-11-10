@@ -90,19 +90,19 @@ export const PhonePe: FC<prop> = ({ value }) => {
 
   const [catgery, setCatgery] = useState("The Temple");
 
-  const [amount, setAmount] = useState<number | any>();
+  const [amount, setAmount] = useState<number | any>(1);
   const [active, setActive] = useState(0);
   const [_option, setOption] = useState(0);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [pan, setPan] = useState("");
-  const [message, setMessage] = useState("");
-  const [address, setAddress] = useState("");
-  const [pin, setPin] = useState("");
-  const [city, setCity] = useState("");
-  const [State, setState] = useState("");
-  const [country, setCountry] = useState("");
+  const [name, setName] = useState("sabari");
+  const [phone, setPhone] = useState("6383736008");
+  const [email, setEmail] = useState("sabariqwerty001@gmail.com");
+  const [pan, setPan] = useState("ABCTY1234D");
+  const [message, setMessage] = useState("test message");
+  const [address, setAddress] = useState("test address");
+  const [pin, setPin] = useState("9213");
+  const [city, setCity] = useState("test city");
+  const [State, setState] = useState("test state");
+  const [country, setCountry] = useState("test country");
   const [disabled, setDisabled] = useState(false);
 
   const name_ = SubDonationCatgery[catgery];

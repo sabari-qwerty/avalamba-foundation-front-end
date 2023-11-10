@@ -1,12 +1,12 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-datasource db {
-  provider          = "postgresql"
-  url               = env("NEXT_PUBLIC_DATABASE_URL")
-  directUrl         = env("NEXT_PUBLIC_DIRECT_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
-}
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("NEXT_PUBLIC_DATABASE_URL")
+// directUrl         = env("NEXT_PUBLIC_DIRECT_URL")
+// shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+// }
 
 //  old
 
@@ -29,11 +29,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// datasource db {
-//   provider = "postgresql"
+datasource db {
+  provider = "postgresql"
 
-//   url = env("NEXT_PUBLIC_DATABASE_URL")
-// }
+  url = env("NEXT_PUBLIC_DATABASE_URL")
+}
 
 // model DonationDetails {
 //   id                    String    @id @unique @default(uuid())
@@ -95,7 +95,7 @@ model DonationDetails {
 //   pgtra
 // }
 
-model PaymnetStatus {
+model PaymentCard {
   id                    String @id @unique @default(uuid())
   code                  String
   message               String
@@ -113,4 +113,35 @@ model PaymnetStatus {
   arn                   String
   bankId                String
   brn                   String
+}
+
+model PaymentUPI {
+  id                    String @id @unique @default(uuid())
+  code                  String
+  message               String
+  merchantId            String
+  merchantTransactionId String
+  transactionId         String
+  amount                Int
+  state                 String
+  responseCode          String
+  type                  String
+  utr                   String
+}
+
+model NetBanKing {
+  id                     String @id @unique @default(uuid())
+  code                   String
+  message                String
+  merchantId             String
+  merchantTransactionId  String
+  transactionId          String
+  amount                 Int
+  state                  String
+  responseCode           String
+  type                   String
+  pgTransactionId        String
+  pgServiceTransactionId String
+  bankTransactionId      String
+  backId                 String
 }

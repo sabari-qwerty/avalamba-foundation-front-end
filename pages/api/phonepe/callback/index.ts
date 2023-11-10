@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-interface response {
+interface cardPayment {
   success: boolean;
   code: string;
   message: string;
@@ -27,56 +27,47 @@ interface response {
   };
 }
 
+interface PaymentUPI {
+  success: Boolean;
+  code: string;
+  message: string;
+  data: {
+    merchantId: string;
+    merchantTransactionId: string;
+    transactionI: string;
+    amount: number;
+    state: string;
+    responseCode: string;
+    paymentInstrument: {
+      type: string;
+      utr: string;
+    };
+  };
+}
+
+interface NetBanKing {
+  success: boolean;
+  code: string;
+  message: string;
+  data: {
+    merchantId: string;
+    merchantTransactionId: string;
+    transactionId: string;
+    amount: number;
+    state: string;
+    responseCode: string;
+    paymentInstrument: {
+      type: string;
+      pgTransactionId: string;
+      pgServiceTransactionId: string;
+      bankTransactionId: string;
+      bankId: string;
+    };
+  };
+}
+
 import { Prisma } from "@prisma/client";
 import axios from "axios";
-// export default async function handler(
-//   req: NextApiRequest,
-//   res: NextApiResponse
-// ) {
-//   if (req.method === "POST") {
-//     try {
-//       const data_ = req.body;
-
-//       const base64 = data_["response"];
-
-//       const response = atob(base64);
-
-//       const json: response = JSON.parse(response);
-
-//       const data = {
-//         merchantId: json.data.merchantId,
-//         merchantTransactionId: json.data.merchantTransactionId,
-//         transactionId: json.data.transactionId,
-//         amount: json.data.amount / 100,
-//         state: json.data.state,
-//         responseCode: json.data.responseCode,
-//         type: json.data.paymentInstrument.type,
-//         cardType: json.data.paymentInstrument.cardType,
-//         pgTransactionId: json.data.paymentInstrument.pgTransactionId,
-//         bankTransactionId: String(
-//           json.data.paymentInstrument.bankTransactionId
-//         ),
-//         pgAuthorizationCode: String(
-//           json.data.paymentInstrument.pgAuthorizationCode
-//         ),
-//         arn: String(json.data.paymentInstrument.arn),
-//         bankId: json.data.paymentInstrument.bankId,
-//         brn: json.data.paymentInstrument.brn,
-//         code: json.code,
-//         message: json.message,
-//       };
-
-//       await prisma.paymnetStatus.create({
-//         data: data,
-//       });
-
-//       console.log(json.data.merchantTransactionId);
-//       return res.status(200).send({ success: json.success });
-//     } catch (err) {
-//       return res.status(500).send({ err });
-//     }
-//   }
-// }
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -92,34 +83,76 @@ export default async function handler(
 
       const response = atob(base64);
 
-      const json: response = JSON.parse(response);
+      const json: cardPayment & PaymentUPI & NetBanKing = JSON.parse(response);
 
-      console.log(json);
+      console.log("here json", json);
 
-      const create_data = await prisma.paymnetStatus.create({
-        data: {
-          merchantId: json.data.merchantId,
-          merchantTransactionId: json.data.merchantTransactionId,
-          transactionId: json.data.transactionId,
-          amount: json.data.amount / 100,
-          state: json.data.state,
-          responseCode: json.data.responseCode,
-          type: json.data.paymentInstrument.type,
-          cardType: json.data.paymentInstrument.cardType,
-          pgTransactionId: json.data.paymentInstrument.pgTransactionId,
-          bankTransactionId: String(
-            json.data.paymentInstrument.bankTransactionId
-          ),
-          pgAuthorizationCode: String(
-            json.data.paymentInstrument.pgAuthorizationCode
-          ),
-          arn: String(json.data.paymentInstrument.arn),
-          bankId: json.data.paymentInstrument.bankId,
-          brn: json.data.paymentInstrument.brn,
-          code: json.code,
-          message: json.message,
-        },
-      });
+      if (json.data.paymentInstrument.type === "UPI") {
+        const upi = await prisma.paymentUPI.create({
+          data: {
+            code: json.code,
+            message: json.message,
+            merchantId: json.data.merchantId,
+            merchantTransactionId: json.data.merchantTransactionId,
+            transactionId: json.data.transactionId,
+            amount: json.data.amount / 100,
+            state: json.data.state,
+            responseCode: json.data.responseCode,
+            type: json.data.paymentInstrument.type,
+            utr: json.data.paymentInstrument.utr,
+          },
+        });
+      }
+
+      if (json.data.paymentInstrument.type === "CARD") {
+        const card = await prisma.paymentCard.create({
+          data: {
+            merchantId: json.data.merchantId,
+            merchantTransactionId: json.data.merchantTransactionId,
+            transactionId: json.data.transactionId,
+            amount: json.data.amount / 100,
+            state: json.data.state,
+            responseCode: json.data.responseCode,
+            type: json.data.paymentInstrument.type,
+            cardType: json.data.paymentInstrument.cardType,
+            pgTransactionId: json.data.paymentInstrument.pgTransactionId,
+            bankTransactionId: String(
+              json.data.paymentInstrument.bankTransactionId
+            ),
+            pgAuthorizationCode: String(
+              json.data.paymentInstrument.pgAuthorizationCode
+            ),
+            arn: String(json.data.paymentInstrument.arn),
+            bankId: String(json.data.paymentInstrument.bankId),
+            brn: String(json.data.paymentInstrument.brn),
+            code: String(json.code),
+            message: String(json.message),
+          },
+        });
+      }
+
+      if (json.data.paymentInstrument.type === "NETBANKING") {
+        const net = await prisma.netBanKing.create({
+          data: {
+            merchantId: json.data.merchantId,
+            merchantTransactionId: json.data.merchantTransactionId,
+            transactionId: json.data.transactionId,
+            amount: json.data.amount / 100,
+            state: json.data.state,
+            responseCode: json.data.responseCode,
+            type: json.data.paymentInstrument.type,
+            pgTransactionId: json.data.paymentInstrument.pgTransactionId,
+            pgServiceTransactionId:
+              json.data.paymentInstrument.pgServiceTransactionId,
+            bankTransactionId: String(
+              json.data.paymentInstrument.bankTransactionId
+            ),
+            backId: json.data.paymentInstrument.bankId,
+            code: String(json.code),
+            message: String(json.message),
+          },
+        });
+      }
 
       const find_email = await prisma.donationDetails.findUnique({
         where: {
