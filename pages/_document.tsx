@@ -4,7 +4,13 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Avalamb foundation</title>
+        <title>
+          Avalamba Foundation: Nourishing the Roots of Bhartiya Heritage
+        </title>
+        <meta
+          name="description"
+          content="Avalamba Foundation: Your gateway to the rich cultural heritage of Bhartiya civilization, offering a glimpse into its timeless essence."
+        />
         <link rel="icon" type="image/x-icon" href="/logo/icon.ico" />
         <script>{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
